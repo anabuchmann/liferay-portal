@@ -22,11 +22,24 @@ definition {
 	}
 
 	macro addFieldByDoubleClickFromObjectSidebar {
-		var key_fieldLabel = "${fieldLabel}";
+		var key_fieldLabel = "${fieldType}";
 
-		DoubleClick(locator1 = "FormViewBuilder#OBJECT_FIELD_LABEL");
+		var iterator = "0";
+		var maxRetryNumber = "3";
 
-		FormViewBuilder.validateFieldLabel(fieldLabel = "${fieldLabel}");
+		while ((IsElementNotPresent(locator1 = "FormViewBuilder#SIDEBAR_BASIC_TAB")) && ("${iterator}" != "${maxRetryNumber}")) {
+			DoubleClick(locator1 = "FormViewBuilder#OBJECT_FIELD_LABEL");
+
+			Pause(locator1 = "1000");
+
+			if ("${iterator}" == "${maxRetryNumber}") {
+				echo("Couldn't add the field by double-click action, maximum retries number reached: ${iterator}");
+			}
+
+			var iterator = MathUtil.sum("${iterator}", "1");
+		}
+
+		AssertElementPresent(locator1 = "FormViewBuilder#SIDEBAR_BASIC_TAB");
 	}
 
 	macro addFieldByDragAndDrop {
@@ -92,6 +105,23 @@ definition {
 		FormViewBuilder.validateFieldLabel(fieldLabel = "${fieldType}");
 
 		AppBuilderAdmin.gotoBack();
+	}
+
+	macro addFormViewSameFields {
+		while ( IsElementNotPresent(locator1 = "AppBuilder#NAVBAR") || IsElementNotPresent(locator1 = "FormViewBuilder#SIDEBAR_FIELDS_TAB") ) {
+			Pause(locator1 = "1000");
+		}
+
+		if (IsElementPresent(locator1 = "AppBuilder#NAVBAR")) {
+			FormViewBuilder.switchToFormViewTab();
+			AppBuilderAdmin.add();
+		}
+
+		FormViewBuilder.addFieldByDoubleClickFromObjectSidebar(fieldType = "${fieldType}");
+
+		FormViewBuilder.setName(formViewName = "${formViewName}");
+
+		FormViewBuilder.save();
 	}
 
 	macro addObjectByDragAndDrop {

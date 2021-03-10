@@ -157,6 +157,12 @@ definition {
 			tableViewName = "${tableViewName}");
 	}
 
+	macro createFormViewSameFields {
+		FormViewBuilder.addFormViewSameFields(
+			fieldType = "${fieldType}",
+			formViewName = "${formViewName}");
+	}
+
 	macro deleteApp {
 		Click(
 			key_itemName = "${itemName}",

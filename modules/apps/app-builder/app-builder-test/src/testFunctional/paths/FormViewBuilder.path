@@ -290,7 +290,7 @@
 <!--OBJECT_SIDEBAR-->
 <tr>
 	<td>OBJECT_FIELD_LABEL</td>
-	<td>//div[contains(@class,'custom-object-field')]//span[contains(text(),'${key_fieldLabel}')]</td>
+	<td>//div[contains(@class,'custom-object-sidebar')]//span[contains(text(),'${key_fieldLabel}')]</td>
 	<td></td>
 </tr>
 
