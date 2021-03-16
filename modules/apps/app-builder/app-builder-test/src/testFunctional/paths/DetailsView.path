@@ -48,6 +48,12 @@
 </tr>
 
 <tr>
+	<td>FORM_VIEW_NAME</td>
+	<td>//h3[contains(text(),'${formViewName}')]</td>
+	<td></td>
+</tr>
+
+<tr>
 	<td>BACK_TO_TABLE_VIEW</td>
 	<td>xpath=(//div[contains(@class,'app-builder-control-menu')] | //div[contains(@class,'control-menu')]//*[contains(@class,'lexicon-icon-angle-left')])</td>
 	<td></td>

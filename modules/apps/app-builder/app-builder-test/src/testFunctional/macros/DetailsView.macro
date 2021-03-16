@@ -1,5 +1,11 @@
 definition {
 
+	macro assertFormView {
+		AssertElementPresent(
+			formViewName = "${formViewName}",
+			locator1 = "DetailsView#FORM_VIEW_NAME");
+	}
+
 	macro assertStatus {
 		AssertElementPresent(
 			key_status = "${status}",
