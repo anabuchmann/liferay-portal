@@ -2321,6 +2321,54 @@ definition {
 		AssertElementNotPresent(locator1 = "WorkflowAllItems#DUE_DATE_ICON");
 	}
 
+	@description = "LRQA-66568 - Verify if minutes (Duration time section) accepts 59 as the maximum value"
+	@priority = "5"
+	test ValidateDurationTime {
+		property portal.acceptance = "true";
+
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
+
+		WorkflowMetrics.goToWorkflowSLASettings(workflowProcessName = "Single Approver");
+
+		Click(locator1 = "WorkflowMetricsSLA#ADD_NEW_SLA_BUTTON");
+
+		WorkflowMetrics.fillSLAForm(
+			slaDefinitionDays = "1",
+			slaDefinitionDescription = "SLA Description",
+			slaDefinitionEnd = "Process Ends: Approved",
+			slaDefinitionHours = "00:60",
+			slaDefinitionName = "New SLA",
+			slaDefinitionStart = "Process Begins");
+
+		Button.clickSave();
+
+		WorkflowMetrics.viewSLAErrorMessage(errorMessage = "Value must be an hour below 23:59.");
+
+		WorkflowMetrics.fillSLAForm(
+			slaDefinitionDays = "1",
+			slaDefinitionDescription = "SLA Description",
+			slaDefinitionEnd = "Process Ends: Approved",
+			slaDefinitionHours = "00:59",
+			slaDefinitionName = "New SLA",
+			slaDefinitionStart = "Process Begins");
+
+		AssertElementNotPresent(
+			key_errorMessage = "Value must be an hour below 23:59.",
+			locator1 = "WorkflowMetricsSLA#SLA_ERROR_MESSAGE");
+
+		WorkflowMetrics.fillSLAForm(
+			slaDefinitionDays = "1",
+			slaDefinitionDescription = "SLA Description",
+			slaDefinitionEnd = "Process Ends: Approved",
+			slaDefinitionHours = "24:59",
+			slaDefinitionName = "New SLA",
+			slaDefinitionStart = "Process Begins");
+
+		Button.clickSave();
+
+		WorkflowMetrics.viewSLAErrorMessage(errorMessage = "Value must be an hour below 23:59.");
+	}
+
 	@description = "LRQA-53646 - Automate LPS-88573: Search and order the reports list"
 	@priority = "5"
 	test ValidateWorkflowProcessListOnMetrics {
