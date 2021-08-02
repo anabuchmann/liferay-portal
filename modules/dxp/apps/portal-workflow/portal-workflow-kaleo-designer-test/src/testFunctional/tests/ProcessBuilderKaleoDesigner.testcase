@@ -882,4 +882,31 @@ definition {
 		AssertElementPresent(locator1 = "KaleoDesignerEditWorkflow#CIRCLE_ORANGE_CONNECTOR");
 	}
 
+	@description = "LPS-135888 - Verify that is possible to select Account role type for role assignments"
+	@ignore = "Test Stub"
+	@priority = "5"
+	test CanAssignAccountRole {
+
+		// TODO LRQA-69104 CanAssignAccountRole pending implementation
+
+	}
+
+	@description = "LPS-135888 - Verify that the Single Approver Workflow comes with the Account Member and Account Administrator role names assigned"
+	@ignore = "Test Stub"
+	@priority = "4"
+	test SingleApproverComesWithAccountMemberAndAdmRoleName {
+
+		// TODO LRQA-69103 SingleApproverComesWithAccountMemberAndAdmRoleName pending implementation
+
+	}
+
+	@description = "LPS-135888 - Verify that the Single Approver Workflow comes with the Account role assigned"
+	@ignore = "Test Stub"
+	@priority = "5"
+	test SingleApproverComesWithAccountRole {
+
+		// TODO LRQA-69102 SingleApproverComesWithAccountRole pending implementation
+
+	}
+
 }
