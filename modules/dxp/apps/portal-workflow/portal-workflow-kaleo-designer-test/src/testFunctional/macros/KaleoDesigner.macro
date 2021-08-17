@@ -109,7 +109,7 @@ definition {
 
 		var key_nodeType = StringUtil.replace("${nodeType}", "-", "_");
 
-		SikuliDragAndDrop(
+		DragAndDrop.dragAndDrop(
 			locator1 = "KaleoDesignerEditWorkflow#NODE_PNG",
 			value1 = "250,0");
 
