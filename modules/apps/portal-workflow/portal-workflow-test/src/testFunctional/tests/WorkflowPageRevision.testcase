@@ -264,12 +264,41 @@ definition {
 	}
 
 	@description = "Verify that when the Approved page is edited the button Submit for Publication is displayed"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test SubmitForPublicationButtonIsDisplayedWhenPageIsEdited {
+		Navigator.gotoStagedSitePage(
+			pageName = "${pageName}",
+			siteName = "${siteName}");
 
-		// TODO LRQA-70879 SubmitForPublicationButtonIsDisplayedWhenPageIsEdited pending implementation
+		Portlet.addPG(
+			pageName = "${pageName}",
+			portletName = "Blogs");
 
+		Staging.submitForPublicationPageRevision();
+
+		AssertElementNotPresent(locator1 = "Staging#STAGING_MENU_SUBMIT_FOR_PUBLICATION");
+
+		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "${pageName}",
+			workflowAssetType = "Page Revision",
+			workflowTask = "Review");
+
+		Workflow.approveTaskByActions(
+			workflowAssetTitle = "${pageName}",
+			workflowAssetType = "Page Revision",
+			workflowTask = "Review");
+
+		Navigator.gotoStagedSitePage(
+			pageName = "${pageName}",
+			siteName = "${siteName}");
+
+		Portlet.addPG(
+			pageName = "${pageName}",
+			portletName = "Message Boards");
+		
+		AssertElementPresent(locator1 = "Staging#STAGING_MENU_SUBMIT_FOR_PUBLICATION");
 	}
 
 	@description = "This is a use case for LPS-65319."
