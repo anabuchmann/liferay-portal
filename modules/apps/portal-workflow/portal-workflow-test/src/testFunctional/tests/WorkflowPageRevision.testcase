@@ -183,12 +183,21 @@ definition {
 	}
 
 	@description = "Verify that a Staging Area Page is Pending after it is submitted for publication"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test StatusIsPendingAfterSubmitForPublication {
+		Navigator.gotoStagedSitePage(
+			pageName = "${pageName}",
+			siteName = "${siteName}");
 
-		// TODO LRQA-70875 StatusIsPendingAfterSubmitForPublication pending implementation
+		Portlet.addPG(
+			pageName = "${pageName}",
+			portletName = "Blogs");
 
+		Blogs.addEntry(
+			entryContent = "Blogs Content",
+			entryTitle = "Blogs Title");
+
+		Staging.submitForPublicationPageRevision();
 	}
 
 	@description = "Verify that when the Approved page is edited the button Submit for Publication is displayed"
