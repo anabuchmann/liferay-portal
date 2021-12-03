@@ -201,12 +201,41 @@ definition {
 	}
 
 	@description = "Verify that when the Approved page is edited it's status comes to Draft"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test StatusComesToDraftWhenPageIsEdited {
+		Navigator.gotoStagedSitePage(
+			pageName = "Site Page Name",
+			siteName = "Site Name");
 
-		// TODO LRQA-70878 StatusComesToDraftWhenPageIsEdited pending implementation
+		Portlet.addPG(
+			pageName = "Site Page Name",
+			portletName = "Blogs");
 
+		Blogs.addEntry(
+			entryContent = "Blogs Content",
+			entryTitle = "Blogs Title");
+
+		Staging.submitForPublicationPageRevision();
+
+		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Site Page Name",
+			workflowAssetType = "Page Revision",
+			workflowTask = "Review");
+
+		Workflow.approveTaskByActions(
+			workflowAssetTitle = "Site Page Name",
+			workflowAssetType = "Page Revision",
+			workflowTask = "Review");
+
+		Navigator.gotoStagedSitePage(
+			pageName = "Site Page Name",
+			siteName = "Site Name");
+
+		Portlet.deletePG(portletName = "Blogs");
+
+		Workflow.viewWorkflowStatus(status = "Draft");
 	}
 
 	@description = "Verify that a Staging Area Page is Pending after it is submitted for publication"
