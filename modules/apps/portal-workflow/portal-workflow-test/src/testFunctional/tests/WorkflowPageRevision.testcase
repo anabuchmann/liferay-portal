@@ -79,12 +79,39 @@ definition {
 	}
 
 	@description = "Verify that, after approval, the Page status is Ready for Publish"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test PageIsReadyForPublishAfterApproval {
+		Navigator.gotoStagedSitePage(
+			pageName = "Site Page Name",
+			siteName = "Site Name");
 
-		// TODO LRQA-70877 PageIsReadyForPublishAfterApproval pending implementation
+		Portlet.addPG(
+			pageName = "Site Page Name",
+			portletName = "Blogs");
 
+		Blogs.addEntry(
+			entryContent = "Blogs Content",
+			entryTitle = "Blogs Title");
+
+		Staging.submitForPublicationPageRevision();
+
+		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Site Page Name",
+			workflowAssetType = "Page Revision",
+			workflowTask = "Review");
+
+		Workflow.approveTaskByActions(
+			workflowAssetTitle = "Site Page Name",
+			workflowAssetType = "Page Revision",
+			workflowTask = "Review");
+
+		Navigator.gotoStagedSitePage(
+			pageName = "Site Page Name",
+			siteName = "Site Name");
+
+		Workflow.viewWorkflowStatus(status = "Ready for Publish Process");
 	}
 
 	@priority = "4"
