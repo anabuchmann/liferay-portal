@@ -46,14 +46,14 @@ definition {
 		Workflow.viewDefinitionUnpublished(workflowDefinitionTitle = "Single Approver");
 
 		Workflow.duplicateNotPublishedWorkflow(
-			workflowCopyName = "Copy of Single Approver",
+			workflowCopyName = "Not Published Workflow",
 			workflowName = "Single Approver");
 
 		Navigator.gotoBack();
 
 		Workflow.viewDefinitionUnpublished(workflowDefinitionTitle = "Single Approver");
 
-		Workflow.viewDefinitionUnpublished(workflowDefinitionTitle = "Copy of Single Approver");
+		Workflow.viewDefinitionUnpublished(workflowDefinitionTitle = "Not Published Workflow");
 	}
 
 	@description = "Verify that the user can select Duplicate option in the kebab menu for a particular row"

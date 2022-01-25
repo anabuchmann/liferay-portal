@@ -560,11 +560,11 @@ definition {
 
 		MenuItem.clickNoError(menuItem = "Duplicate");
 
-		Button.click(button = "Duplicate");
-
 		Type(
 			locator1 = "WorkflowDefinition#DEFINITION_TITLE",
 			value1 = "${workflowCopyName}");
+
+		Button.click(button = "Duplicate");
 	}
 
 	macro duplicateSingleApproverWorkflow {
