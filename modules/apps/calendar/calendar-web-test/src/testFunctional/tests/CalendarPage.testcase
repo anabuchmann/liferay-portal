@@ -106,36 +106,35 @@ definition {
 	test CanGoBackAndForwardOnCalendar {
 		Navigator.gotoPage(pageName = "Calendar Page");
 
-        CalendarPage.viewPreviousDayCalendar(
-			viewType = "Day",
-			displayDate = "${currentDate}");
+		CalendarPage.viewPreviousDayCalendar(
+			displayDate = "${currentDate}",
+			viewType = "Day");
 
-        CalendarPage.viewTodayDayCalendar(viewType = "Day");
+		CalendarPage.viewTodayDayCalendar(viewType = "Day");
 
-        CalendarPage.viewNextDayCalendar(
-			viewType = "Day",
-			displayDate = "${currentDate}");
+		CalendarPage.viewNextDayCalendar(
+			displayDate = "${currentDate}",
+			viewType = "Day");
 
-        CalendarPage.viewPreviousDayCalendar(
-			viewType = "Week",
-			displayDate = "${currentDate}");
+		CalendarPage.viewPreviousDayCalendar(
+			displayDate = "${currentDate}",
+			viewType = "Week");
 
-        CalendarPage.viewTodayDayCalendar(viewType = "Week");
+		CalendarPage.viewTodayDayCalendar(viewType = "Week");
 
-        CalendarPage.viewNextDayCalendar(
-			viewType = "Week",
-			displayDate = "${currentDate}");
+		CalendarPage.viewNextDayCalendar(
+			displayDate = "${currentDate}",
+			viewType = "Week");
 
-        CalendarPage.viewPreviousDayCalendar(
-			viewType = "Month",
-			displayDate = "${currentDate}");
+		CalendarPage.viewPreviousDayCalendar(
+			displayDate = "${currentDate}",
+			viewType = "Month");
 
-        CalendarPage.viewTodayDayCalendar(viewType = "Month");
+		CalendarPage.viewTodayDayCalendar(viewType = "Month");
 
-        CalendarPage.viewNextDayCalendar(
-			viewType = "Month",
-			displayDate = "${currentDate}");
-
+		CalendarPage.viewNextDayCalendar(
+			displayDate = "${currentDate}",
+			viewType = "Month");
 	}
 
 	@description = "LRQA-72024 - Verify that the user can hide Events from a specific Calendar"
