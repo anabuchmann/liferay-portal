@@ -1,0 +1,119 @@
+definition {
+    macro viewPreviousDayCalendar {
+        var currentDate = DateUtil.getFormattedCurrentDate("MMMM dd, yyyy");        
+        var displayDate = "${currentDate}";
+
+        if ("${viewType}" == "Day") {
+            CalendarNavigator.gotoView(viewType = "Day");
+
+            Click(locator1 = "Calendar#VIEW_PREVIOUS_BUTTON");
+
+            AssertTextEquals.assertPartialText(
+                locator1 = "CalendarPage#VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT",
+                value1 = "${displayDate}");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+        }
+        else if ("${viewType}" == "Week") {
+            CalendarNavigator.gotoView(viewType = "Week");
+
+            Click(locator1 = "Calendar#VIEW_PREVIOUS_BUTTON");
+
+            AssertTextEquals.assertPartialText(
+                locator1 = "CalendarPage#VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT",
+                value1 = "${displayDate}");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+        }
+        else if ("${viewType}" == "Month") {
+            CalendarNavigator.gotoView(viewType = "Month");
+
+            Click(locator1 = "Calendar#VIEW_PREVIOUS_BUTTON");
+
+            AssertTextEquals.assertPartialText(
+                locator1 = "CalendarPage#VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT",
+                value1 = "${displayDate}");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+        }
+    }
+    macro viewNextDayCalendar {
+        var currentDate = DateUtil.getFormattedCurrentDate("MMMM dd, yyyy");        
+        var displayDate = "${currentDate}";
+
+        if ("${viewType}" == "Day") {
+            CalendarNavigator.gotoView(viewType = "Day");
+
+            Click(locator1 = "Calendar#VIEW_NEXT_BUTTON");
+
+            AssertTextEquals.assertPartialText(
+                locator1 = "CalendarPage#VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT",
+                value1 = "${displayDate}");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+        }
+        else if ("${viewType}" == "Week") {
+            CalendarNavigator.gotoView(viewType = "Week");
+
+            Click(locator1 = "Calendar#VIEW_NEXT_BUTTON");
+
+            AssertTextEquals.assertPartialText(
+                locator1 = "CalendarPage#VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT",
+                value1 = "${displayDate}");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+        }
+        else if ("${viewType}" == "Month") {
+            CalendarNavigator.gotoView(viewType = "Month");
+
+            Click(locator1 = "Calendar#VIEW_NEXT_BUTTON");
+
+            AssertTextEquals.assertPartialText(
+                locator1 = "CalendarPage#VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT",
+                value1 = "${displayDate}");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+        }
+    }
+    macro viewTodayDayCalendar {
+        if ("${viewType}" == "Day") {
+            CalendarNavigator.gotoView(viewType = "Day");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+
+            AssertElementPresent(locator1 = "Calendar#SCHEDULER_VIEW_DAY_CURRENT_DAY");
+        }
+        else if ("${viewType}" == "Week") {
+            CalendarNavigator.gotoView(viewType = "Week");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+
+            AssertElementPresent(locator1 = "Calendar#SCHEDULER_VIEW_WEEK_CURRENT_DAY");
+        }
+        else if ("${viewType}" == "Month") {
+            CalendarNavigator.gotoView(viewType = "Month");
+
+            AssertClick(
+                locator1 = "Calendar#VIEW_TODAY_BUTTON",
+                value1 = "Today");
+
+            AssertElementPresent(locator1 = "Calendar#SCHEDULER_VIEW_MONTH_CURRENT_DAY");
+        }
+    }
+}

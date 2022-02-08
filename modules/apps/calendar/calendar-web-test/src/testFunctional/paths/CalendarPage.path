@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>CalendarPage</title>
+</head>
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CalendarPage</td></tr>
+</thead>
+<tbody>
+<tr>
+    <td>VIEW_RESULT_DISPLAYED_CALENDAR_CLICKING_ON_PREVIOUS_OR_NEXT</td>
+    <td>//span[contains(@class, 'sr-only') and contains(text(), '${displayDate}')]</td>
+    <td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

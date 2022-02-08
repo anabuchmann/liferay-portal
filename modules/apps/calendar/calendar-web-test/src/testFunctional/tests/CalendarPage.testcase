@@ -102,11 +102,39 @@ definition {
 	}
 
 	@description = "LRQA-72024 - Verify that the user can go back and forward on Calendar"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanGoBackAndForwardOnCalendar {
+		Navigator.gotoPage(pageName = "Calendar Page");
 
-		// TODO LRQA-72033 CanGoBackAndForwardOnCalendar pending implementation
+        CalendarPage.viewPreviousDayCalendar(
+			viewType = "Day",
+			displayDate = "${currentDate}");
+
+        CalendarPage.viewTodayDayCalendar(viewType = "Day");
+
+        CalendarPage.viewNextDayCalendar(
+			viewType = "Day",
+			displayDate = "${currentDate}");
+
+        CalendarPage.viewPreviousDayCalendar(
+			viewType = "Week",
+			displayDate = "${currentDate}");
+
+        CalendarPage.viewTodayDayCalendar(viewType = "Week");
+
+        CalendarPage.viewNextDayCalendar(
+			viewType = "Week",
+			displayDate = "${currentDate}");
+
+        CalendarPage.viewPreviousDayCalendar(
+			viewType = "Month",
+			displayDate = "${currentDate}");
+
+        CalendarPage.viewTodayDayCalendar(viewType = "Month");
+
+        CalendarPage.viewNextDayCalendar(
+			viewType = "Month",
+			displayDate = "${currentDate}");
 
 	}
 
