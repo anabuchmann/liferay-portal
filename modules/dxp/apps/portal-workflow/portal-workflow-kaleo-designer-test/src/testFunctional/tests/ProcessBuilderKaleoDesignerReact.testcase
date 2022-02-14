@@ -338,7 +338,6 @@ definition {
 		Workflow.saveDefinition();
 
 		Workflow.viewDefinitionUnpublished(workflowDefinitionTitle = "New Workflow Definition Title");
-
 	}
 
 	@description = "LPS-139387 - Verify that the user is able to see the Start and End nodes on the Diagram when creating a New Process"

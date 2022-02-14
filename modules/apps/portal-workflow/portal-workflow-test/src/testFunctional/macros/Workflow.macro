@@ -850,16 +850,17 @@ definition {
 
 	macro saveDefinition {
 		if ("${newKaleoDesigner}" == "True") {
-            AssertClick(
-            locator1 = "KaleoDesigner#SAVE_BUTTON",
-            value1 = "Save");
-        }
-        else {
-            AssertClick(
-                locator1 = "KaleoDesigner#SAVE_BUTTON",
-                value1 = "Save");
-            Alert.viewSuccessMessage();
-        }
+			AssertClick(
+				locator1 = "KaleoDesigner#SAVE_BUTTON",
+				value1 = "Save");
+		}
+		else {
+			AssertClick(
+				locator1 = "KaleoDesigner#SAVE_BUTTON",
+				value1 = "Save");
+
+			Alert.viewSuccessMessage();
+		}
 	}
 
 	macro searchFieldPresent {
