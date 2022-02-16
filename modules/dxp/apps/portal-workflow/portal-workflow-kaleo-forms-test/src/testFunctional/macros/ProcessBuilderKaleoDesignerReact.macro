@@ -1,0 +1,56 @@
+definition {
+
+	macro addConnector {
+		MouseOver.mouseOverInvisible(
+			key_direction = "${direction}",
+			key_nodeType = "${connectorOut}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CONNECTOR_SOURCE",
+			value1 = "0,0");
+
+		MouseDown.mouseDownAt(
+			key_direction = "${direction}",
+			key_nodeType = "${connectorOut}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CONNECTOR_SOURCE",
+			value1 = "0,0");
+
+		MouseMove(
+			key_nodeType = "${connectorIn}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE",
+			value1 = "0,47");
+
+		MouseUp.mouseUpAt(
+			key_nodeType = "${connectorIn}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE",
+			value1 = "0,47");
+
+		Type(
+			key_connectorLabel = "TRANSITION LABEL",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_LABEL",
+			value1 = "${connectorLabel}");
+	}
+
+	macro selectConnectorPresent {
+		Click(
+			key_connectorLabel = "${connectorLabel}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_CONNECTOR_LABEL");
+	}
+
+	macro deleteNodeOrConnection {
+
+		Click(locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN");
+
+		AssertElementPresent(
+			key_title = "${title}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_DELETE_MODAL");
+
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
+	}
+
+	macro notViewConnectorPresent {
+		AssertElementNotPresent(
+			key_connectorLabel = "${connectorLabel}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_CONNECTOR_LABEL");
+	}
+
+	
+}
