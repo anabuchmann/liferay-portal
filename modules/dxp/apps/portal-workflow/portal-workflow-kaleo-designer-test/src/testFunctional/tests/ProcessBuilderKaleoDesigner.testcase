@@ -111,6 +111,27 @@ definition {
 			value1 = "Role Type");
 	}
 
+	@description = "LRQA-72537 - Verify that the user is able to add a State node to the workflow by drag and drop"
+	@priority = "5"
+	test CanAddNodeByDragAndDrop {
+		property portal.acceptance = "true";
+		property osgi.module.configuration.file.names = "com.liferay.portal.workflow.kaleo.designer.web.internal.configuration.FFKaleoDesignerConfiguration_default.config";
+		property osgi.module.configurations = "newKaleoDesignerEnabled=&quot;true&quot;";
+
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition Title");
+
+		Pause(locator1 = "5000");
+
+		task ("Take screenshot") {
+			takeScreenshot();
+		}
+	}
+
 	@description = "Verify that Notification can be added"
 	@priority = "4"
 	test CanAddNotification {
