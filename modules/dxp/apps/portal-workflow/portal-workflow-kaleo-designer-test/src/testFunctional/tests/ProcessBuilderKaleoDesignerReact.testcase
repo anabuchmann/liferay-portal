@@ -453,7 +453,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.deleteNodeOrConnection(title = "Delete Transition");
 
 		ProcessBuilderKaleoDesignerReact.notViewConnectorPresent(connectorLabel = "START TASK CONNECTOR");
-
 	}
 
 	@description = "Verify that the user can edit the connectors label"

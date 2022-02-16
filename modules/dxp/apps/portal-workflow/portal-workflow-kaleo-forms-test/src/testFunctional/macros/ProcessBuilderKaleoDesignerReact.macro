@@ -29,14 +29,7 @@ definition {
 			value1 = "${connectorLabel}");
 	}
 
-	macro selectConnectorPresent {
-		Click(
-			key_connectorLabel = "${connectorLabel}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_CONNECTOR_LABEL");
-	}
-
 	macro deleteNodeOrConnection {
-
 		Click(locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN");
 
 		AssertElementPresent(
@@ -52,5 +45,10 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_CONNECTOR_LABEL");
 	}
 
-	
+	macro selectConnectorPresent {
+		Click(
+			key_connectorLabel = "${connectorLabel}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_CONNECTOR_LABEL");
+	}
+
 }
