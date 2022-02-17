@@ -380,18 +380,17 @@ definition {
 
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "Start Task Connector",
-            connectorOut = "start",
-            key_direction = "top");
+		ProcessBuilderKaleoDesignerReact.addConnector(
+			connectorIn = "end",
+			connectorLabel = "Start Task Connector",
+			connectorOut = "start",
+			key_direction = "top");
 
 		PortletEntry.publish();
 
-        Workflow.viewDefinitionPublished(workflowDefinitionTitle = "New Workflow Definition");
-
+		Workflow.viewDefinitionPublished(workflowDefinitionTitle = "New Workflow Definition");
 	}
 
 	@description = "Verify that user can Save workflow as Draft"
