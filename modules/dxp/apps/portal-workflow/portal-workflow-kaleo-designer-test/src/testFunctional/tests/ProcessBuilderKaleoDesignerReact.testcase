@@ -373,13 +373,24 @@ definition {
 	}
 
 	@description = "Verify that the user can Publish workflow"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanPublishWorkflow {
 		property osgi.module.configuration.file.names = "com.liferay.portal.workflow.kaleo.designer.web.internal.configuration.FFKaleoDesignerConfiguration_default.config";
 		property osgi.module.configurations = "newKaleoDesignerEnabled=&quot;true&quot;";
 
-		// TODO LRQA-72944 CanPublishWorkflow pending implementation
+		Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "Start Task Connector",
+            connectorOut = "start",
+            key_direction = "top");
+
+		PortletEntry.publish();
+
+        Workflow.viewDefinitionPublished(workflowDefinitionTitle = "New Workflow Definition");
 
 	}
 
