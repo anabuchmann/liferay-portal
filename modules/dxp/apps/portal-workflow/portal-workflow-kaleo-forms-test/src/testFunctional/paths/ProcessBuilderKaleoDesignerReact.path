@@ -50,6 +50,11 @@
 	<td>//input[@id='edgeLabel']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>SELECTED_NODE</td>
+	<td>//div[contains(@class, 'react-flow__node-${key_nodeType} selected')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>

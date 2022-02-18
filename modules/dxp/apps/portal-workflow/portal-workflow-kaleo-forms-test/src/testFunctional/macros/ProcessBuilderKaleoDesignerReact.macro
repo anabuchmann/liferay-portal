@@ -59,6 +59,12 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro selectNode {
+		Click(
+			key_nodeType = "${nodeType}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE");
+	}
+
 	macro selectTranslationLanguage {
 		var key_translationOptionSelected = "${translationOptionSelected}";
 		var key_translationOption = "${newTranslationOption}";
@@ -80,6 +86,12 @@ definition {
 		AssertElementPresent(
 			key_connectorLabel = "${connectorLabel}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_CONNECTOR_LABEL");
+	}
+
+	macro viewSelectedNode {
+		AssertElementPresent(
+			key_nodeType = "${nodeType}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
 	macro viewTranslationLanguageStatus {
