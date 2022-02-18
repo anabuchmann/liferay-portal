@@ -432,8 +432,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedNode(nodeType = "task");
-
-
 	}
 
 	@description = "Verify that the user can set transition Default"
