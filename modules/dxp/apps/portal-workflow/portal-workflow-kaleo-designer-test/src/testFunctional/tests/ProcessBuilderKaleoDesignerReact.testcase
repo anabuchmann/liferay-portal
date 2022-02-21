@@ -578,9 +578,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Start");
 
 		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Task");
-
-		
-
 	}
 
 	@description = "LPS-140056 - Verify that the changes on Default settings, for transitions, reflects on the diagram"
