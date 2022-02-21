@@ -239,4 +239,10 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewNodeLabel {
+		AssertElementPresent(
+			key_nodeLabel = "${nodeLabel}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE_LABEL");
+	}
+
 }
