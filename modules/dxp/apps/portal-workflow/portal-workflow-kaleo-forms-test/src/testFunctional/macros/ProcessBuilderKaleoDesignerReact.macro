@@ -114,6 +114,16 @@ definition {
 		}
 	}
 
+	macro sideBarBack {
+		Click(locator1 = "Sidebar#BACK");
+	}
+
+	macro sideBarProperties {
+		AssertElementPresent(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY",
+			value1 = "${property}");
+	}
+
 	macro viewAndFillNotification {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_NEW_BUTTON");
 
@@ -237,16 +247,6 @@ definition {
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-	macro sideBarProperties {
-		AssertElementPresent(
-			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY",
-			value1 = "${property}");
-	}
-
-	macro sideBarBack {
-		Click(locator1 = "Sidebar#BACK");
 	}
 
 }

@@ -635,42 +635,41 @@ definition {
 
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Join",
-            nodePosition = "-80,-40",
-            nodeType = "join");
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Join",
+			nodePosition = "-80,-40",
+			nodeType = "join");
 
 		ProcessBuilderKaleoDesignerReact.sideBarProperties(property = "Actions");
 
 		ProcessBuilderKaleoDesignerReact.sideBarBack();
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Join XOR",
-            nodePosition = "-40,-20",
-            nodeType = "join xor");
+			nodeLabel = "Join XOR",
+			nodePosition = "-40,-20",
+			nodeType = "join xor");
 
 		ProcessBuilderKaleoDesignerReact.sideBarProperties(property = "Actions");
 
 		ProcessBuilderKaleoDesignerReact.sideBarBack();
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "State",
-            nodePosition = "-320,-160",
-            nodeType = "state");
+			nodeLabel = "State",
+			nodePosition = "-320,-160",
+			nodeType = "state");
 
 		ProcessBuilderKaleoDesignerReact.sideBarProperties(property = "Actions");
 
 		ProcessBuilderKaleoDesignerReact.sideBarBack();
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Task",
-            nodePosition = "-580,-300",
-            nodeType = "task");
+			nodeLabel = "Task",
+			nodePosition = "-580,-300",
+			nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.sideBarProperties(property = "Actions");
-			
 	}
 
 	@description = "Verify that each type of Node has Description property"
