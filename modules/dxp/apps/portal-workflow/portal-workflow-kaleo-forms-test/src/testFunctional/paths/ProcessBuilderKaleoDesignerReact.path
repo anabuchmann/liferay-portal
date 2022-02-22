@@ -107,9 +107,9 @@
 	<td></td>
 </tr>
 <tr>
-    <td>REACT_PANEL</td>
-    <td>//div[@class='react-flow__pane']</td>
-    <td></td>
+	<td>REACT_PANEL</td>
+	<td>//div[@class='react-flow__pane']</td>
+	<td></td>
 </tr>
 
 </tbody>

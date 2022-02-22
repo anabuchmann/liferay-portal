@@ -29,24 +29,6 @@ definition {
 			value1 = "${connectorLabel}");
 	}
 
-	macro backArrowOnSidebar {
-		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BACK_TO_SIDEBAR_BUTTON");
-	}
-
-	macro clickDefaultToggle {
-		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
-	}
-
-	macro deleteNodeOrConnection {
-		Click(locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN");
-
-		AssertElementPresent(
-			key_title = "${title}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_DELETE_MODAL");
-
-		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
-	}
-		
 	macro addConnectorNodeSelected {
 		MouseOver.mouseOverInvisible(
 			key_direction = "${direction}",
@@ -98,6 +80,24 @@ definition {
 			key_nodeType = "${connectorIn}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE",
 			value1 = "0,47");
+	}
+
+	macro backArrowOnSidebar {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BACK_TO_SIDEBAR_BUTTON");
+	}
+
+	macro clickDefaultToggle {
+		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
+	}
+
+	macro deleteNodeOrConnection {
+		Click(locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN");
+
+		AssertElementPresent(
+			key_title = "${title}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_DELETE_MODAL");
+
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
 	}
 
 	macro dragAndDropDiagramNode {
