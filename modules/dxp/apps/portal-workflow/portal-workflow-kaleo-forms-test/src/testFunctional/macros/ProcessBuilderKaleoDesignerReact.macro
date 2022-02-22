@@ -232,13 +232,6 @@ definition {
 			value1 = "${description}");
 	}
 
-	macro viewTranslationLanguageStatus {
-		AssertElementPresent(
-			key_translationOption = "${newTranslationOption}",
-			key_translationStatus = "${translationStatus}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
 	macro viewNodePosition {
 		AssertElementPresent(
 			key_nodeType = "${nodeType}",
@@ -250,7 +243,7 @@ definition {
 	macro viewNodePositionChaged {
 		var nodeXPositionChaged = selenium.getAttribute("//div[contains(@class,'node ${nodeType}-node selected')]@xpos");
 		var nodeYPositionChaged = selenium.getAttribute("//div[contains(@class,'node ${nodeType}-node selected')]@ypos");
-		
+
 		AssertElementPresent(
 			key_nodeType = "${nodeType}",
 			key_nodeXPosition = "${nodeXPositionChaged}",
@@ -262,6 +255,13 @@ definition {
 			key_nodeXPosition = "${firstNodeXPosition}",
 			key_nodeYPosition = "${firstNodeYPosition}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_POSITION");
+	}
+
+	macro viewTranslationLanguageStatus {
+		AssertElementPresent(
+			key_translationOption = "${newTranslationOption}",
+			key_translationStatus = "${translationStatus}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
 }

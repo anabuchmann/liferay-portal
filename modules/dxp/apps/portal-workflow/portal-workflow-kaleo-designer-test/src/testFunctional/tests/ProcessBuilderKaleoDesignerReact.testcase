@@ -300,7 +300,7 @@ definition {
 	test CanMoveNode {
 		property osgi.module.configuration.file.names = "com.liferay.portal.workflow.kaleo.designer.web.internal.configuration.FFKaleoDesignerConfiguration_default.config";
 		property osgi.module.configurations = "newKaleoDesignerEnabled=&quot;true&quot;";
-		
+
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -316,14 +316,13 @@ definition {
 			nodeYPosition = "100");
 
 		ProcessBuilderKaleoDesignerReact.dragAndDropDiagramNode(
-			nodeType = "start",
-			nodePosition = "100,-50");
+			nodePosition = "100,-50",
+			nodeType = "start");
 
 		ProcessBuilderKaleoDesignerReact.viewNodePositionChaged(
-			nodeType = "start",
 			firstNodeXPosition = "300",
-			firstNodeYPosition = "100");
-		
+			firstNodeYPosition = "100",
+			nodeType = "start");
 	}
 
 	@description = "Verify that is not possible to have multiple Start nodes"
