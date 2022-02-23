@@ -737,11 +737,27 @@ definition {
 	}
 
 	@description = "Verify that the Task node has Timers property"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test TaskNodeHasTimersProperty {
 
-		// TODO LRQA-72948 TaskNodeHasTimersProperty pending implementation
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-100",
+			nodeType = "task");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
+
+		ProcessBuilderKaleoDesignerReact.viewPropertyPresentOnSideBar(propertyName = "Timers");
+
+		
+
 
 	}
 
