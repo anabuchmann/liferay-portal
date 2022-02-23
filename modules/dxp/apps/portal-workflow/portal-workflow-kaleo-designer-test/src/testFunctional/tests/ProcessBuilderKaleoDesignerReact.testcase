@@ -433,7 +433,6 @@ definition {
 	@description = "Verify that Condition Node do not have Timers property"
 	@priority = "4"
 	test ConditionHasNoTimersProperty {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
