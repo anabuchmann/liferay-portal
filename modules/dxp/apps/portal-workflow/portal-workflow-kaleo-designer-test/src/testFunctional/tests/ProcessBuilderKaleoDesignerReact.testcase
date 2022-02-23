@@ -357,8 +357,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
 
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "end");
-		
-
 	}
 
 	@description = "Verify that the user can select each node in Diagram"
