@@ -658,22 +658,20 @@ definition {
 	@description = "LPS-139387 - Verify that the node info is displayed when the node is selected"
 	@priority = "4"
 	test NodeInfoIsDisplayedWhenNodeIsSelected {
-
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
-		
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Task",
-            nodePosition = "-20,-40",
-            nodeType = "task");
+			nodeLabel = "Task",
+			nodePosition = "-20,-40",
+			nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.viewNodeInfo(nodeInfo = "nodeLabel");
-		
+
 		ProcessBuilderKaleoDesignerReact.viewNodeInfo(nodeInfo = "nodeId");
 
 		ProcessBuilderKaleoDesignerReact.viewNodeInfo(nodeInfo = "nodeDescription");
-
 	}
 
 	@description = "LPS-139388 - Verify that the active node is highlighted on the diagram"
