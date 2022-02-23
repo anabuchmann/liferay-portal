@@ -239,4 +239,10 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewPropertyNotPresentOnSideBar {
+        AssertElementNotPresent(
+			key_propertyName = "${propertyName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+	}
+
 }

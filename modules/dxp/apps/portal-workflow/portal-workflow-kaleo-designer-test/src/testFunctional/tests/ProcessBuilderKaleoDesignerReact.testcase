@@ -431,12 +431,24 @@ definition {
 	}
 
 	@description = "Verify that Condition Node do not have Timers property"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test ConditionHasNoTimersProperty {
 
-		// TODO LRQA-72949 ConditionHasNoTimersProperty pending implementation
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Condition",
+			nodePosition = "-20,-100",
+			nodeType = "condition");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "condition");
+
+		ProcessBuilderKaleoDesignerReact.viewPropertyNotPresentOnSideBar(propertyName = "Timers");
 	}
 
 	@description = "Verify that the Condition node must have at least two outgoing transitions"
