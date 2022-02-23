@@ -345,11 +345,19 @@ definition {
 	}
 
 	@description = "LPS-139387 - Verify that the user is able to see the Start and End nodes on the Diagram when creating a New Process"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanSeeStartAndEndNodesByDefault {
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
-		// TODO LRQA-72970 CanSeeStartAndEndNodesByDefault pending implementation
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "end");
+		
 
 	}
 
