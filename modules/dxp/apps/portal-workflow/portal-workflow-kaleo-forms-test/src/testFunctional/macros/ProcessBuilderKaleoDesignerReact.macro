@@ -232,17 +232,17 @@ definition {
 			value1 = "${description}");
 	}
 
+	macro viewPropertyPresentOnSideBar {
+		AssertElementPresent(
+			key_propertyName = "${propertyName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+	}
+
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-	macro viewPropertyPresentOnSideBar {
-		AssertElementPresent(
-			key_propertyName = "${propertyName}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
 	}
 
 }

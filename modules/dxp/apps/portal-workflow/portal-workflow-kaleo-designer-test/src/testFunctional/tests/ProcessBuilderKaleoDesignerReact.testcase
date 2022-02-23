@@ -739,7 +739,6 @@ definition {
 	@description = "Verify that the Task node has Timers property"
 	@priority = "4"
 	test TaskNodeHasTimersProperty {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -755,10 +754,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.viewPropertyPresentOnSideBar(propertyName = "Timers");
-
-		
-
-
 	}
 
 	@description = "LPS-130000 - Verify that the transitions do not lose the reference when the Task ID is changed"
