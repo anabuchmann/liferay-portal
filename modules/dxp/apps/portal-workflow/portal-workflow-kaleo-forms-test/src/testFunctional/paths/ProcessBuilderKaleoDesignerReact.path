@@ -107,9 +107,9 @@
 	<td></td>
 </tr>
 <tr>
-    <td>VIEW_NODE_DESCRIPTION</td>
-    <td>//div[contains(@class, 'node task-node')]//span[contains(@class, 'node-description truncate-container text-muted')]</td>
-    <td></td>
+	<td>VIEW_NODE_DESCRIPTION</td>
+	<td>//div[contains(@class, 'node task-node')]//span[contains(@class, 'node-description truncate-container text-muted')]</td>
+	<td></td>
 </tr>
 </tbody>
 </table>
