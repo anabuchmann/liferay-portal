@@ -107,9 +107,9 @@
 	<td></td>
 </tr>
 <tr>
-    <td>VIEW_REQUIRED_FIELD</td>
-    <td>//div[@class='sidebar']//label[@for='${nodeInfo}']//span[contains(text(),'*')]</td>
-    <td></td>
+	<td>VIEW_REQUIRED_FIELD</td>
+	<td>//div[@class='sidebar']//label[@for='${nodeInfo}']//span[contains(text(),'*')]</td>
+	<td></td>
 </tr>
 </tbody>
 </table>

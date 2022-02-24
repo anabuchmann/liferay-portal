@@ -232,16 +232,15 @@ definition {
 			value1 = "${description}");
 	}
 
+	macro viewRequiredField {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_REQUIRED_FIELD");
+	}
+
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
-
-	macro viewRequiredField {
-
-        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_REQUIRED_FIELD");
-    }
 
 }
