@@ -239,4 +239,18 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro editNodeDescription {
+
+		Type(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_NODE_DESCRIPTION",
+			value1 = "${nodeDescription}");
+			
+	}
+
+	macro viewNodeDescription {
+		AssertTextEquals(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_NODE_DESCRIPTION",
+			value1 = "${nodeDescription}");
+	}
+
 }
