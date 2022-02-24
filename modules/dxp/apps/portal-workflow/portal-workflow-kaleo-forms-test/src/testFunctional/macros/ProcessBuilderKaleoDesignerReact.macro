@@ -239,4 +239,9 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewRequiredField {
+
+        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_REQUIRED_FIELD");
+    }
+
 }
