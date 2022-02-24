@@ -106,6 +106,21 @@
 	<td>//*[name()='path'][contains(@style,'stroke: rgb(128, 172, 255); stroke-dasharray: ${key_transitionStyle}; stroke-width: 2;')]/..//*[normalize-space(text())='${key_connectorLabel}']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>FIELD_INFORMATION</td>
+	<td>//input[@id='node${field}']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_REQUIRED_FIELD</td>
+	<td>//div[@class='sidebar']//label[@for='${nodeInfo}']//span[contains(text(),'*')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>VIEW_NODE_NAME</td>
+	<td>//div[contains(@class, 'node ${nodeType}-node')]//span[contains(text(),'${nodeName}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>

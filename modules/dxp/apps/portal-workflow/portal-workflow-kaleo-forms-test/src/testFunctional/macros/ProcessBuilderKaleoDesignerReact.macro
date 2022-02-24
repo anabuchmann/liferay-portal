@@ -81,6 +81,12 @@ definition {
 			value1 = "${newConnectorLabel}");
 	}
 
+	macro editFieldInformation {
+		Type(
+			locator1 = "ProcessBuilderKaleoDesignerReact#FIELD_INFORMATION",
+			value1 = "${newTitle}");
+	}
+
 	macro editWorkflowTitle {
 		PortletEntry.inputTitle(title = "${title}");
 	}
@@ -230,6 +236,16 @@ definition {
 		AssertTextEquals(
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_NODE_DESCRIPTION",
 			value1 = "${description}");
+	}
+
+	macro viewNodeName {
+		AssertTextEquals(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_NODE_NAME",
+			value1 = "${nodeName}");
+	}
+
+	macro viewRequiredField {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_REQUIRED_FIELD");
 	}
 
 	macro viewTranslationLanguageStatus {
