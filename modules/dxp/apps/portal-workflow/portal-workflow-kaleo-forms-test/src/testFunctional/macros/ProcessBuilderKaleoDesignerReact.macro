@@ -81,6 +81,13 @@ definition {
 			value1 = "${newConnectorLabel}");
 	}
 
+	macro editInformationFieldsOnSideBar {
+		Type(
+			key_inputField = "${inputField}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_FIELDS",
+			value1 = "${inputText}");
+	}
+
 	macro editWorkflowTitle {
 		PortletEntry.inputTitle(title = "${title}");
 	}
@@ -232,11 +239,11 @@ definition {
 			value1 = "${description}");
 	}
 
-	macro viewTranslationLanguageStatus {
+	macro viewInformationFieldsOnSideBar {
 		AssertElementPresent(
-			key_translationOption = "${newTranslationOption}",
-			key_translationStatus = "${translationStatus}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
+			key_fieldValue = "${fieldValue}",
+			key_inputField = "${inputField}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_FIELDS_VALUE");
 	}
 
 	macro viewPropertyPresentOnSideBar {
@@ -245,18 +252,11 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
 	}
 
-	macro editInformationFieldsOnSideBar {
-		Type(
-			key_inputField = "${inputField}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_FIELDS",
-			value1 = "${inputText}");
-	}
-
-	macro viewInformationFieldsOnSideBar {
+	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
-			key_inputField = "${inputField}",
-			key_fieldValue = "${fieldValue}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_FIELDS_VALUE");
+			key_translationOption = "${newTranslationOption}",
+			key_translationStatus = "${translationStatus}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
 }

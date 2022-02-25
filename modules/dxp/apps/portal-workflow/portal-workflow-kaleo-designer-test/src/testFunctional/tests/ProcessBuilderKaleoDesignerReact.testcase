@@ -239,9 +239,8 @@ definition {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.viewInformationFieldsOnSideBar(
-			inputField = "Id",
-			fieldValue = "item_22");
-			
+			fieldValue = "item_22",
+			inputField = "Id");
 	}
 
 	@description = "LPS-139387 - Verify that the user is able to view and edit the node's Label in the sidebar"
