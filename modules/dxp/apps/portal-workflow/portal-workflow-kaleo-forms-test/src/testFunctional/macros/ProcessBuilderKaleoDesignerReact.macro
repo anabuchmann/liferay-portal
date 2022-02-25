@@ -34,7 +34,8 @@ definition {
 	}
 
 	macro clickDefaultToggle {
-		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
+		
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#DEFAULT_TOGGLE_SWITCH");
 	}
 
 	macro deleteNodeOrConnection {
@@ -238,5 +239,6 @@ definition {
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
+
 
 }

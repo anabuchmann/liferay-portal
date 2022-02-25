@@ -509,11 +509,28 @@ definition {
 	}
 
 	@description = "LPS-140056 - Verify that the changes on Default settings, for transitions, reflects on the diagram"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test DefaultSettingsChangesReflectsOnDiagram {
 
-		// TODO LRQA-72989 DefaultSettingsChangesReflectsOnDiagram pending implementation
+		Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "TRANSITION LABEL",
+            connectorOut = "start",
+            key_direction = "top");
+
+		ProcessBuilderKaleoDesignerReact.editConnector(
+			connectorLabel = "TRANSITION LABEL",
+			newConnectorLabel = "LIFERAY LATAM");
+
+		ProcessBuilderKaleoDesignerReact.clickDefaultToggle(connectorLabel = "LIFERAY LATAM");
+
+		ProcessBuilderKaleoDesignerReact.viewDefaultToggleStatus(
+			connectorLabel = "LIFERAY LATAM",
+			defaultStatus = "False");
 
 	}
 
