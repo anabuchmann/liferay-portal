@@ -239,4 +239,24 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewPropertyPresentOnSideBar {
+		AssertElementPresent(
+			key_propertyName = "${propertyName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+	}
+
+	macro editInformationFieldsOnSideBar {
+		Type(
+			key_inputField = "${inputField}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_FIELDS",
+			value1 = "${inputText}");
+	}
+
+	macro viewInformationFieldsOnSideBar {
+		AssertElementPresent(
+			key_inputField = "${inputField}",
+			key_fieldValue = "${fieldValue}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_FIELDS_VALUE");
+	}
+
 }

@@ -214,12 +214,34 @@ definition {
 	}
 
 	@description = "LPS-139387 - Verify that the user is able to view and edit the nodes ID in the sidebar"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanEditStepID {
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
-		// TODO LRQA-72974 CanEditStepID pending implementation
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
 
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-100",
+			nodeType = "task");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
+
+		ProcessBuilderKaleoDesignerReact.viewPropertyPresentOnSideBar(propertyName = "Node ID");
+
+		ProcessBuilderKaleoDesignerReact.editInformationFieldsOnSideBar(
+			inputField = "Id",
+			inputText = "item_22");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
+
+		ProcessBuilderKaleoDesignerReact.viewInformationFieldsOnSideBar(
+			inputField = "Id",
+			fieldValue = "item_22");
+			
 	}
 
 	@description = "LPS-139387 - Verify that the user is able to view and edit the node's Label in the sidebar"
