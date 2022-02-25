@@ -34,7 +34,6 @@ definition {
 	}
 
 	macro clickDefaultToggle {
-		
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#DEFAULT_TOGGLE_SWITCH");
 	}
 
@@ -239,6 +238,5 @@ definition {
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
-
 
 }

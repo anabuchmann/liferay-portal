@@ -511,16 +511,15 @@ definition {
 	@description = "LPS-140056 - Verify that the changes on Default settings, for transitions, reflects on the diagram"
 	@priority = "4"
 	test DefaultSettingsChangesReflectsOnDiagram {
-
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "TRANSITION LABEL",
-            connectorOut = "start",
-            key_direction = "top");
+			connectorIn = "end",
+			connectorLabel = "TRANSITION LABEL",
+			connectorOut = "start",
+			key_direction = "top");
 
 		ProcessBuilderKaleoDesignerReact.editConnector(
 			connectorLabel = "TRANSITION LABEL",
@@ -531,7 +530,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewDefaultToggleStatus(
 			connectorLabel = "LIFERAY LATAM",
 			defaultStatus = "False");
-
 	}
 
 	@description = "LPS-129928 - Verify that when hovering the Process Builder view button the text Diagram view is displayed"
