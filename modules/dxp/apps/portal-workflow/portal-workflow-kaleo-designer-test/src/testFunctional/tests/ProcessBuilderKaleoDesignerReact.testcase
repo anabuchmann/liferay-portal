@@ -139,10 +139,9 @@ definition {
 	@description = "LPS-140056 - Verify that only one transition in the same direction from one node to the other can be created"
 	@priority = "4"
 	test CanCreateOnlyOneTransitionInSameDirection {
-
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
 			connectorIn = "end",
@@ -163,7 +162,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "START-END CONNECTOR1");
 
 		ProcessBuilderKaleoDesignerReact.viewConnectorNotPresent(connectorLabel = "START-END CONNECTOR2");
-
 	}
 
 	@description = "Verify that user can create transition between nodes from the edge of node"
