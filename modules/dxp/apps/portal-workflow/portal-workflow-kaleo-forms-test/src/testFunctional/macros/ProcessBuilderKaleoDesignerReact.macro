@@ -239,4 +239,11 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewNodeNotPresent {
+
+		AssertElementNotPresent(
+			key_nodeType = "${nodeType}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
+	}
+
 }
