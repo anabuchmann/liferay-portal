@@ -137,11 +137,32 @@ definition {
 	}
 
 	@description = "LPS-140056 - Verify that only one transition in the same direction from one node to the other can be created"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanCreateOnlyOneTransitionInSameDirection {
 
-		// TODO LRQA-72992 CanCreateOnlyOneTransitionInSameDirection pending implementation
+		Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.addConnector(
+			connectorIn = "end",
+			connectorLabel = "Start-End Connector1",
+			connectorOut = "start",
+			key_direction = "right");
+
+		ProcessBuilderKaleoDesignerReact.sideBarBack();
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.addConnectorNodeSelectedNoType(
+			connectorIn = "end",
+			connectorLabel = "Start-End Connector2",
+			connectorOut = "start",
+			key_direction = "left");
+
+		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "START-END CONNECTOR1");
+
+		ProcessBuilderKaleoDesignerReact.viewConnectorNotPresent(connectorLabel = "START-END CONNECTOR2");
 
 	}
 

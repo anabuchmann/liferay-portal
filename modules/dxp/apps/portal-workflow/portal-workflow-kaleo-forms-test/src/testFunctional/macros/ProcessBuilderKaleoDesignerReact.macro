@@ -239,4 +239,33 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro addConnectorNodeSelectedNoType {
+
+		MouseOver.mouseOverInvisible(
+			key_direction = "${direction}",
+			key_nodeType = "${connectorOut}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CONNECTOR_SOURCE_SELECTED",
+			value1 = "0,0");
+
+		MouseDown.mouseDownAt(
+			key_direction = "${direction}",
+			key_nodeType = "${connectorOut}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CONNECTOR_SOURCE_SELECTED",
+			value1 = "0,0");
+
+		MouseMove(
+			key_nodeType = "${connectorIn}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE",
+			value1 = "0,47");
+
+		MouseUp.mouseUpAt(
+			key_nodeType = "${connectorIn}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE",
+			value1 = "0,47");
+	}
+
+	macro sideBarBack {
+		Click(locator1 = "Sidebar#BACK");
+	}
+
 }
