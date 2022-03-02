@@ -239,4 +239,14 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro cancelDeleteNodeOrConnection {
+		Click(locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN");
+
+		AssertElementPresent(
+			key_title = "${title}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_DELETE_MODAL");
+
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_CANCEL_MODAL");
+	}
+
 }
