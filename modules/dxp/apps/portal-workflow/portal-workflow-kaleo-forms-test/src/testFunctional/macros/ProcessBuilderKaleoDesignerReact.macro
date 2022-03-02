@@ -232,18 +232,17 @@ definition {
 			value1 = "${description}");
 	}
 
+	macro viewNodeNotPresent {
+		AssertElementNotPresent(
+			key_nodeType = "${nodeType}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
+	}
+
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-	macro viewNodeNotPresent {
-
-		AssertElementNotPresent(
-			key_nodeType = "${nodeType}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
 }
