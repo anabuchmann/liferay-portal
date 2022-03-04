@@ -252,19 +252,17 @@ definition {
 	@description = "LPS-140056 - Verify that the user is able to localize the label of the transition"
 	@priority = "3"
 	test CanLocalizeTransitionLabel {
-
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "Start-End Connector",
-            connectorOut = "start",
-            key_direction = "right");
+		ProcessBuilderKaleoDesignerReact.addConnector(
+			connectorIn = "end",
+			connectorLabel = "Start-End Connector",
+			connectorOut = "start",
+			key_direction = "right");
 
 		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "START-END CONNECTOR");
-
 	}
 
 	@description = "Verify that the user can move nodes in diagram by drag&drop in the middle of node"

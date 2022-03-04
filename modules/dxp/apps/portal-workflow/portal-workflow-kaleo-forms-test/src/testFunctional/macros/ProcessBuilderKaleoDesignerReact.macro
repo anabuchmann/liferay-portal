@@ -192,10 +192,6 @@ definition {
 		}
 	}
 
-
-
-
-
 	macro viewConnectorNotPresent {
 		AssertElementNotPresent(
 			key_connectorLabel = "${connectorLabel}",
@@ -235,14 +231,6 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_NODE_DESCRIPTION",
 			value1 = "${description}");
 	}
-
-
-
-
-
-
-
-	
 
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
