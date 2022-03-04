@@ -250,11 +250,20 @@ definition {
 	}
 
 	@description = "LPS-140056 - Verify that the user is able to localize the label of the transition"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanLocalizeTransitionLabel {
 
-		// TODO LRQA-72990 CanLocalizeTransitionLabel pending implementation
+		Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "Start-End Connector",
+            connectorOut = "start",
+            key_direction = "right");
+
+		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "START-END CONNECTOR");
 
 	}
 
