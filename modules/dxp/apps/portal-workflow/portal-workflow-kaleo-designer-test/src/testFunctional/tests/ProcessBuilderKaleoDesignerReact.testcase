@@ -39,27 +39,25 @@ definition {
 	@description = "Verify that Action can be added"
 	@priority = "4"
 	test CanAddAction {
-
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Task",
-            nodePosition = "-20,-40",
-            nodeType = "task");
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-40",
+			nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.viewAndFillActions(
-			name = "Liferay Actions",
 			description = "",
-			template = "Action Template",
 			executionTypeOption = "On Entry",
-			priorityTypeOption = "");
+			name = "Liferay Actions",
+			priorityTypeOption = "",
+			template = "Action Template");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.viewNameAction(actionName = "Liferay Actions");
-
 	}
 
 	@description = "Verify that Assignment can be added"
