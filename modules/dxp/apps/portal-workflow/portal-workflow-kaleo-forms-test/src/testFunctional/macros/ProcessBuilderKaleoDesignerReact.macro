@@ -239,4 +239,69 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+		macro viewAndFillActions {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#ACTIONS_NEW_BUTTON");
+
+		AssertElementPresent(
+			key_inputOption = "Name",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT");
+
+		AssertElementPresent(
+			key_inputOption = "Description",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT");
+
+		AssertElementPresent(
+			key_selectorField = "Template (Groovy)",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ACTIONS_TEMPLATE_FIELD");
+
+		AssertElementPresent(
+			key_selectorField = "Execution Type",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_SELECTORS");
+
+		AssertElementPresent(
+			key_selectorField = "Priority",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ACTIONS_PRIORITY_FIELD");
+
+		if (isSet(name)) {
+			Type(
+				key_inputOption = "Name",
+				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT",
+				value1 = "${name}");
+		}
+
+		if (isSet(description)) {
+			Type(
+				key_inputOption = "Description",
+				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT",
+				value1 = "${description}");
+		}
+
+		if (isSet(template)) {
+			Type(
+				key_selectorField = "Template (Groovy)",
+				locator1 = "ProcessBuilderKaleoDesignerReact#ACTIONS_TEMPLATE_FIELD",
+				value1 = "${template}");
+		}
+
+		if (isSet(executionTypeOption)) {
+			Select(
+				key_selectorField = "Execution Type",
+				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_SELECTORS",
+				value1 = "${executionTypeOption}");
+		}
+
+		if (isSet(priorityTypeOption)) {
+			Type(
+				key_selectorField = "Priority",
+				locator1 = "ProcessBuilderKaleoDesignerReact#ACTIONS_PRIORITY_FIELD",
+				value1 = "${priorityTypeOption}");
+		}
+	}
+
+	macro viewNameAction {
+
+		AssertElementPresent(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_NAME_ACTION_FIELD");
+	}
+
 }
