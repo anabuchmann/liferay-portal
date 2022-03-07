@@ -503,81 +503,35 @@ definition {
 	@priority = "4"
 	test DefaultLabelsAreProvided {
 
-		Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView(); 
+		
 
 		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
+		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Start");
+
+		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "End");
+
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
 			nodeLabel = "Condition",
-			nodePosition = "",
+			nodePosition = "20,-500",
 			nodeType = "condition");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-			nodeLabel = "Fork",
-			nodePosition = "",
-			nodeType = "fork");
-
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-
-		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-			nodeLabel = "Join XOR",
-			nodePosition = "",
-			nodeType = "join XOR");
-
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-
-		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-			nodeLabel = "State",
-			nodePosition = "",
-			nodeType = "state");
-
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-
-		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-			nodeLabel = "End",
-			nodePosition = "",
-			nodeType = "end");
-
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-
-		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-			nodeLabel = "Join",
-			nodePosition = "",
-			nodeType = "join");
-
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-
-		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-			nodeLabel = "Start",
-			nodePosition = "",
-			nodeType = "start");
-
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-
-		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
 			nodeLabel = "Task",
-			nodePosition = "",
+			nodePosition = "20,-100",
 			nodeType = "task");
 
-		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();		
 
 		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Condition");
 
-		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Fork");
-
-		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Join XOR");
-
-		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "State");
-
-		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "End");
-
-		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Join");
-
-		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Start");
-
 		ProcessBuilderKaleoDesignerReact.viewNodeLabel(nodeLabel = "Task");
+
+
 	}
 
 	@description = "LPS-140056 - Verify that the changes on Default settings, for transitions, reflects on the diagram"
