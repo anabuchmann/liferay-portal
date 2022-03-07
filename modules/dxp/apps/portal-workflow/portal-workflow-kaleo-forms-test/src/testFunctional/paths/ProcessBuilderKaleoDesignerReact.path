@@ -106,6 +106,16 @@
 	<td>//*[name()='path'][contains(@style,'stroke: rgb(128, 172, 255); stroke-dasharray: ${key_transitionStyle}; stroke-width: 2;')]/..//*[normalize-space(text())='${key_connectorLabel}']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>BUTTON_CANCEL_DELETE_MODAL</td>
+	<td>//button[contains (@class,'close')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SELECTED_NODE</td>
+	<td>//div[contains(@class, 'react-flow__node-${key_nodeType} selected')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
