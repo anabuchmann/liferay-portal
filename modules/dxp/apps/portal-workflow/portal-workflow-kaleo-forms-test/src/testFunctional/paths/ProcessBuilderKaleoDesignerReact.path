@@ -107,21 +107,20 @@
 	<td></td>
 </tr>
 <tr>
-    <td>VIEW_NAME_NOTIFICATION_FIELD</td>
-    <td>//span[contains(., 'Notification')]/../..//span[contains(.,'${notificationName}')]</td>
-    <td></td>
+	<td>VIEW_NAME_NOTIFICATION_FIELD</td>
+	<td>//span[contains(., 'Notification')]/../..//span[contains(.,'${notificationName}')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATION_TYPE</td>
-    <td>//label[contains(., 'Notification Types')]</td>
-    <td></td>
+	<td>NOTIFICATION_TYPE</td>
+	<td>//label[contains(., 'Notification Types')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATION_TYPE_OPTIONS</td>
-    <td>//input[@type='checkbox']</td>
-    <td></td>
+	<td>NOTIFICATION_TYPE_OPTIONS</td>
+	<td>//input[@type='checkbox']</td>
+	<td></td>
 </tr>
-
 
 </tbody>
 </table>

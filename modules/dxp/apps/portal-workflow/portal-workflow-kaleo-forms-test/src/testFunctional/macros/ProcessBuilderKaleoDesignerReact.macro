@@ -172,15 +172,16 @@ definition {
 
 		if (isSet(notificationsTypeOption)) {
 			Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE");
-			
+
 			Check(
 				checkboxName = "${notificationOption}",
 				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
 
-			// Select(
-			// 	key_selectorField = "Notifications Type",
-			// 	locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE",
-			// 	value1 = "${notificationsTypeOption}");
+			//Select(
+			//	key_selectorField = "Notifications Type",
+			//	locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE",
+			//	value1 = "${notificationsTypeOption}");
+
 		}
 
 		if (isSet(executionTypeOption)) {
@@ -238,18 +239,17 @@ definition {
 			value1 = "${description}");
 	}
 
+	macro viewNameNotification {
+		AssertTextEquals(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_NAME_NOTIFICATION_FIELD",
+			value1 = "${notificationName}");
+	}
+
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
-
-	macro viewNameNotification {
-
-        AssertTextEquals(
-            locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_NAME_NOTIFICATION_FIELD",
-			value1 = "${notificationName}");
-    }
 
 }
