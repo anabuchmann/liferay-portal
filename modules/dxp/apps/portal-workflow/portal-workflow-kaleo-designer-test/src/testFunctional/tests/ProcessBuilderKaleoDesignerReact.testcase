@@ -748,27 +748,26 @@ definition {
 	@description = "LPS-130000 - Verify that the transitions do not lose the reference when the Task ID is changed"
 	@priority = "5"
 	test TransitionDoNotLoseReferenceOnTaskIDChange {
-
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Task",
-            nodePosition = "-20,-40",
-            nodeType = "task");
-
-		ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "task",
-            connectorLabel = "Start-Task Connector",
-            connectorOut = "start",
-            key_direction = "right");
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-40",
+			nodeType = "task");
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "Task-End Connector",
-            connectorOut = "task",
-            key_direction = "right");
+			connectorIn = "task",
+			connectorLabel = "Start-Task Connector",
+			connectorOut = "start",
+			key_direction = "right");
+
+		ProcessBuilderKaleoDesignerReact.addConnector(
+			connectorIn = "end",
+			connectorLabel = "Task-End Connector",
+			connectorOut = "task",
+			key_direction = "right");
 
 		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "START-TASK CONNECTOR");
 
@@ -781,7 +780,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "START-TASK CONNECTOR");
 
 		ProcessBuilderKaleoDesignerReact.viewConnectorPresent(connectorLabel = "TASK-END CONNECTOR");
-
 	}
 
 	@description = "LPS-130000 - Verify that the transitions do not lose the reference when the Task ID is changed"

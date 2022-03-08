@@ -81,6 +81,13 @@ definition {
 			value1 = "${newConnectorLabel}");
 	}
 
+	macro editNodeInformationLabelOrID {
+		Type(
+			key_inputOption = "Node ID",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT",
+			value1 = "${key_ID}");
+	}
+
 	macro editWorkflowTitle {
 		PortletEntry.inputTitle(title = "${title}");
 	}
@@ -237,15 +244,6 @@ definition {
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-	macro editNodeInformationLabelOrID{
-
-		Type(
-			key_inputOption = "Node ID",
-			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT",
-			value1 = "${key_ID}");
-		
 	}
 
 }
