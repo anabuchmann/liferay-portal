@@ -106,6 +106,22 @@
 	<td>//*[name()='path'][contains(@style,'stroke: rgb(128, 172, 255); stroke-dasharray: ${key_transitionStyle}; stroke-width: 2;')]/..//*[normalize-space(text())='${key_connectorLabel}']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>VIEW_NAME_NOTIFICATION_FIELD</td>
+	<td>//span[contains(., 'Notification')]/../..//span[contains(.,'${notificationName}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NOTIFICATION_TYPE</td>
+	<td>//label[contains(., 'Notification Types')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>NOTIFICATION_TYPE_OPTIONS</td>
+	<td>//input[@type='checkbox']</td>
+	<td></td>
+</tr>
+
 </tbody>
 </table>
 </body>

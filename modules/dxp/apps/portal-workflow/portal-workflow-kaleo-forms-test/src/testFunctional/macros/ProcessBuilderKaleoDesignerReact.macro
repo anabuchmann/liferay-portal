@@ -138,7 +138,7 @@ definition {
 
 		AssertElementPresent(
 			key_selectorField = "Notifications Type",
-			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_SELECTORS");
+			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE");
 
 		AssertElementPresent(
 			key_selectorField = "Execution Type",
@@ -176,10 +176,17 @@ definition {
 		}
 
 		if (isSet(notificationsTypeOption)) {
-			Select(
-				key_selectorField = "Notifications Type",
-				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_SELECTORS",
-				value1 = "${notificationsTypeOption}");
+			Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE");
+
+			Check(
+				checkboxName = "${notificationOption}",
+				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
+
+			//Select(
+			//	key_selectorField = "Notifications Type",
+			//	locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE",
+			//	value1 = "${notificationsTypeOption}");
+
 		}
 
 		if (isSet(executionTypeOption)) {
@@ -235,6 +242,12 @@ definition {
 		AssertTextEquals(
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_NODE_DESCRIPTION",
 			value1 = "${description}");
+	}
+
+	macro viewNameNotification {
+		AssertTextEquals(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_NAME_NOTIFICATION_FIELD",
+			value1 = "${notificationName}");
 	}
 
 	macro viewTranslationLanguageStatus {

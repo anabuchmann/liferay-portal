@@ -64,12 +64,24 @@ definition {
 	}
 
 	@description = "Verify that Notification can be added"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanAddNotification {
+		Workflow.openWorkflowListView();
 
-		// TODO LRQA-72953 CanAddNotification pending implementation
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-40",
+			nodeType = "task");
+
+		ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+			name = "Liferay Notification",
+			notificationTemplateValue = "Notification Template");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.viewNameNotification(notificationName = "Liferay Notification");
 	}
 
 	@description = "Verify that Timers can be added"
