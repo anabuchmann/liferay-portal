@@ -237,13 +237,6 @@ definition {
 			value1 = "${description}");
 	}
 
-	macro viewTranslationLanguageStatus {
-		AssertElementPresent(
-			key_translationOption = "${newTranslationOption}",
-			key_translationStatus = "${translationStatus}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
 	macro viewNodeHighlighted {
 		AssertElementPresent(
 			key_nodeType = "${nodeType}",
@@ -254,6 +247,13 @@ definition {
 		AssertElementNotPresent(
 			key_nodeType = "${nodeType}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_HIGHLIGHTED");
+	}
+
+	macro viewTranslationLanguageStatus {
+		AssertElementPresent(
+			key_translationOption = "${newTranslationOption}",
+			key_translationStatus = "${translationStatus}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
 }
