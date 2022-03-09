@@ -244,4 +244,15 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewTranslationDropdown {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#ICON_COUNTRY");
+
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_DROPDOWN");
+	}
+
+	macro viewTranslationDropdownNotPresent {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#ICON_COUNTRY");
+
+		AssertElementNotPresent(locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_DROPDOWN");
+	}
 }

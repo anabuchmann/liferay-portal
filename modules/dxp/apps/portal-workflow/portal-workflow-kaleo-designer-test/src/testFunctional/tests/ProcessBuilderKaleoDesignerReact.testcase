@@ -773,11 +773,17 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that the translation dropdown closes when the user clicks out of it"
-	@ignore = "Test Stub"
 	@priority = "2"
 	test TranslationDropdownClosesClickOut {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#TranslationDropdownClosesClickOut";
 
-		// TODO LRQA-73003 TranslationDropdownClosesClickOut pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(key_translationOptionSelected = "en-us");
+
+		ProcessBuilderKaleoDesignerReact.viewTranslationDropdownNotPresent(key_translationOptionSelected = "en-us");
 
 	}
 
