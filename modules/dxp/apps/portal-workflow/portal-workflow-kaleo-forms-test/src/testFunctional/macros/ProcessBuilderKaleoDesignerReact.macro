@@ -237,13 +237,6 @@ definition {
 			value1 = "${description}");
 	}
 
-	macro viewTranslationLanguageStatus {
-		AssertElementPresent(
-			key_translationOption = "${newTranslationOption}",
-			key_translationStatus = "${translationStatus}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
 	macro viewTranslationDropdown {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#ICON_COUNTRY");
 
@@ -255,4 +248,12 @@ definition {
 
 		AssertElementNotPresent(locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_DROPDOWN");
 	}
+
+	macro viewTranslationLanguageStatus {
+		AssertElementPresent(
+			key_translationOption = "${newTranslationOption}",
+			key_translationStatus = "${translationStatus}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
+	}
+
 }

@@ -784,7 +784,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(key_translationOptionSelected = "en-us");
 
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdownNotPresent(key_translationOptionSelected = "en-us");
-
 	}
 
 }
