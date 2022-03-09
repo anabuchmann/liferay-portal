@@ -237,6 +237,31 @@ definition {
 			value1 = "${description}");
 	}
 
+	macro viewNodePosition {
+		AssertElementPresent(
+			key_nodeType = "${nodeType}",
+			key_nodeXPosition = "${nodeXPosition}",
+			key_nodeYPosition = "${nodeYPosition}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_POSITION");
+	}
+
+	macro viewNodePositionChaged {
+		var nodeXPositionChaged = selenium.getAttribute("//div[contains(@class,'node ${nodeType}-node selected')]@xpos");
+		var nodeYPositionChaged = selenium.getAttribute("//div[contains(@class,'node ${nodeType}-node selected')]@ypos");
+
+		AssertElementPresent(
+			key_nodeType = "${nodeType}",
+			key_nodeXPosition = "${nodeXPositionChaged}",
+			key_nodeYPosition = "${nodeYPositionChaged}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_POSITION");
+
+		AssertElementNotPresent(
+			key_nodeType = "${nodeType}",
+			key_nodeXPosition = "${firstNodeXPosition}",
+			key_nodeYPosition = "${firstNodeYPosition}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_POSITION");
+	}
+
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
 			key_translationOption = "${newTranslationOption}",

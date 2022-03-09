@@ -259,12 +259,31 @@ definition {
 	}
 
 	@description = "Verify that the user can move nodes in diagram by drag&drop in the middle of node"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanMoveNode {
 
-		// TODO LRQA-72917 CanMoveNode pending implementation
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.viewNodePosition(
+			nodeType = "start",
+			nodeXPosition = "300",
+			nodeYPosition = "100");
+
+		ProcessBuilderKaleoDesignerReact.dragAndDropDiagramNode(
+			nodePosition = "100,-50",
+			nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.viewNodePositionChaged(
+			firstNodeXPosition = "300",
+			firstNodeYPosition = "100",
+			nodeType = "start");
 	}
 
 	@description = "Verify that is not possible to have multiple Start nodes"
