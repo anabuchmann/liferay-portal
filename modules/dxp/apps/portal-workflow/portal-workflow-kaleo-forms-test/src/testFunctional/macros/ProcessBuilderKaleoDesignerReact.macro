@@ -90,6 +90,12 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro hideInformationFields {
+		Click(
+			key_property = "${property}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#HIDE_INFORMATION_FIELDS");
+	}
+
 	macro selectConnector {
 		Click(
 			key_connectorLabel = "${connectorLabel}",
@@ -237,15 +243,7 @@ definition {
 			value1 = "${description}");
 	}
 
-	macro viewTranslationLanguageStatus {
-		AssertElementPresent(
-			key_translationOption = "${newTranslationOption}",
-			key_translationStatus = "${translationStatus}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
 	macro viewFieldsInformationNode {
-
 		AssertElementPresent(
 			key_inputOption = "Label",
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT");
@@ -254,21 +252,18 @@ definition {
 			key_inputOption = "Node ID",
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_INPUT");
 
-		AssertElementPresent(
-			locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_DESCRIPTION");
-	}
-
-	macro hideInformationFields {
-
-		Click(
-			key_property = "${property}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#HIDE_INFORMATION_FIELDS");
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#INFORMATION_DESCRIPTION");
 	}
 
 	macro viewFieldsInformationNodeNotPresent {
-
 		AssertElementNotPresent(locator1 = "ProcessBuilderKaleoDesignerReact#NODE_INFORMATION_FIELDS");
+	}
 
+	macro viewTranslationLanguageStatus {
+		AssertElementPresent(
+			key_translationOption = "${newTranslationOption}",
+			key_translationStatus = "${translationStatus}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
 }
