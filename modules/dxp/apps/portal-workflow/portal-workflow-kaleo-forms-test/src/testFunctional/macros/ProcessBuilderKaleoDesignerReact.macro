@@ -244,4 +244,16 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro viewNodeHighlighted {
+		AssertElementPresent(
+			key_nodeType = "${nodeType}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_HIGHLIGHTED");
+	}
+
+	macro viewNodeHighlightedNotPresent {
+		AssertElementNotPresent(
+			key_nodeType = "${nodeType}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_HIGHLIGHTED");
+	}
+
 }
