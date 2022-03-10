@@ -46,11 +46,28 @@ definition {
 	}
 
 	@description = "Verify that Assignment can be added"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanAddAssignment {
+        ApplicationsMenu.gotoPortlet(
+            category = "Workflow",
+            panel = "Applications",
+            portlet = "Process Builder");
 
-		// TODO LRQA-72955 CanAddAssignment pending implementation
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Task",
+            nodePosition = "-20,-100",
+            nodeType = "task");
+
+        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
+
+        ProcessBuilderKaleoDesignerReact.viewAndFillAssignments(
+        	assignmentType = "Resource Actions",
+        	resourceActionsText = "Test");
+
+        ProcessBuilderKaleoDesignerReact.viewSelectedAssignments(
+            selectedAssignments = "Resource Actions: Test");
 
 	}
 
