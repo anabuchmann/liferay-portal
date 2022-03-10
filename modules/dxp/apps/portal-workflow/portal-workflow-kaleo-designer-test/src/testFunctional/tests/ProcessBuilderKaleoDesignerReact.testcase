@@ -48,27 +48,25 @@ definition {
 	@description = "Verify that Assignment can be added"
 	@priority = "4"
 	test CanAddAssignment {
-        ApplicationsMenu.gotoPortlet(
-            category = "Workflow",
-            panel = "Applications",
-            portlet = "Process Builder");
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
 
-        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Task",
-            nodePosition = "-20,-100",
-            nodeType = "task");
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-100",
+			nodeType = "task");
 
-        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "task");
 
-        ProcessBuilderKaleoDesignerReact.viewAndFillAssignments(
-        	assignmentType = "Resource Actions",
-        	resourceActionsText = "Test");
+		ProcessBuilderKaleoDesignerReact.viewAndFillAssignments(
+			assignmentType = "Resource Actions",
+			resourceActionsText = "Test");
 
-        ProcessBuilderKaleoDesignerReact.viewSelectedAssignments(
-            selectedAssignments = "Resource Actions: Test");
-
+		ProcessBuilderKaleoDesignerReact.viewSelectedAssignments(selectedAssignments = "Resource Actions: Test");
 	}
 
 	@description = "Verify that Assignment can be added"

@@ -167,24 +167,24 @@
 	<td></td>
 </tr>
 <tr>
-    <td>ANY_SELECTED_ASSIGNMENTS</td>
-    <td>//*[contains(@class,'d-flex')]</td>
-    <td></td>
+	<td>ANY_SELECTED_ASSIGNMENTS</td>
+	<td>//*[contains(@class,'d-flex')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>RESOURCE_ACTIONS_TEXTAREA</td>
-    <td>//label[@for='resource-actions']/..//textarea[@type='text']</td>
-    <td></td>
+	<td>RESOURCE_ACTIONS_TEXTAREA</td>
+	<td>//label[@for='resource-actions']/..//textarea[@type='text']</td>
+	<td></td>
 </tr>
 <tr>
-    <td>ASSIGNMENT_TYPE_SELECT_OPTION</td>
-    <td>//*[contains(@class,'dropdown-item') and contains(text(),'${selectValue}')]</td>
-    <td></td>
+	<td>ASSIGNMENT_TYPE_SELECT_OPTION</td>
+	<td>//*[contains(@class,'dropdown-item') and contains(text(),'${selectValue}')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>ASSIGNMENT_TYPE_USER_SELECT_OPTION</td>
-    <td>//*[contains(@class,'autocomplete-dropdown-menu')]//..//button[contains(@class,'dropdown-item')]</td>
-    <td></td>
+	<td>ASSIGNMENT_TYPE_USER_SELECT_OPTION</td>
+	<td>//*[contains(@class,'autocomplete-dropdown-menu')]//..//button[contains(@class,'dropdown-item')]</td>
+	<td></td>
 </tr>
 </tbody>
 </table>
