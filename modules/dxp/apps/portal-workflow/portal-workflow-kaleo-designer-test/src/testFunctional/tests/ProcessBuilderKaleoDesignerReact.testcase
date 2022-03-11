@@ -532,8 +532,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
 
 		ProcessBuilderKaleoDesignerReact.viewDiagramEditor();
-
-
 	}
 
 	@description = "LPS-129928 - Verify that when the user clicks on the Source button the Source editor appears"

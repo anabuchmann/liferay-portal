@@ -143,6 +143,10 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoSourceOrDiagram {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+	}
+
 	macro selectConnector {
 		Click(
 			key_connectorLabel = "${connectorLabel}",
@@ -345,6 +349,10 @@ definition {
 		}
 	}
 
+	macro viewDiagramEditor {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#REACT_PANEL");
+	}
+
 	macro viewFieldNotPresentOnSideBar {
 		AssertElementNotPresent(
 			key_fieldName = "${fieldName}",
@@ -444,6 +452,10 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
+	macro viewSourceEditor {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_SOURCE_EDITOR");
+	}
+
 	macro viewSpecificNodeLabel {
 		AssertTextEquals(
 			key_nodeLabel = "${nodeLabel}",
@@ -457,21 +469,6 @@ definition {
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-	macro viewSourceEditor {
-
-        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_SOURCE_EDITOR");
-    }
-
-    macro gotoSourceOrDiagram {
-
-        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
-    }
-
-	macro viewDiagramEditor {
-
-		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#REACT_PANEL");
 	}
 
 }
