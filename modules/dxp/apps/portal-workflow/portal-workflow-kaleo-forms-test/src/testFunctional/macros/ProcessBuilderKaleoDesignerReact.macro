@@ -143,6 +143,10 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoSourceOrDiagram {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+	}
+
 	macro selectConnector {
 		Click(
 			key_connectorLabel = "${connectorLabel}",
@@ -452,23 +456,17 @@ definition {
 			value1 = "${nodeLabel}");
 	}
 
+	macro viewToolTipButtonSourceDiagram {
+		MouseOver(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_TEXT_SOURCE_DIAGRAM_BUTTON");
+	}
+
 	macro viewTranslationLanguageStatus {
 		AssertElementPresent(
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
-
-	macro viewToolTipButtonSourceDiagram {
-
-        MouseOver(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
-
-        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_TEXT_SOURCE_DIAGRAM_BUTTON");
-    }
-
-	macro gotoSourceOrDiagram {
-
-        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
-    }
 
 }
