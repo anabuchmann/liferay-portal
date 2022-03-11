@@ -166,7 +166,16 @@
 	<td>//input[@type='checkbox' and @value ='${key_checkboxValue}']</td>
 	<td></td>
 </tr>
-
+<tr>
+    <td>BUTTON_SOURCE_DIAGRAM</td>
+    <td>//*[not(self::div)][contains(@class,'btn-secondary')][normalize-space()=''][not(contains(@class,'navbar'))]</td>
+    <td></td>
+</tr>
+<tr>
+    <td>VIEW_SOURCE_EDITOR</td>
+    <td>//div[@class='CodeMirror-lines']</td>
+    <td></td>
+</tr>
 </tbody>
 </table>
 </body>

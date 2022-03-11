@@ -517,11 +517,22 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that when the user clicks on the Diagram view button the Diagram editor appears"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanViewDiagramEditor {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanViewDiagramEditor";
 
-		// TODO LRQA-72997 CanViewDiagramEditor pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		ProcessBuilderKaleoDesignerReact.viewSourceEditor();
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		ProcessBuilderKaleoDesignerReact.viewDiagramEditor();
+
 
 	}
 
