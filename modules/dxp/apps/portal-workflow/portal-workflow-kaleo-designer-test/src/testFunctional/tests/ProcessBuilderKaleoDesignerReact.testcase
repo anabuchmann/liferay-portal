@@ -695,12 +695,17 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that when hovering the Process Builder view button the text Diagram view is displayed"
-	@ignore = "Test Stub"
 	@priority = "2"
 	test DiagramViewToolTipIsDisplayed {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#DiagramViewToolTipIsDisplayed";
 
-		// TODO LRQA-72998 DiagramViewToolTipIsDisplayed pending implementation
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		ProcessBuilderKaleoDesignerReact.viewToolTipButtonSourceDiagram(source_diagram = "Diagram View");
 	}
 
 	@description = "Verify that the Fork node must have at least two outgoing transitions"

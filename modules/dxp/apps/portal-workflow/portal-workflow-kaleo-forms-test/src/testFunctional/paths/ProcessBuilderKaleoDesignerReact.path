@@ -166,6 +166,16 @@
 	<td>//input[@type='checkbox' and @value ='${key_checkboxValue}']</td>
 	<td></td>
 </tr>
+<tr>
+    <td>BUTTON_SOURCE_DIAGRAM</td>
+    <td>//*[not(self::div)][contains(@class,'btn-secondary')][normalize-space()=''][not(contains(@class,'navbar'))]</td>
+    <td></td>
+</tr>
+<tr>
+    <td>VIEW_TEXT_SOURCE_DIAGRAM_BUTTON</td>
+    <td>//button[contains(@class,'btn btn-monospaced btn-secondary') and contains(@data-restore-title,'${source_diagram}')]</td>
+    <td></td>
+</tr>
 
 </tbody>
 </table>
