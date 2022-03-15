@@ -535,11 +535,17 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that when the user makes changes to the Process Builder these changes are reflected in the XML code"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test ChangesOnDiagramAreReflectedOnXML {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#ChangesOnDiagramAreReflectedOnXML";
 
-		// TODO LRQA-73000 ChangesOnDiagramAreReflectedOnXML pending implementation
+		Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		ProcessBuilderKaleoDesignerReact.viewChangesReflectsCodeXML(changesCode ="Workflow Title");
 
 	}
 

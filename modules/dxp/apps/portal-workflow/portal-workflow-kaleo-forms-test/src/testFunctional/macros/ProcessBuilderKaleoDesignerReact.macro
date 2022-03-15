@@ -459,4 +459,16 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro gotoSourceOrDiagram {
+
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+	}
+
+	macro viewChangesReflectsCodeXML {
+		AssertTextEquals.assertPartialText(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_CHANGES_CODE_XML",
+			value1 = "${changesCode}");
+
+	}
+
 }
