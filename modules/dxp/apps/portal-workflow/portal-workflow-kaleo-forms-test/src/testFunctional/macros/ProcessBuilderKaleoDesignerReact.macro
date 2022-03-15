@@ -143,6 +143,10 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoSourceOrDiagram {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+	}
+
 	macro selectConnector {
 		Click(
 			key_connectorLabel = "${connectorLabel}",
@@ -311,6 +315,12 @@ definition {
 		}
 	}
 
+	macro viewChangesReflectsCodeXML {
+		AssertTextEquals.assertPartialText(
+			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_CHANGES_CODE_XML",
+			value1 = "${changesCode}");
+	}
+
 	macro viewConnectorNotPresent {
 		AssertElementNotPresent(
 			key_connectorLabel = "${connectorLabel}",
@@ -457,18 +467,6 @@ definition {
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-	macro gotoSourceOrDiagram {
-
-		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
-	}
-
-	macro viewChangesReflectsCodeXML {
-		AssertTextEquals.assertPartialText(
-			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_CHANGES_CODE_XML",
-			value1 = "${changesCode}");
-
 	}
 
 }

@@ -167,9 +167,9 @@
 	<td></td>
 </tr>
 <tr>
-    <td>BUTTON_SOURCE_DIAGRAM</td>
-    <td>//*[not(self::div)][contains(@class,'btn-secondary')][normalize-space()=''][not(contains(@class,'navbar'))]</td>
-    <td></td>
+	<td>BUTTON_SOURCE_DIAGRAM</td>
+	<td>//*[not(self::div)][contains(@class,'btn-secondary')][normalize-space()=''][not(contains(@class,'navbar'))]</td>
+	<td></td>
 </tr>
 <tr>
 	<td>VIEW_CHANGES_CODE_XML</td>

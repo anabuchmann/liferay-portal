@@ -541,12 +541,11 @@ definition {
 
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "Workflow Title");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "Workflow Title");
 
 		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
 
-		ProcessBuilderKaleoDesignerReact.viewChangesReflectsCodeXML(changesCode ="Workflow Title");
-
+		ProcessBuilderKaleoDesignerReact.viewChangesReflectsCodeXML(changesCode = "Workflow Title");
 	}
 
 	@description = "LPS-129928 - Verify that when the user makes changes to the XML code these changes are reflected in the Process Builder"
