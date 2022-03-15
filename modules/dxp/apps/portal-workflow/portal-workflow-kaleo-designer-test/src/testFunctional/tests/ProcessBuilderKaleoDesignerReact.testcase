@@ -884,11 +884,40 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that the node coordinates are updated in Source when node is moved in diagram"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test NodeCoordinatedAreUpdated {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#NodeCoordinatedAreUpdated";
 
-		// TODO LRQA-73004 NodeCoordinatedAreUpdated pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
+			line = "16",
+			contentLineSourceXml = "300,");
+
+		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
+			line = "17",
+			contentLineSourceXml = "100");
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		DragAndDrop.dragAndDrop(
+			key_nodeType = "start",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DIAGRAM_NODE",
+			value1 = "200,200");
+
+		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
+
+		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
+			line = "16",
+			contentLineSourceXml = "500,");
+
+		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
+			line = "17",
+			contentLineSourceXml = "300");
 
 	}
 

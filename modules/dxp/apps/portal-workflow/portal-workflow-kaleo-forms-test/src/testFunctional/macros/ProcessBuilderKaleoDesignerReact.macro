@@ -459,4 +459,20 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+	macro gotoSourceOrDiagram {
+
+        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+    }
+
+    macro viewSourceXMLLine {
+
+        ScrollWebElementIntoView(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_SOURCE_EDITOR");
+
+        AssertTextEquals.assertPartialTextAceEditor(
+			key_line = "${line}",
+            value1 = "${contentLineSourceXml}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SOURCE_XML_CONTENT_SPECIFIC_LINE");
+    
+    }
+
 }
