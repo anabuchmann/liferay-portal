@@ -895,12 +895,12 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
 
 		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
-			line = "16",
-			contentLineSourceXml = "300,");
+			contentLineSourceXml = "300,",
+			line = "16");
 
 		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
-			line = "17",
-			contentLineSourceXml = "100");
+			contentLineSourceXml = "100",
+			line = "17");
 
 		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
 
@@ -912,13 +912,12 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoSourceOrDiagram();
 
 		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
-			line = "16",
-			contentLineSourceXml = "500,");
+			contentLineSourceXml = "500,",
+			line = "16");
 
 		ProcessBuilderKaleoDesignerReact.viewSourceXMLLine(
-			line = "17",
-			contentLineSourceXml = "300");
-
+			contentLineSourceXml = "300",
+			line = "17");
 	}
 
 	@description = "LPS-139387 - Verify that the node info is displayed when the node is selected"

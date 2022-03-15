@@ -143,6 +143,10 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoSourceOrDiagram {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
+	}
+
 	macro selectConnector {
 		Click(
 			key_connectorLabel = "${connectorLabel}",
@@ -444,6 +448,15 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
+	macro viewSourceXMLLine {
+		ScrollWebElementIntoView(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_SOURCE_EDITOR");
+
+		AssertTextEquals.assertPartialTextAceEditor(
+			key_line = "${line}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SOURCE_XML_CONTENT_SPECIFIC_LINE",
+			value1 = "${contentLineSourceXml}");
+	}
+
 	macro viewSpecificNodeLabel {
 		AssertTextEquals(
 			key_nodeLabel = "${nodeLabel}",
@@ -458,21 +471,5 @@ definition {
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
-
-	macro gotoSourceOrDiagram {
-
-        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_SOURCE_DIAGRAM");
-    }
-
-    macro viewSourceXMLLine {
-
-        ScrollWebElementIntoView(locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_SOURCE_EDITOR");
-
-        AssertTextEquals.assertPartialTextAceEditor(
-			key_line = "${line}",
-            value1 = "${contentLineSourceXml}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#SOURCE_XML_CONTENT_SPECIFIC_LINE");
-    
-    }
 
 }

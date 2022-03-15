@@ -167,19 +167,19 @@
 	<td></td>
 </tr>
 <tr>
-    <td>BUTTON_SOURCE_DIAGRAM</td>
-    <td>//*[not(self::div)][contains(@class,'btn-secondary')][normalize-space()=''][not(contains(@class,'navbar'))]</td>
-    <td></td>
+	<td>BUTTON_SOURCE_DIAGRAM</td>
+	<td>//*[not(self::div)][contains(@class,'btn-secondary')][normalize-space()=''][not(contains(@class,'navbar'))]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>VIEW_SOURCE_EDITOR</td>
-    <td>//div[@class='CodeMirror-lines']</td>
-    <td></td>
+	<td>VIEW_SOURCE_EDITOR</td>
+	<td>//div[@class='CodeMirror-lines']</td>
+	<td></td>
 </tr>
 <tr>
-    <td>SOURCE_XML_CONTENT_SPECIFIC_LINE</td>
-    <td>//div[contains(@class,'CodeMirror-gutter-wrapper') and contains(.,'${key_line}')]/..//span[contains(@class,'cm-atom')]</td>
-    <td></td>
+	<td>SOURCE_XML_CONTENT_SPECIFIC_LINE</td>
+	<td>//div[contains(@class,'CodeMirror-gutter-wrapper') and contains(.,'${key_line}')]/..//span[contains(@class,'cm-atom')]</td>
+	<td></td>
 </tr>
 
 </tbody>
