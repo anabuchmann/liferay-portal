@@ -166,7 +166,6 @@
 	<td>//input[@type='checkbox' and @value ='${key_checkboxValue}']</td>
 	<td></td>
 </tr>
-
 <tr>
 	<td>NOTIFICATIONS_NODE_LABEL</td>
 	<td>//input[contains(@id, 'notificationName')]</td>

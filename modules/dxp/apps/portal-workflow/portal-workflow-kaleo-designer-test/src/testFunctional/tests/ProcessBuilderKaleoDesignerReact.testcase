@@ -282,17 +282,11 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
 
-		ProcessBuilderKaleoDesignerReact.editNodeNotifications(
-			nodeNotificationsName = "New Notification name edited");
+		ProcessBuilderKaleoDesignerReact.editNodeNotifications(nodeNotificationsName = "New Notification name edited");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.viewNodeNotification(nodeNotificationsName = "New Notification name edited");
-
-		
-
-
-
 	}
 
 	@description = "Verify that the user can edit a Template for Notification"
