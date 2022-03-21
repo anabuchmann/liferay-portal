@@ -375,7 +375,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New notification");
 
 		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsTemplateLanguage = "Velocity");
-
 	}
 
 	@description = "LPS-139387 - Verify that the user can hide/show the information area"
