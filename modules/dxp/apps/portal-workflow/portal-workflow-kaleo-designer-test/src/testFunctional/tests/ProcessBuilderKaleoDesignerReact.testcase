@@ -366,8 +366,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New notification");
 
 		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsTemplateLanguage = "Text");
-
-
 	}
 
 	@description = "Verify that the user can edit the Template Language of the Notification to Velocity"
