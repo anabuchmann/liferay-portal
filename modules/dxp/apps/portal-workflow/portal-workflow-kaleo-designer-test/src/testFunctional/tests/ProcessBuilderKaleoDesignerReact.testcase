@@ -253,11 +253,36 @@ definition {
 	}
 
 	@description = "Verify that the user can edit the Description of the Notification"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanEditNotificationDescription {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditNotificationDescription";
 
-		// TODO LRQA-73836 CanEditNotificationDescription pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+        ProcessBuilderKaleoDesignerReact.addNewNotification();
+
+        ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+            nodeNotificationsName = "New Notification",
+            nodeNotificationsDescription = "Notification Description",
+            nodeNotificationsTemplate = "Notification Template",
+            nodeNotificationsType = "Email");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+        ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+
+        ProcessBuilderKaleoDesignerReact.editNodeNotifications(nodeNotificationsDescription = "Notification description edited");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+        ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsDescription = "Notification description edited");
+		
 
 	}
 
