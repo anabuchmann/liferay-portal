@@ -343,11 +343,30 @@ definition {
 	}
 
 	@description = "Verify that the user can edit the Template Language of the Notification to Text"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanEditTemplateLanguageToText {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditTemplateLanguageToText";
 
-		// TODO LRQA-73840 CanEditTemplateLanguageToText pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.addNewNotification();
+
+		ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+			nodeNotificationsName = "New notification",
+			nodeNotificationsTemplate = "Node Notifications Template.",
+			nodeNotificationsTemplateLanguage = "Text",
+			nodeNotificationsType = "Email");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsTemplateLanguage = "Text");
+
 
 	}
 
