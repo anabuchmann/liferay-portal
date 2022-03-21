@@ -271,11 +271,38 @@ definition {
 	}
 
 	@description = "Verify that the user can edit a Template for Notification"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanEditNotificationTemplate {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditNotificationTemplate";
 
-		// TODO LRQA-73838 CanEditNotificationTemplate pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.addNewNotification();
+
+		ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+			nodeNotificationsName = "New notification",
+			nodeNotificationsTemplate = "Node Notifications Template.",
+			nodeNotificationsType = "Email");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(
+			nodeNotificationsName = "New notification",
+			nodeNotificationsTemplate = "Node Notifications Template.");
+
+		ProcessBuilderKaleoDesignerReact.editNodeNotifications(nodeNotificationsTemplate = "Node Notifications Template edited.");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsTemplate = "Node Notifications Template edited.");
 
 	}
 
