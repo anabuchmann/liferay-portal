@@ -459,4 +459,24 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
 
+
+
+	
+
+	macro editIDConnector {
+		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
+
+		Type(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_ID",
+			value1 = "${newConnectorID}");
+	}
+
+
+
+	macro viewConnectorID {
+		AssertTextEquals(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_ID",
+			value1 = "${iD}");
+	}
+
 }

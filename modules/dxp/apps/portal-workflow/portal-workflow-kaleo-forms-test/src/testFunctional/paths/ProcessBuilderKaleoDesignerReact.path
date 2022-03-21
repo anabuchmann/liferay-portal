@@ -166,6 +166,11 @@
 	<td>//input[@type='checkbox' and @value ='${key_checkboxValue}']</td>
 	<td></td>
 </tr>
+<tr>
+	<td>SIDEBAR_CONNECTOR_ID</td>
+	<td>//input[@id='transitionId']</td>
+	<td></td>
+</tr>
 
 </tbody>
 </table>
