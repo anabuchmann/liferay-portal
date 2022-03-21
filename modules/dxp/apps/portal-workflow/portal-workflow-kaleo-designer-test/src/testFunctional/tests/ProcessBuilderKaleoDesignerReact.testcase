@@ -303,7 +303,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New notification");
 
 		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsTemplate = "Node Notifications Template edited.");
-
 	}
 
 	@description = "LPS-139387 - Verify that the user is able to view and edit the nodes ID in the sidebar"
