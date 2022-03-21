@@ -132,6 +132,14 @@ definition {
 			value1 = "${newConnectorLabel}");
 	}
 
+	macro editIDConnector {
+		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
+
+		Type(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_ID",
+			value1 = "${newConnectorID}");
+	}
+
 	macro editNodeInformationField {
 		Type(
 			key_infoOption = "${infoOption}",
@@ -311,6 +319,12 @@ definition {
 		}
 	}
 
+	macro viewConnectorID {
+		AssertTextEquals(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_ID",
+			value1 = "${iD}");
+	}
+
 	macro viewConnectorNotPresent {
 		AssertElementNotPresent(
 			key_connectorLabel = "${connectorLabel}",
@@ -457,26 +471,6 @@ definition {
 			key_translationOption = "${newTranslationOption}",
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
-	}
-
-
-
-	
-
-	macro editIDConnector {
-		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
-
-		Type(
-			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_ID",
-			value1 = "${newConnectorID}");
-	}
-
-
-
-	macro viewConnectorID {
-		AssertTextEquals(
-			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_CONNECTOR_ID",
-			value1 = "${iD}");
 	}
 
 }

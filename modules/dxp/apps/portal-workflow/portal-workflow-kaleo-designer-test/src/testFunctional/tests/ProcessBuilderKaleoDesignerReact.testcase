@@ -27,56 +27,6 @@ definition {
 		}
 	}
 
-	@description = "LPS-140056 - Verify that the user is able to edit the transition ID"
-	@ignore = "Test Stub"
-	@priority = "4"
-	test CanEditTransitionID {
-		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditTransitionID";
-
-		Workflow.openWorkflowListView();
-
-		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
-
-		ProcessBuilderKaleoDesignerReact.addConnector(
-			connectorIn = "end",
-			connectorLabel = "Start-End Connector",
-			connectorOut = "start",
-			key_direction = "right");
-
-
-			
-
-		ProcessBuilderKaleoDesignerReact.editIDConnector(
-			connectorLabel = "START-END CONNECTOR",
-			newConnectorID = "New ID");
-
-		Button.clickPublish();
-
-
-
-
-
-		Workflow.viewWorkflowDefinition(workflowDefinitionTitle = "New Workflow Definition");
-
-
-
-
-
-
-		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "START-END CONNECTOR");
-
-
-
-
-
-		ProcessBuilderKaleoDesignerReact.viewConnectorID(iD = "New ID");
-
-
-
-
-
-	}
-
 	@description = "Verify that Action can be added"
 	@ignore = "Test Stub"
 	@priority = "4"
@@ -399,6 +349,35 @@ definition {
 
 		// TODO LRQA-73841 CanEditTemplateLanguageToVelocity pending implementation
 
+	}
+
+	@description = "LPS-140056 - Verify that the user is able to edit the transition ID"
+	@ignore = "Test Stub"
+	@priority = "4"
+	test CanEditTransitionID {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditTransitionID";
+
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.addConnector(
+			connectorIn = "end",
+			connectorLabel = "Start-End Connector",
+			connectorOut = "start",
+			key_direction = "right");
+
+		ProcessBuilderKaleoDesignerReact.editIDConnector(
+			connectorLabel = "START-END CONNECTOR",
+			newConnectorID = "New ID");
+
+		Button.clickPublish();
+
+		Workflow.viewWorkflowDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "START-END CONNECTOR");
+
+		ProcessBuilderKaleoDesignerReact.viewConnectorID(iD = "New ID");
 	}
 
 	@description = "LPS-139387 - Verify that the user can hide/show the information area"
