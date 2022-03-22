@@ -572,18 +572,14 @@ definition {
 
 		Workflow.openWorkflowListView();
 
-
 		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
-
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
 			nodeLabel = "Task",
 			nodePosition = "-20,-100",
 			nodeType = "task");
 
-
 		ProcessBuilderKaleoDesignerReact.addNewNotification();
-
 
 		ProcessBuilderKaleoDesignerReact.editNodeNotifications(
 			nodeNotificationsExecutionType = "On Assignment",
@@ -591,12 +587,9 @@ definition {
 			nodeNotificationsTemplate = "Notification Template",
 			nodeNotificationsType = "Email");
 
-
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-
 		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
-		
 
 		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsExecutionType = "On Assignment");
 	}
