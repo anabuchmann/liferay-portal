@@ -575,11 +575,29 @@ definition {
 	}
 
 	@description = "Verify that the user can select On Entry as the time when the notification will be sent"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanSelectOnEntryAsExecutionTypeAtNodeNotifications {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectOnEntryAsExecutionTypeAtNodeNotifications";
 
-		// TODO LRQA-73846 CanSelectOnEntryAsExecutionTypeAtNodeNotifications pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+        ProcessBuilderKaleoDesignerReact.addNewNotification();
+
+        ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+            nodeNotificationsName = "New Notification",
+            nodeNotificationsTemplate = "Notification Template",
+            nodeNotificationsType = "Email",
+			nodeNotificationsExecutionType = "On Entry");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+        ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+
+        ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsExecutionType = "On Entry");
 
 	}
 
