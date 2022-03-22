@@ -566,12 +566,39 @@ definition {
 	}
 
 	@description = "Verify that the user can select On Assignment as the time when the notification will be sent in a task"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanSelectOnAssignmentAsExecutionTypeAtTaskNotifications {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectOnAssignmentAsExecutionTypeAtTaskNotifications";
 
-		// TODO LRQA-73845 CanSelectOnAssignmentAsExecutionTypeAtTaskNotifications pending implementation
+		Workflow.openWorkflowListView();
 
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-100",
+			nodeType = "task");
+
+
+		ProcessBuilderKaleoDesignerReact.addNewNotification();
+
+
+		ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+			nodeNotificationsExecutionType = "On Assignment",
+			nodeNotificationsName = "New Notification",
+			nodeNotificationsTemplate = "Notification Template",
+			nodeNotificationsType = "Email");
+
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+		
+
+		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsExecutionType = "On Assignment");
 	}
 
 	@description = "Verify that the user can select On Entry as the time when the notification will be sent"
