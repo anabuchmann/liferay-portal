@@ -615,30 +615,28 @@ definition {
 	test CanSelectTaskAssigneesAsNotificationRecipientTypeAtTaskNode {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectTaskAssigneesAsNotificationRecipientTypeAtTaskNode";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
 
-        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Task",
-            nodePosition = "-20,-100",
-            nodeType = "task");
-            
-        ProcessBuilderKaleoDesignerReact.addNewNotification();
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-100",
+			nodeType = "task");
 
-        ProcessBuilderKaleoDesignerReact.editNodeNotifications(
-            nodeNotificationsName = "New Notification",
-            nodeNotificationsTemplate = "Notification Template",
-            nodeNotificationsType = "Email",
-            nodeNotificationsRecipientType = "Task Assignees");
+		ProcessBuilderKaleoDesignerReact.addNewNotification();
 
-        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
-  
-        ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+		ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+			nodeNotificationsName = "New Notification",
+			nodeNotificationsRecipientType = "Task Assignees",
+			nodeNotificationsTemplate = "Notification Template",
+			nodeNotificationsType = "Email");
 
-        ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsRecipientType = "Task Assignees");
-		
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
+		ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsRecipientType = "Task Assignees");
 	}
 
 	@description = "Verify that the user can select Email and User Notification as Notification type"

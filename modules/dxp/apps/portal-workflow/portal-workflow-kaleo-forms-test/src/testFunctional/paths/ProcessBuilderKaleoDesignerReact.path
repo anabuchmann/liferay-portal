@@ -167,74 +167,74 @@
 	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_LABEL</td>
-    <td>//input[contains(@id, 'notificationName')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_LABEL</td>
+	<td>//input[contains(@id, 'notificationName')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_TEMPLATE</td>
-    <td>//textarea[contains(@id, 'template')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_TEMPLATE</td>
+	<td>//textarea[contains(@id, 'template')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_DESCRIPTION</td>
-    <td>//input[contains(@id, 'notificationDescription')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_DESCRIPTION</td>
+	<td>//input[contains(@id, 'notificationDescription')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_TEMPLATE_LANGUAGE</td>
-    <td>//select[@id= 'template-language']</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_TEMPLATE_LANGUAGE</td>
+	<td>//select[@id= 'template-language']</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_NOTIFICATIONS_TYPES</td>
-    <td>//input[contains(@id,'notification-types')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_NOTIFICATIONS_TYPES</td>
+	<td>//input[contains(@id,'notification-types')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_CHECKBOX_NOTIFICATIONS_TYPES</td>
-    <td>//input[contains(@class,'custom-control-input')]//..//span[contains(@class, 'custom-control-label-text') and contains(., '${key_nodenotificationsType}')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_CHECKBOX_NOTIFICATIONS_TYPES</td>
+	<td>//input[contains(@class,'custom-control-input')]//..//span[contains(@class, 'custom-control-label-text') and contains(., '${key_nodenotificationsType}')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_EXECUTION_TYPES</td>
-    <td>//select[contains(@id, 'execution-type')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_EXECUTION_TYPES</td>
+	<td>//select[contains(@id, 'execution-type')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_RECIPIENT_TYPE</td>
-    <td>//select[contains(@id, 'recipient-type')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_RECIPIENT_TYPE</td>
+	<td>//select[contains(@id, 'recipient-type')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_ROLE_NAME</td>
-    <td>//input[contains(@id,'role-name')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_ROLE_NAME</td>
+	<td>//input[contains(@id,'role-name')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_ROLE_TYPE</td>
-    <td>//input[contains(@id,'role-type')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_ROLE_TYPE</td>
+	<td>//input[contains(@id,'role-type')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_BUTTON_NEW</td>
-    <td>//div[contains(@class, 'sheet-subtitle') and contains(., 'Notifications')]//..//button[@type= 'button']</td>
-    <td></td>
+	<td>NOTIFICATIONS_BUTTON_NEW</td>
+	<td>//div[contains(@class, 'sheet-subtitle') and contains(., 'Notifications')]//..//button[@type= 'button']</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_NAME</td>
-    <td>//div[contains(@class, 'sheet-subtitle') and contains(., 'Notifications')]//..//*[contains(@class, 'link-secondary') and contains(., '${key_nodeNotificationsName}')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_NAME</td>
+	<td>//div[contains(@class, 'sheet-subtitle') and contains(., 'Notifications')]//..//*[contains(@class, 'link-secondary') and contains(., '${key_nodeNotificationsName}')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_CHECKBOX_AUTOCREATE_RECIPIENT_TYPE</td>
-    <td>//div[contains(@class, 'recipient-type')]//input[contains(@type, 'checkbox')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_CHECKBOX_AUTOCREATE_RECIPIENT_TYPE</td>
+	<td>//div[contains(@class, 'recipient-type')]//input[contains(@type, 'checkbox')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>NOTIFICATIONS_NODE_OPTION_ROLE_NAME</td>
-    <td>//div[contains(@class, 'dropdown-menu')]//span[contains(@class, 'dropdown-item') and contains(., '${key_optionRoleName}')]</td>
-    <td></td>
+	<td>NOTIFICATIONS_NODE_OPTION_ROLE_NAME</td>
+	<td>//div[contains(@class, 'dropdown-menu')]//span[contains(@class, 'dropdown-item') and contains(., '${key_optionRoleName}')]</td>
+	<td></td>
 </tr>
 </tbody>
 </table>
