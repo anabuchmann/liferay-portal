@@ -611,11 +611,33 @@ definition {
 	}
 
 	@description = "Verify that the is able to select who receives the notification: Task Assignees"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanSelectTaskAssigneesAsNotificationRecipientTypeAtTaskNode {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectTaskAssigneesAsNotificationRecipientTypeAtTaskNode";
 
-		// TODO LRQA-73851 CanSelectTaskAssigneesAsNotificationRecipientTypeAtTaskNode pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Task",
+            nodePosition = "-20,-100",
+            nodeType = "task");
+            
+        ProcessBuilderKaleoDesignerReact.addNewNotification();
+
+        ProcessBuilderKaleoDesignerReact.editNodeNotifications(
+            nodeNotificationsName = "New Notification",
+            nodeNotificationsTemplate = "Notification Template",
+            nodeNotificationsType = "Email",
+            nodeNotificationsRecipientType = "Task Assignees");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+  
+        ProcessBuilderKaleoDesignerReact.gotoNotification(nodeNotificationsName = "New Notification");
+
+        ProcessBuilderKaleoDesignerReact.viewNodeNotifications(nodeNotificationsRecipientType = "Task Assignees");
+		
 
 	}
 
