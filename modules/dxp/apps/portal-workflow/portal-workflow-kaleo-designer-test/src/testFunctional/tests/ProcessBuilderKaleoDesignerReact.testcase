@@ -350,15 +350,14 @@ definition {
 			name = "New Notification",
 			newNotification = "true",
 			notificationTemplateValue = "New Notification Template",
-			templateLanguageOption = "FreeMarker",
-			notificationTypeOption = "userNotification");
+			notificationTypeOption = "userNotification",
+			templateLanguageOption = "FreeMarker");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
 
 		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(notificationTemplateLanguage = "FreeMarker");
-
 	}
 
 	@description = "Verify that the user can edit the Template Language of the Notification to Text"
