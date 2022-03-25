@@ -884,11 +884,47 @@ definition {
 	}
 
 	@description = "Verify that the Fork node must have at least two outgoing transitions"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test ForkNodeMustHaveMoreThanOneTransition {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#ForkNodeMustHaveMoreThanOneTransition";	
+		
+		Workflow.openWorkflowListView();
 
-		// TODO LRQA-72943 ForkNodeMustHaveMoreThanOneTransition pending implementation
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Fork",
+            nodePosition = "-20,-350",
+            nodeType = "fork");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Join",
+            nodePosition = "-40,-200",
+            nodeType = "join");
+
+        ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "join",
+            connectorLabel = "Transition Label",
+            connectorOut = "fork",
+            key_direction = "right");
+
+        ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "Transition Label",
+            connectorOut = "join",
+            key_direction = "top");
+
+        ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "fork",
+            connectorLabel = "Transition Label",
+            connectorOut = "start",
+            key_direction = "top");
+
+		Button.clickPublish();
+
+		Alert.viewErrorMessage(errorMessage = "The item_2 node must have at least 2 outgoing transitions");
 
 	}
 
