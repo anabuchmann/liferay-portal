@@ -336,11 +336,28 @@ definition {
 	}
 
 	@description = "Verify that the user can edit the Template Language of the Notification to FreeMarker"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanEditTemplateLanguageToFreeMarker {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditTemplateLanguageToFreeMarker";
 
-		// TODO LRQA-73839 CanEditTemplateLanguageToFreeMarker pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+			name = "New Notification",
+			newNotification = "true",
+			notificationTemplateValue = "New Notification Template",
+			templateLanguageOption = "FreeMarker",
+			notificationTypeOption = "userNotification");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(notificationTemplateLanguage = "FreeMarker");
 
 	}
 
