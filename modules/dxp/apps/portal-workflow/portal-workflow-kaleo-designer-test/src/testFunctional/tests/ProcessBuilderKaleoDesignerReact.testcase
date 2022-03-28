@@ -532,12 +532,30 @@ definition {
 	}
 
 	@description = "Verify that the user can select Email as Notification type"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanSelectEmailAsNotificationType {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectEmailAsNotificationType";
 
-		// TODO LRQA-73842 CanSelectEmailAsNotificationType pending implementation
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+			name = "New Notification",
+			newNotification = "true",
+			notificationTemplateValue = "New Notification Template",
+			notificationTypeOption = "email");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
+	
+		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(
+			checkboxValue = "select",
+			notificationTypeOption = "email");
+		
 	}
 
 	@description = "Verify that the user can select each node in Diagram"

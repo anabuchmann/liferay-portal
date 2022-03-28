@@ -488,11 +488,11 @@ definition {
 		}
 
 		if (isSet(notificationTypeOption)) {
-			Click(locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
+			Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
 
-			AssertChecked(
-				key_checkboxValue = "${notificationTypeOption}",
-				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
+            AssertChecked.assertCheckedNotVisible(
+                key_checkboxValue = "${notificationTypeOption}",
+                locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
 		}
 
 		if (isSet(notificationExecutionType)) {
