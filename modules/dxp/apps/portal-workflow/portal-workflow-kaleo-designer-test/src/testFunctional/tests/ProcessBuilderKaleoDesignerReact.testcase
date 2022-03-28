@@ -551,11 +551,10 @@ definition {
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
-	
+
 		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(
 			checkboxValue = "select",
 			notificationTypeOption = "email");
-		
 	}
 
 	@description = "Verify that the user can select each node in Diagram"
