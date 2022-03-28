@@ -144,7 +144,7 @@ definition {
 	}
 
 	macro gotoNotification {
-		ProcessBuilderKaleoDesignerReact.viewNotificationPresent(notificationsName = "${notificationName}");
+		ProcessBuilderKaleoDesignerReact.viewNotificationPresent(key_nodeNotificationName = "${notificationName}");
 
 		Click(
 			key_nodeNotificationName = "${notificationName}",
@@ -488,9 +488,10 @@ definition {
 		}
 
 		if (isSet(notificationTypeOption)) {
-			Click(locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
+			
+			Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
 
-			AssertChecked(
+			AssertChecked.assertCheckedNotVisible(
 				key_checkboxValue = "${notificationTypeOption}",
 				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
 		}
@@ -511,7 +512,7 @@ definition {
 
 	macro viewNotificationPresent {
 		AssertElementPresent(
-			key_nodeNotificationName = "${notificationsName}",
+			key_nodeNotificationName = "${notificationName}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_VALUE_NODE_SIDEBAR");
 	}
 

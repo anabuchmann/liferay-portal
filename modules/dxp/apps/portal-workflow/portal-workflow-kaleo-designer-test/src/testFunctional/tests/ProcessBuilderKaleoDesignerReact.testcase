@@ -660,11 +660,27 @@ definition {
 	}
 
 	@description = "Verify that the user can select User Notification as Notification type"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanSelectUserNotificationAsNotificationType {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectUserNotificationAsNotificationType";
+        
+        Workflow.openWorkflowListView();
 
-		// TODO LRQA-73843 CanSelectUserNotificationAsNotificationType pending implementation
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+        ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+            newNotification = "true",
+            name = "New Notification",
+            notificationTemplateValue = '''${userName} sent you a ${entryType} for review in the workflow.''',
+            notificationTypeOption = "userNotification");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+        ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
+
+        ProcessBuilderKaleoDesignerReact.viewNotificationInfo(notificationTypeOption = "userNotification");
 
 	}
 
