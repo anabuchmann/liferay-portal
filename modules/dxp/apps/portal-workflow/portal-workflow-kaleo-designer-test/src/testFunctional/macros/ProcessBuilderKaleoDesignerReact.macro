@@ -488,7 +488,6 @@ definition {
 		}
 
 		if (isSet(notificationTypeOption)) {
-			
 			Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
 
 			AssertChecked.assertCheckedNotVisible(

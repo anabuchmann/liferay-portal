@@ -663,25 +663,24 @@ definition {
 	@priority = "5"
 	test CanSelectUserNotificationAsNotificationType {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectUserNotificationAsNotificationType";
-        
-        Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+		Workflow.openWorkflowListView();
 
-        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
 
-        ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
-            newNotification = "true",
-            name = "New Notification",
-            notificationTemplateValue = '''${userName} sent you a ${entryType} for review in the workflow.''',
-            notificationTypeOption = "userNotification");
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
 
-        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+		ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+			name = "New Notification",
+			newNotification = "true",
+			notificationTemplateValue = '''${userName} sent you a ${entryType} for review in the workflow.''',
+			notificationTypeOption = "userNotification");
 
-        ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-        ProcessBuilderKaleoDesignerReact.viewNotificationInfo(notificationTypeOption = "userNotification");
+		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
 
+		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(notificationTypeOption = "userNotification");
 	}
 
 	@description = "Verify that the user can set transition Default"
