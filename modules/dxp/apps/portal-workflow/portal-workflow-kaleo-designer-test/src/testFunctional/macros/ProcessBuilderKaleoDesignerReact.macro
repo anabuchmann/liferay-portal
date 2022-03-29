@@ -98,6 +98,10 @@ definition {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
 	}
 
+	macro diagramSourceSwitchView {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DIAGRAM_SOURCE_SWITCH");
+	}
+
 	macro dragAndDropDiagramNode {
 		DragAndDrop.dragAndDrop(
 			key_nodeType = "${nodeType}",
@@ -559,6 +563,10 @@ definition {
 			locator1 = "Tooltip#FLOATING_TOOLTIP_CONTENT");
 	}
 
+	macro viewSourceEditor {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#SOURCE_EDITOR");
+	}
+
 	macro viewSpecificNodeLabel {
 		AssertTextEquals(
 			key_nodeLabel = "${nodeLabel}",
@@ -573,13 +581,5 @@ definition {
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
-
-	macro diagramSourceSwitchView {
-        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DIAGRAM_SOURCE_SWITCH");
-    }
-
-	macro viewSourceEditor {
-        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#SOURCE_EDITOR");
-    }
 
 }

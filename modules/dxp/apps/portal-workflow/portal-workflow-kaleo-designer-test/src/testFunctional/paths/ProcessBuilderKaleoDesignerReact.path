@@ -202,9 +202,9 @@
 	<td></td>
 </tr>
 <tr>
-    <td>SOURCE_EDITOR</td>
-    <td>//div[@class='CodeMirror-lines']</td>
-    <td></td>
+	<td>SOURCE_EDITOR</td>
+	<td>//div[@class='CodeMirror-lines']</td>
+	<td></td>
 </tr>
 
 </tbody>

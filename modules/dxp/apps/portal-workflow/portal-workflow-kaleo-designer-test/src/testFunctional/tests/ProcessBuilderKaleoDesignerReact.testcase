@@ -728,17 +728,13 @@ definition {
 	test CanViewSourceEditor {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanViewSourceEditor";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		ProcessBuilderKaleoDesignerReact.diagramSourceSwitchView();
 
-
-        ProcessBuilderKaleoDesignerReact.diagramSourceSwitchView();
-		
-
-        ProcessBuilderKaleoDesignerReact.viewSourceEditor();
-
+		ProcessBuilderKaleoDesignerReact.viewSourceEditor();
 	}
 
 	@description = "LPS-129928 - Verify that when the user makes changes to the Process Builder these changes are reflected in the XML code"
