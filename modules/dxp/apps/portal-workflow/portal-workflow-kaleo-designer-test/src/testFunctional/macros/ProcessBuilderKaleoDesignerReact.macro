@@ -93,7 +93,7 @@ definition {
 
 		AssertElementPresent(
 			key_title = "${title}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#VIEW_DELETE_MODAL");
+			locator1 = "ProcessBuilderKaleoDesignerReact#DELETE_MODAL");
 
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
 	}
@@ -573,5 +573,13 @@ definition {
 			key_translationStatus = "${translationStatus}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_COUNTRY_LABEL");
 	}
+
+	macro diagramSourceSwitchView {
+        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DIAGRAM_SOURCE_SWITCH");
+    }
+
+	macro viewSourceEditor {
+        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#SOURCE_EDITOR");
+    }
 
 }

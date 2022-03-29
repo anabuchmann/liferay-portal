@@ -724,11 +724,20 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that when the user clicks on the Source button the Source editor appears"
-	@ignore = "Test Stub"
 	@priority = "4"
-	test CanViewSorceEditor {
+	test CanViewSourceEditor {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanViewSourceEditor";
 
-		// TODO LRQA-72995 CanViewSorceEditor pending implementation
+        Workflow.openWorkflowListView();
+
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+
+        ProcessBuilderKaleoDesignerReact.diagramSourceSwitchView();
+		
+
+        ProcessBuilderKaleoDesignerReact.viewSourceEditor();
 
 	}
 
