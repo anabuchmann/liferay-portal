@@ -577,9 +577,8 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
 
 		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(
-			selectorField = "Recipient Type",
-			notificationRecipientType = "Asset Creator");
-			
+			notificationRecipientType = "Asset Creator",
+			selectorField = "Recipient Type");
 	}
 
 	@description = "Verify that the user can select Email as Notification type"
