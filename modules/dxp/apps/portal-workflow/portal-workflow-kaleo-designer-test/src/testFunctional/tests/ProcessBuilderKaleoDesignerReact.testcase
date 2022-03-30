@@ -557,9 +557,29 @@ definition {
 	@ignore = "Test Stub"
 	@priority = "5"
 	test CanSelectAssetCreatorAsNotificationRecipientType {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSelectAssetCreatorAsNotificationRecipientType";
 
-		// TODO LRQA-73848 CanSelectAssetCreatorAsNotificationRecipientType pending implementation
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+			name = "New Notification",
+			newNotification = "true",
+			notificationTemplateValue = "New Notification Template",
+			notificationTypeOption = "email",
+			recipientTypeOption = "Asset Creator");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
+
+		ProcessBuilderKaleoDesignerReact.viewNotificationInfo(
+			selectorField = "Recipient Type",
+			notificationRecipientType = "Asset Creator");
+			
 	}
 
 	@description = "Verify that the user can select Email as Notification type"
