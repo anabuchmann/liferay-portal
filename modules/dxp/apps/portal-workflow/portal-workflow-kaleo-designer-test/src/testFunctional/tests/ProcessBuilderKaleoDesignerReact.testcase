@@ -1761,8 +1761,8 @@ definition {
 	@description = "Verify that the Start Node must have an outgoing transition"
 	@priority = "4"
 	test StartNodeMustHaveOutgoingTransition {
-		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#StartNodeMustHaveOutgoingTransition";	
-		
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#StartNodeMustHaveOutgoingTransition";
+
 		Workflow.openWorkflowListView();
 
 		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
@@ -1774,7 +1774,6 @@ definition {
 		Navigator.gotoBack();
 
 		Workflow.viewDefinitionNotPresent(workflowDefinitionTitle = "New Workflow Definition");
-	
 	}
 
 	@description = "LPS-139387 - Verify that the Node ID is a required field"
@@ -1794,7 +1793,7 @@ definition {
 		ProcessBuilderKaleoDesignerReact.editNodeInformationField(
 			infoOption = "Id",
 			infoValue = " ");
-		
+
 		ProcessBuilderKaleoDesignerReact.viewRequiredField(
 			requiredField = "nodeId",
 			save = "true");
