@@ -718,11 +718,40 @@ definition {
 	}
 
 	@description = "Verify that is not possible to have multiple Start nodes"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanNotHaveMultipleStartNode {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanNotHaveMultipleStartNode";	
 
-		// TODO LRQA-72940 CanNotHaveMultipleStartNode pending implementation
+		Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+
+		ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "Transition Label",
+            connectorOut = "start",
+            key_direction = "right");
+		
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Start",
+            nodePosition = "20,-50",
+            nodeType = "start");
+
+		ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "Transition Label",
+            connectorOut = "start",
+            key_direction = "top");
+
+		Button.clickPublish();
+
+		Alert.viewErrorMessage(errorMessage = "The workflow has too many start nodes (state nodes item_0 and item_3)");
+
+		Navigator.gotoBack();
+
+		Workflow.viewDefinitionNotPresent(workflowDefinitionTitle = "New Workflow Title");
 
 	}
 
