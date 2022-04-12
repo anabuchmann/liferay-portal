@@ -720,30 +720,30 @@ definition {
 	@description = "Verify that is not possible to have multiple Start nodes"
 	@priority = "4"
 	test CanNotHaveMultipleStartNode {
-		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanNotHaveMultipleStartNode";	
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanNotHaveMultipleStartNode";
 
 		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Title");
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "Transition Label",
-            connectorOut = "start",
-            key_direction = "right");
-		
+			connectorIn = "end",
+			connectorLabel = "Transition Label",
+			connectorOut = "start",
+			key_direction = "right");
+
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
-            nodeLabel = "Start",
-            nodePosition = "20,-50",
-            nodeType = "start");
+			nodeLabel = "Start",
+			nodePosition = "20,-50",
+			nodeType = "start");
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "Transition Label",
-            connectorOut = "start",
-            key_direction = "top");
+			connectorIn = "end",
+			connectorLabel = "Transition Label",
+			connectorOut = "start",
+			key_direction = "top");
 
 		Button.clickPublish();
 
@@ -752,7 +752,6 @@ definition {
 		Navigator.gotoBack();
 
 		Workflow.viewDefinitionNotPresent(workflowDefinitionTitle = "New Workflow Title");
-
 	}
 
 	@description = "LPS-139388 - Verify that nodes behave correctly when we import a workflow with the same names for different elements"
