@@ -1090,8 +1090,8 @@ definition {
 	macro uploadDefinition {
 		Workflow.addNewDefinition(workflowDefinitionTitle = "${workflowDefinitionTitle}");
 
-		if (IsElementPresent(locator1 = "KaleoDesignerEditWorkflow#SOURCE_KALEO_XML_TAB")) {
-			KaleoDesigner.viewSourceXMLTab();
+		if (IsElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DIAGRAM_SOURCE_SWITCH")) {
+			ProcessBuilderKaleoDesignerReact.diagramSourceSwitchView();
 		}
 
 		UploadDependencyFile.uploadFile(fileName = "${workflowDefinitionFile}");
@@ -1106,13 +1106,15 @@ definition {
 			Alert.viewErrorMessage(errorMessage = "${errorMessage}");
 		}
 		else {
+			ProcessBuilderKaleoDesignerReact.diagramSourceSwitchView();
+
 			PortletEntry.publish();
 
-			AssertTextEquals.assertPartialText(
-				locator1 = "Portlet#HEADER",
+			AssertTextEquals(
+				locator1 = "TextInput#TITLE",
 				value1 = "${workflowDefinitionTitle}");
 
-			Navigator.gotoBack();
+			Workflow.openWorkflowListView();
 		}
 	}
 
