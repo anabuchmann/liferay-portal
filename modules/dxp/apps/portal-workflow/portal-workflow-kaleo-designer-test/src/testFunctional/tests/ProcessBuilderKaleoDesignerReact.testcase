@@ -3088,22 +3088,18 @@ definition {
 
 		Workflow.openWorkflowListView();
 
-
 		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
-
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
 			nodeLabel = "Task",
 			nodePosition = "20,-700",
 			nodeType = "task");
 
-
 		ProcessBuilderKaleoDesignerReact.addConnector(
 			connectorIn = "task",
 			connectorLabel = "Transition Label",
 			connectorOut = "start",
 			key_direction = "top");
-			
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
 			connectorIn = "end",
