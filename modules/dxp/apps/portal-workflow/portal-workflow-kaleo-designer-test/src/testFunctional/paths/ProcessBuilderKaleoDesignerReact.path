@@ -55,6 +55,11 @@
 	<td></td>
 </tr>
 <tr>
+    <td>MANAGE_TRANSLATIONS</td>
+    <td>//button[contains(@class,'dropdown-item')]//div[contains(@class,'autofit-section')and text()='Manage Translations']</td>
+    <td></td>
+</tr>
+<tr>
 	<td>TRANSLATION_DROPDOWN</td>
 	<td>//div[@class='dropdown-menu show']</td>
 	<td></td>

@@ -1116,4 +1116,16 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro closeModal {
+        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_CLOSE_MODAL");
+    }
+
+	macro viewModalNotPresent {
+		AssertElementNotPresent(locator1 = "Modal#BODY");
+	}
+
+	macro gotoManageTranslations {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS");
+	}
+
 }

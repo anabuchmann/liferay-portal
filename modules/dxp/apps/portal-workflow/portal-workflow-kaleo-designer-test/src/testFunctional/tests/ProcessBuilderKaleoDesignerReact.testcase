@@ -469,11 +469,22 @@ definition {
 	}
 
 	@description = "Verify that when the user click “X”, the Manage Translations window closes"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanCloseManageTranslationsWindowOnXClick {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanCloseManageTranslationsWindowOnXClick";
 
-		// TODO CanCloseManageTranslationsWindowOnXClick pending implementation
+		Workflow.openWorkflowListView();
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
+
+		ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
+
+		ProcessBuilderKaleoDesignerReact.closeModal();
+
+		ProcessBuilderKaleoDesignerReact.viewModalNotPresent();
+
 
 	}
 
