@@ -88,6 +88,10 @@ definition {
 		}
 	}
 
+	macro closeModal {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_CLOSE_MODAL");
+	}
+
 	macro deleteNodeByDeleteKey {
 		ProcessBuilderKaleoDesignerReact.viewPanelNodePresent(key_nodeType = "${nodeType}");
 
@@ -193,6 +197,10 @@ definition {
 
 	macro editWorkflowTitle {
 		PortletEntry.inputTitle(title = "${title}");
+	}
+
+	macro gotoManageTranslations {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS");
 	}
 
 	macro gotoNotification {
@@ -764,6 +772,10 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
+	macro viewModalNotPresent {
+		AssertElementNotPresent(locator1 = "Modal#BODY");
+	}
+
 	macro viewNodeInfo {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "${nodeType}");
 
@@ -1114,18 +1126,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro closeModal {
-        Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_CLOSE_MODAL");
-    }
-
-	macro viewModalNotPresent {
-		AssertElementNotPresent(locator1 = "Modal#BODY");
-	}
-
-	macro gotoManageTranslations {
-		Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS");
 	}
 
 }

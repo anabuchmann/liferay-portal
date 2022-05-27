@@ -484,8 +484,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.closeModal();
 
 		ProcessBuilderKaleoDesignerReact.viewModalNotPresent();
-
-
 	}
 
 	@description = "Verify that the user is able to complete the task through different types of users assigned at My Workflow Task"
