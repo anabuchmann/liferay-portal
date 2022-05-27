@@ -3036,12 +3036,9 @@ definition {
 
 		Workflow.openWorkflowListView();
 
-
 		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
-		
 
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
-
 	}
 
 	@description = "LPS-129928 - Verify that the translation dropdown closes when the user clicks out of it"
