@@ -3030,11 +3030,17 @@ definition {
 	}
 
 	@description = "LPS-129928 - Verify that the translation dropdown closes when the user selects a language"
-	@ignore = "Test Stub"
 	@priority = "2"
 	test TranslationDropdownClosesAfterSelection {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#TranslationDropdownClosesAfterSelection";
 
-		// TODO LRQA-73002 TranslationDropdownClosesAfterSelection pending implementation
+		Workflow.openWorkflowListView();
+
+
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		
+
+		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
 
 	}
 
