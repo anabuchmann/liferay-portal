@@ -64,7 +64,16 @@
 	<td>//div[@class='dropdown-menu show']</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>LANGUAGE_TRANSLATION_IN_DROPDOWN</td>
+	<td>//div[@class='dropdown-menu show']//*[contains(@class,'lexicon-icon-${key_languageTranslationOption}')]</td>
+	<td></td>
+</tr>
+<tr>
+    <td>MANAGE_TRANSLATIONS</td>
+    <td>//button[contains(@class,'dropdown-item')]//div[contains(@class,'autofit-section')and text()='Manage Translations']</td>
+    <td></td>
+</tr>
 <!-- DIAGRAM_VIEW_PATHS -->
 
 <tr>

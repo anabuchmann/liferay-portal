@@ -2434,11 +2434,30 @@ definition {
 	}
 
 	@description = "Verify that, when the user deletes a translation, the action reflects in the language selector"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test DeletedTranslationsAreNotDisplayedOnLanguageSelector {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#DeletedTranslationsAreNotDisplayedOnLanguageSelector";
 
-		// TODO DeletedTranslationsAreNotDisplayedOnLanguageSelector pending implementation
+        Workflow.openWorkflowListView();
+
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+
+        ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
+
+        ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
+
+
+		ProcessBuilderKaleoDesignerReact.deleteLanguage(language = "Catalan");
+
+        Button.clickDone();
+		
+
+        ProcessBuilderKaleoDesignerReact.viewLanguageTranslationDropdownNotPresent(
+			translationOptionSelected = "en-us",
+			languageTranslationOption = "ca-es");
+
 
 	}
 
