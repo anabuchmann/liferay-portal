@@ -2438,27 +2438,21 @@ definition {
 	test DeletedTranslationsAreNotDisplayedOnLanguageSelector {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#DeletedTranslationsAreNotDisplayedOnLanguageSelector";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
 
-
-        ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
-
-        ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
-
+		ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
 
 		ProcessBuilderKaleoDesignerReact.deleteLanguage(language = "Catalan");
 
-        Button.clickDone();
-		
+		Button.clickDone();
 
-        ProcessBuilderKaleoDesignerReact.viewLanguageTranslationDropdownNotPresent(
-			translationOptionSelected = "en-us",
-			languageTranslationOption = "ca-es");
-
-
+		ProcessBuilderKaleoDesignerReact.viewLanguageTranslationDropdownNotPresent(
+			languageTranslationOption = "ca-es",
+			translationOptionSelected = "en-us");
 	}
 
 	@description = "LPS-129928 - Verify that when hovering the Process Builder view button the text Diagram view is displayed"

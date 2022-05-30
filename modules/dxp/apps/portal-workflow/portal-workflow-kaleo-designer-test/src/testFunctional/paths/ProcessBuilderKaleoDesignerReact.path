@@ -70,9 +70,9 @@
 	<td></td>
 </tr>
 <tr>
-    <td>MANAGE_TRANSLATIONS</td>
-    <td>//button[contains(@class,'dropdown-item')]//div[contains(@class,'autofit-section')and text()='Manage Translations']</td>
-    <td></td>
+	<td>MANAGE_TRANSLATIONS</td>
+	<td>//button[contains(@class,'dropdown-item')]//div[contains(@class,'autofit-section')and text()='Manage Translations']</td>
+	<td></td>
 </tr>
 <!-- DIAGRAM_VIEW_PATHS -->
 

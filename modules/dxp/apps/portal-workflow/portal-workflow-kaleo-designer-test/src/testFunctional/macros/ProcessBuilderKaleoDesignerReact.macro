@@ -88,6 +88,13 @@ definition {
 		}
 	}
 
+	macro deleteLanguage {
+		Click(
+			key_language = "${language}",
+			locator1 = "ManageTranslations#LIST_ITEM_DELETE_LANGUAGE_BUTTON",
+			value1 = "key_language");
+	}
+
 	macro deleteNodeByDeleteKey {
 		ProcessBuilderKaleoDesignerReact.viewPanelNodePresent(key_nodeType = "${nodeType}");
 
@@ -193,6 +200,10 @@ definition {
 
 	macro editWorkflowTitle {
 		PortletEntry.inputTitle(title = "${title}");
+	}
+
+	macro gotoManageTranslations {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS");
 	}
 
 	macro gotoNotification {
@@ -764,6 +775,17 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
+	macro viewLanguageTranslationDropdownNotPresent {
+		Click(
+			key_translationOptionSelected = "${translationOptionSelected}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ICON_COUNTRY");
+
+		AssertElementNotPresent(
+			key_languageTranslationOption = "${languageTranslationOption}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_TRANSLATION_IN_DROPDOWN",
+			value1 = "key_languageTranslationOption");
+	}
+
 	macro viewNodeInfo {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "${nodeType}");
 
@@ -1115,27 +1137,5 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
-
-	macro deleteLanguage {
-		Click(
-			key_language = "${language}",
-			value1 = "key_language",
-			locator1 = "ManageTranslations#LIST_ITEM_DELETE_LANGUAGE_BUTTON");
-	}
-
-	macro viewLanguageTranslationDropdownNotPresent {
-		Click(
-			key_translationOptionSelected = "${translationOptionSelected}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#ICON_COUNTRY");
-
-		AssertElementNotPresent(
-			key_languageTranslationOption = "${languageTranslationOption}",
-			value1 = "key_languageTranslationOption",
-			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_TRANSLATION_IN_DROPDOWN");
-	}
-
-	macro gotoManageTranslations {
-        Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS");
-    }
 
 }
