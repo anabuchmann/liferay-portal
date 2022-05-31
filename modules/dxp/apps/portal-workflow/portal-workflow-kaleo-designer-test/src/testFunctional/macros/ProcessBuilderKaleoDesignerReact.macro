@@ -194,6 +194,42 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoManageTranslations {
+		Click(locator1 = "TranslationManager#MANAGE_TRANSLATIONS");
+
+		if (isSet(searchLanguage)) {
+			Type(
+				locator1 = "ManageTranslations#SEARCH_FIELD",
+				value1 = "${searchLanguage}");
+		}
+
+		if (isSet(addLanguage)) {
+			Click(locator1 = "Button#PLUS");
+
+			Click(
+				key_locale = "${addLanguage}",
+				locator1 = "ManageTranslations#DROPDOWN_MENU_ITEM_LANGUAGE");
+		}
+
+		if (isSet(deleteLanguage)) {
+			Click(
+				key_language = "${deleteLanguage}",
+				locator1 = "ManageTranslations#LIST_ITEM_DELETE_LANGUAGE_BUTTON");
+		}
+
+		if (isSet(close)) {
+			Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_CLOSE_MODAL");
+		}
+
+		if (isSet(cancel)) {
+			Click(locator1 = "Button#CANCEL");
+		}
+
+		if (isSet(done)) {
+			Click(locator1 = "Button#DONE");
+		}
+	}
+
 	macro gotoNotification {
 		ProcessBuilderKaleoDesignerReact.viewNotificationPresent(notificationName = "${notificationName}");
 
@@ -1073,6 +1109,18 @@ definition {
 
 	macro viewTranslationDropdownNotPresent {
 		AssertElementNotPresent(locator1 = "ProcessBuilderKaleoDesignerReact#TRANSLATION_DROPDOWN");
+	}
+
+	macro viewTranslationLanguageNotPresentOnDropdownMenu {
+		AssertElementNotPresent(
+			key_locale = "${translationOption}",
+			locator1 = "ManageTranslations#DROPDOWN_MENU_ITEM_LANGUAGE");
+	}
+
+	macro viewTranslationLanguagePresentOnDropdownMenu {
+		AssertElementPresent(
+			key_locale = "${translationOption}",
+			locator1 = "ManageTranslations#DROPDOWN_MENU_ITEM_LANGUAGE");
 	}
 
 	macro viewTranslationLanguageStatus {

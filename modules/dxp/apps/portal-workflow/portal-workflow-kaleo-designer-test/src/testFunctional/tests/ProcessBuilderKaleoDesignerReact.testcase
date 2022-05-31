@@ -901,12 +901,26 @@ definition {
 	}
 
 	@description = "Verify that is possible to delete translations"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanDeleteTranslations {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanDeleteTranslations";
 
-		// TODO CanDeleteTranslations pending implementation
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.selectTranslationLanguage(translationOptionSelected = "en-us");
+
+		ProcessBuilderKaleoDesignerReact.viewTranslationLanguagePresentOnDropdownMenu(translationOption = "fr_FR");
+
+		ProcessBuilderKaleoDesignerReact.gotoManageTranslations(
+			deleteLanguage = "French",
+			done = "true",
+			searchLanguage = "French");
+
+		ProcessBuilderKaleoDesignerReact.selectTranslationLanguage(translationOptionSelected = "en-us");
+
+		ProcessBuilderKaleoDesignerReact.viewTranslationLanguageNotPresentOnDropdownMenu(translationOption = "fr_FR");
 	}
 
 	@description = "Verify that the user can Delete a Draft workflow"
