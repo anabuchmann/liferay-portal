@@ -1063,6 +1063,14 @@ definition {
 		}
 	}
 
+	macro viewToolTipOverName {
+		MouseOver(locator1 = "ProcessBuilderKaleoDesignerReact#ICON_RECURRENCE_INFO");
+
+		AssertElementPresent(
+			key_tooltipOverName = "${tooltipOverName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TOOLTIP_OVER_NAME");
+	}
+
 	macro viewTranslationDropdown {
 		Click(
 			key_translationOptionSelected = "${translationOptionSelected}",
@@ -1113,14 +1121,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro viewToolTipOverName {
-		MouseOver(locator1 = "ProcessBuilderKaleoDesignerReact#ICON_RECURRENCE_INFO");
-
-		AssertElementPresent(
-            key_tooltipOverName = "${tooltipOverName}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#TOOLTIP_OVER_NAME");
 	}
 
 }
