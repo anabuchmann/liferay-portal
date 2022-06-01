@@ -1115,4 +1115,12 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewToolTipOverName {
+		MouseOver(locator1 = "ProcessBuilderKaleoDesignerReact#ICON_RECURRENCE_INFO");
+
+		AssertElementPresent(
+            key_tooltipOverName = "${tooltipOverName}",
+            locator1 = "ProcessBuilderKaleoDesignerReact#TOOLTIP_OVER_NAME");
+	}
+
 }

@@ -306,6 +306,16 @@
 	<td>//*[contains(@class,'d-flex')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>ICON_RECURRENCE_INFO</td>
+	<td>//input[contains(@class,'toggle-switch-check')]//..//..//..//span[*[name()='svg'][contains(@class,'icon-question')]]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TOOLTIP_OVER_NAME</td>
+	<td>//..//*[contains(text(),'${key_tooltipOverName}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
