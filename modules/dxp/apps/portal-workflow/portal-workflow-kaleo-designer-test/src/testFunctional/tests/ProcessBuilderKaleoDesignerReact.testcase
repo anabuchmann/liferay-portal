@@ -1571,8 +1571,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
 			nodeLabel = "Task",
-			nodePosition = "-20,90",
-			nodeType = "task");
+			nodePosition = "0,0");
 
 		ProcessBuilderKaleoDesignerReact.addConnector(
 			connectorIn = "task",
