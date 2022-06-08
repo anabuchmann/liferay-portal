@@ -1587,8 +1587,6 @@ definition {
 	@priority = "5"
 	test CanPublishWithJoinNode {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanPublishWithJoinNode";
-		
-			
 
 		Workflow.openWorkflowListView();
 
@@ -1602,11 +1600,7 @@ definition {
 
 		PortletEntry.publish();
 
-
 		Alert.viewSuccessMessageText(successMessage = "Workflow published successfully.");
-
-
-
 	}
 
 	@description = "Verify that the user can publish a definition with Join XOR node "
