@@ -2104,7 +2104,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoInfoWorkflowDefinition();
 
 		Navigator.gotoNavTab(navTab = "Revision History");
-		
 
 		Navigator.gotoNavTab(navTab = "Details");
 	}
