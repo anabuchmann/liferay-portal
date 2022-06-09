@@ -206,6 +206,10 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoInfoWorkflowDefinition {
+		Click(locator1 = "Icon#INFO");
+	}
+
 	macro gotoManageTranslations {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS_BUTTON");
 	}
@@ -230,6 +234,12 @@ definition {
 		Click(
 			key_property = "${property}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#HIDE_ANGLE_ICON");
+	}
+
+	macro restorePreviousVersion {
+		Click(
+			key_number = "${number}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#RESTORE_VERSION_ICON");
 	}
 
 	macro selectConnector {
@@ -1185,16 +1195,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro gotoInfoWorkflowDefinition {
-        Click(locator1 = "Icon#INFO");
-    }
-
-	macro restorePreviousVersion {
-		Click(
-			key_number = "${number}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#RESTORE_VERSION_ICON");
 	}
 
 }
