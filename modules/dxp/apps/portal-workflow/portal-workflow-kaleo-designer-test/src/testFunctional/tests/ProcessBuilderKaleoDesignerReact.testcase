@@ -1390,11 +1390,11 @@ definition {
 			actionsTemplateValue = "Timer Template",
 			durationValue = "2",
 			newTimer = "true",
-			scaleTypeOption = "Minute",
-			singleTimer = "true",
+			recurrenceDurationValue = "1",
 			recurrenceOption = "True",
 			recurrenceScaleTypeOption = "Hour",
-			recurrenceDurationValue = "1");
+			scaleTypeOption = "Minute",
+			singleTimer = "true");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
@@ -1403,15 +1403,14 @@ definition {
 			propertyValue = "Recurrence: 1 hour");
 
 		ProcessBuilderKaleoDesignerReact.viewAndFillTimers(
-			recurrenceScaleTypeOption = "Minute",
-			recurrenceDurationValue = "5");
+			recurrenceDurationValue = "5",
+			recurrenceScaleTypeOption = "Minute");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.viewPropertyValue(
 			propertyName = "Timer",
 			propertyValue = "Recurrence: 5 minute");
-
 	}
 
 	@description = "LPS-140056 - Verify that the user is able to edit the transition ID"
