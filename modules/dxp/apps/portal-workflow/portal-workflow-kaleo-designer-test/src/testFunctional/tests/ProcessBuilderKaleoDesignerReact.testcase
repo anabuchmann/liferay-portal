@@ -2106,11 +2106,8 @@ definition {
 		ProcessBuilderKaleoDesignerReact.gotoTimer(
 			propertyName = "Actions",
 			propertyValue = "Liferay Actions");
-			
+
 		ProcessBuilderKaleoDesignerReact.viewActionsInfo(executionTypeOption = "On Exit");
-
-	
-
 	}
 
 	@description = "Verify that the user can select On Exit as the time when the notification will be sent"
