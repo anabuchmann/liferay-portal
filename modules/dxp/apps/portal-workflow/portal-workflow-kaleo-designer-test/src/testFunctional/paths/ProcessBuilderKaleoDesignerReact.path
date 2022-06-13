@@ -361,6 +361,16 @@
 	<td>//*[contains(@class,'d-flex')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>PROPERTIES_INPUT_WITHOUT_TEXT_WARNING</td>
+	<td>//label[contains(., 'Duration') and not(contains(., '*'))]/..//input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROPERTIES_SELECTORS_WITHOUT_TEXT_WARNING</td>
+	<td>//label[contains(., 'Scale') and not(contains(., '*'))]/..//select</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
