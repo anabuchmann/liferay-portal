@@ -1017,9 +1017,50 @@ definition {
 	@ignore = "Test Stub"
 	@priority = "4"
 	test CanEditActionFields {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanEditActionFields";
 
-		// TODO CanEditActionFields pending implementation
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+			nodeLabel = "Task",
+			nodePosition = "-20,-40");
+
+		ProcessBuilderKaleoDesignerReact.viewAndFillActions(
+			name = "Liferay Actions",
+			description = "Liferay Actions Description",
+			actionsTemplateValue = "Action Template",
+			executionTypeOption = "On Entry",
+			priorityValue = "2");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
+			propertyName = "Actions",
+			propertyValue = "Liferay Actions");
+
+		ProcessBuilderKaleoDesignerReact.editActions(
+			name = "Liferay Actions Edited",
+			description = "Liferay Actions Description Edited",
+			actionsTemplateValue = "Action Template Edited",
+			executionTypeOption = "On Exit",
+			priorityValue = "10");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
+			propertyName = "Actions",
+			propertyValue = "Liferay Actions Edited");
+
+		ProcessBuilderKaleoDesignerReact.viewActionsInfo(
+			name = "Liferay Actions Edited",
+			description = "Liferay Actions Description Edited",
+			actionsTemplateValue = "Action Template Edited",
+			executionTypeOption = "On Exit",
+			priorityValue = "10");
+
+		
 	}
 
 	@description = "LPS-139388 - Verify that the user can edit the node description"
@@ -1293,7 +1334,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1305,7 +1346,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1335,7 +1376,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1345,7 +1386,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1356,7 +1397,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 2 minute");
 
