@@ -179,6 +179,42 @@ definition {
 		}
 	}
 
+	macro editActions {
+		if (isSet(name)) {
+			Type(
+				key_inputOption = "Name",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${name}");
+		}
+
+		if (isSet(description)) {
+			Type(
+				key_inputOption = "Description",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${description}");
+		}
+
+		if (isSet(actionsTemplateValue)) {
+			Type(
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
+				value1 = "${actionsTemplateValue}");
+		}
+
+		if (isSet(executionTypeOption)) {
+			Select(
+				key_selectorField = "Execution Type",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+				value1 = "${executionTypeOption}");
+		}
+
+		if (isSet(priorityValue)) {
+			Type(
+				key_inputOption = "Priority",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${priorityValue}");
+		}
+	}
+
 	macro editConnector {
 		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
 
@@ -282,6 +318,42 @@ definition {
 				value1 = "Publish");
 
 			Alert.viewErrorMessage(errorMessage = "${errorMessage}");
+		}
+	}
+
+	macro viewActionsInfo {
+		if (isSet(name)) {
+			AssertElementPresent(
+				key_inputOption = "Name",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${name}");
+		}
+
+		if (isSet(description)) {
+			AssertElementPresent(
+				key_inputOption = "Description",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${description}");
+		}
+
+		if (isSet(actionsTemplateValue)) {
+			AssertElementPresent(
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
+				value1 = "${actionsTemplateValue}");
+		}
+
+		if (isSet(executionTypeOption)) {
+			AssertElementPresent(
+				key_selectorField = "Execution Type",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+				value1 = "${executionTypeOption}");
+		}
+
+		if (isSet(priorityValue)) {
+			AssertElementPresent(
+				key_inputOption = "Priority",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${priorityValue}");
 		}
 	}
 
@@ -1285,80 +1357,5 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
-
-	macro editActions {
-		
-		if (isSet(name)) {
-			Type(
-				key_inputOption = "Name",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${name}");
-		}
-
-		if (isSet(description)) {
-			Type(
-				key_inputOption = "Description",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${description}");
-		}
-
-		if (isSet(actionsTemplateValue)) {
-			Type(
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
-				value1 = "${actionsTemplateValue}");
-		}
-
-		if (isSet(executionTypeOption)) {
-			Select(
-				key_selectorField = "Execution Type",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
-				value1 = "${executionTypeOption}");
-		}
-
-		if (isSet(priorityValue)) {
-			Type(
-				key_inputOption = "Priority",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${priorityValue}");
-		}
-	}
-
-	macro viewActionsInfo {
-		
-		if (isSet(name)) {
-			AssertElementPresent(
-				key_inputOption = "Name",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${name}");
-		}
-
-		if (isSet(description)) {
-			AssertElementPresent(
-				key_inputOption = "Description",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${description}");
-		}
-
-		if (isSet(actionsTemplateValue)) {
-			AssertElementPresent(
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
-				value1 = "${actionsTemplateValue}");
-		}
-
-		if (isSet(executionTypeOption)) {
-			AssertElementPresent(
-				key_selectorField = "Execution Type",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
-				value1 = "${executionTypeOption}");
-		}
-
-		if (isSet(priorityValue)) {
-			AssertElementPresent(
-				key_inputOption = "Priority",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${priorityValue}");
-		}
-	}
-
 
 }

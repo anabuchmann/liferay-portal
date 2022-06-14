@@ -1028,10 +1028,10 @@ definition {
 			nodePosition = "-20,-40");
 
 		ProcessBuilderKaleoDesignerReact.viewAndFillActions(
-			name = "Liferay Actions",
-			description = "Liferay Actions Description",
 			actionsTemplateValue = "Action Template",
+			description = "Liferay Actions Description",
 			executionTypeOption = "On Entry",
+			name = "Liferay Actions",
 			priorityValue = "2");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
@@ -1041,10 +1041,10 @@ definition {
 			propertyValue = "Liferay Actions");
 
 		ProcessBuilderKaleoDesignerReact.editActions(
-			name = "Liferay Actions Edited",
-			description = "Liferay Actions Description Edited",
 			actionsTemplateValue = "Action Template Edited",
+			description = "Liferay Actions Description Edited",
 			executionTypeOption = "On Exit",
+			name = "Liferay Actions Edited",
 			priorityValue = "10");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
@@ -1054,13 +1054,11 @@ definition {
 			propertyValue = "Liferay Actions Edited");
 
 		ProcessBuilderKaleoDesignerReact.viewActionsInfo(
-			name = "Liferay Actions Edited",
-			description = "Liferay Actions Description Edited",
 			actionsTemplateValue = "Action Template Edited",
+			description = "Liferay Actions Description Edited",
 			executionTypeOption = "On Exit",
+			name = "Liferay Actions Edited",
 			priorityValue = "10");
-
-		
 	}
 
 	@description = "LPS-139388 - Verify that the user can edit the node description"
