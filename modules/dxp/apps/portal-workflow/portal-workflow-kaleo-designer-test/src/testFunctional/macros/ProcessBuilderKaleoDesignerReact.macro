@@ -1286,4 +1286,50 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewActionsInfo {
+    
+        if (isSet(name)) {
+            AssertElementPresent(
+                key_inputOption = "Name",
+                locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+                value1 = "${name}");
+        }
+
+        if (isSet(description)) {
+            AssertElementPresent(
+                key_inputOption = "Description",
+                locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+                value1 = "${description}");
+        }
+
+        if (isSet(actionsTemplateValue)) {
+            AssertElementPresent(
+                key_inputOption = "Script (Groovy)",
+                locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
+                value1 = "${actionsTemplateValue}");
+        }
+
+        if (isSet(executionTypeOption)) {
+            AssertElementPresent(
+                key_selectorField = "Execution Type",
+                locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+                value1 = "${executionTypeOption}");
+        }
+
+        if (isSet(priorityValue)) {
+            AssertElementPresent(
+                key_inputOption = "Priority",
+                locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+                value1 = "${priorityValue}");
+        }
+    }
+
+    macro gotoActions {
+        Click(
+            key_propertyName = "${propertyName}",
+            key_propertyValue = "${propertyValue}",
+            locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY",
+            value1 = "${propertyValue}");
+    }
+
 }
