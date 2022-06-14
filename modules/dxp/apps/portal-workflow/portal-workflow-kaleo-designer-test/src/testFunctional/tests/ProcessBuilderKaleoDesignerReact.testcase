@@ -1293,7 +1293,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1305,7 +1305,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1335,7 +1335,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1345,7 +1345,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1356,7 +1356,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 2 minute");
 
@@ -2249,11 +2249,39 @@ definition {
 	}
 
 	@description = "Verify that the user can set the Priority for the Action"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanSetActionsPriority {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSetActionsPriority";
 
-		// TODO CanSetActionsPriority pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Task",
+            nodePosition = "-20,-40");
+
+        ProcessBuilderKaleoDesignerReact.viewAndFillActions(
+            name = "Liferay Actions",
+            description = "Liferay Actions Description",
+            actionsTemplateValue = "Action Template",
+            executionTypeOption = "On Entry",
+            priorityValue = "10");
+
+        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+
+        ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
+            propertyName = "Actions",
+            propertyValue = "Liferay Actions");
+
+        ProcessBuilderKaleoDesignerReact.viewActionsInfo(
+            name = "Liferay Actions",
+            description = "Liferay Actions Description",
+            actionsTemplateValue = "Action Template",
+            executionTypeOption = "On Entry",
+            priorityValue = "10");
+
+		
 
 	}
 
