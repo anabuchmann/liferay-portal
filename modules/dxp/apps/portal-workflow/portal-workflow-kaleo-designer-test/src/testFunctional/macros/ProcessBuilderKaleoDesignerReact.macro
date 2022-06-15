@@ -206,6 +206,19 @@ definition {
 		PortletEntry.inputTitle(title = "${title}");
 	}
 
+	macro gotoAndDeleteBySidebarCard {
+		Click(
+			key_propertyName = "${sidebarCardName}",
+			key_propertyValue = "${propertyValue}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+
+		Click(
+			locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN",
+			sidebarCard = "${sidebarCardName}");
+
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
+	}
+
 	macro gotoManageTranslations {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS_BUTTON");
 	}
@@ -1142,6 +1155,13 @@ definition {
 			value1 = "${nodeLabel}");
 	}
 
+	macro viewTimerNotPresent {
+		AssertElementNotPresent(
+			key_propertyName = "${propertyName}",
+			key_propertyValue = "${propertyValue}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+	}
+
 	macro viewTimersInfo {
 		if (isSet(name)) {
 			AssertElementPresent(
@@ -1284,26 +1304,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro gotoAndDeleteBySidebarCard {
-		Click(
-			key_propertyName = "${sidebarCardName}",
-			key_propertyValue = "${propertyValue}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
-
-		Click(
-			sidebarCard = "${sidebarCardName}",
-			locator1 = "WorkflowConfiguration#BLOGS_MOVE_TO_RECYCLE_BIN");
-
-		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
-	}
-
-	macro viewTimerNotPresent {
-		AssertElementNotPresent(
-			key_propertyName = "${propertyName}",
-			key_propertyValue = "${propertyValue}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
 	}
 
 }

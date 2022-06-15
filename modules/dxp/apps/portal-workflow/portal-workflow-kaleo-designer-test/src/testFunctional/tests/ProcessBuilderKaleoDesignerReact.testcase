@@ -723,7 +723,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewTimerNotPresent(propertyValue = "Duration: 12 minute");
 
 		ProcessBuilderKaleoDesignerReact.viewTimerNotPresent(propertyValue = "Duration: 13 minute");
-
 	}
 
 	@description = "Verify that the user can delete Nodes of Condition"
