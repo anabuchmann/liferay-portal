@@ -222,7 +222,7 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_VALUE_NODE_SIDEBAR");
 	}
 
-	macro gotoTimer {
+	macro gotoSideBarProperty {
 		Click(
 			key_propertyName = "${propertyName}",
 			key_propertyValue = "${propertyValue}",
@@ -1315,5 +1315,17 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
+
+	macro viewToolTipOverNameOnAssignments {
+        MouseOver(
+			key_label = "${label}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ICONS_ASSIGNMENTS_INFO",
+			value1 = "${key_label}");
+
+        AssertElementPresent(
+            key_tooltipOverName = "${tooltipOverName}",
+            locator1 = "ProcessBuilderKaleoDesignerReact#TOOLTIP_OVER_NAME");
+    }
+
 
 }

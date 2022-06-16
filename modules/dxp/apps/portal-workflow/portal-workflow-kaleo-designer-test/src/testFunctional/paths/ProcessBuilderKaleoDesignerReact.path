@@ -203,7 +203,7 @@
 </tr>
 <tr>
 	<td>SIDEBAR_PROPERTY</td>
-	<td>//span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']/..//span[contains(.,'${key_propertyValue}')]</td>
+	<td>//span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']/..//span[contains(.,'${key_propertyValue}')] | //span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']//*[contains(@class,'d-flex') and contains(., '${key_propertyValue}')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -370,6 +370,16 @@
 	<td>DETAILS_FIELDS</td>
 	<td>//div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]/..//span | //div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]</td>
 	<td></td>
+</tr>
+<tr>
+    <td>TOOLTIP_OVER_NAME</td>
+    <td>//..//*[contains(text(),'${key_tooltipOverName}')]</td>
+    <td></td>
+</tr>
+<tr>
+    <td>ICONS_ASSIGNMENTS_INFO</td>
+    <td>//label[contains(., '${key_label}')]//span[*[name()='svg'][contains(@class,'icon-question')]]</td>
+    <td></td>
 </tr>
 </tbody>
 </table>
