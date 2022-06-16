@@ -2462,12 +2462,11 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Assignments",
-			propertyValue = "Resource Actions:Test");	
+			propertyValue = "Resource Actions:Test");
 
 		ProcessBuilderKaleoDesignerReact.viewToolTipOverNameOnAssignments(
 			label = "Resource Actions",
 			tooltipOverName = "Enter the comma separated resource actions (e.g. ADD, DELETE, UPDATE).");
-
 	}
 
 	@description = "Verify that a Success alert appears when the user restore a definition version (Example: Success:Restored to Revision 'X')"

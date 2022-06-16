@@ -372,14 +372,14 @@
 	<td></td>
 </tr>
 <tr>
-    <td>TOOLTIP_OVER_NAME</td>
-    <td>//..//*[contains(text(),'${key_tooltipOverName}')]</td>
-    <td></td>
+	<td>TOOLTIP_OVER_NAME</td>
+	<td>//..//*[contains(text(),'${key_tooltipOverName}')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>ICONS_ASSIGNMENTS_INFO</td>
-    <td>//label[contains(., '${key_label}')]//span[*[name()='svg'][contains(@class,'icon-question')]]</td>
-    <td></td>
+	<td>ICONS_ASSIGNMENTS_INFO</td>
+	<td>//label[contains(., '${key_label}')]//span[*[name()='svg'][contains(@class,'icon-question')]]</td>
+	<td></td>
 </tr>
 </tbody>
 </table>

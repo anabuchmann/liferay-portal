@@ -1246,6 +1246,17 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#NODE_PROPERTY_TOOLTIP");
 	}
 
+	macro viewToolTipOverNameOnAssignments {
+		MouseOver(
+			key_label = "${label}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ICONS_ASSIGNMENTS_INFO",
+			value1 = "${key_label}");
+
+		AssertElementPresent(
+			key_tooltipOverName = "${tooltipOverName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#TOOLTIP_OVER_NAME");
+	}
+
 	macro viewTranslationDropdown {
 		Click(
 			key_translationOptionSelected = "${translationOptionSelected}",
@@ -1315,17 +1326,5 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
-
-	macro viewToolTipOverNameOnAssignments {
-        MouseOver(
-			key_label = "${label}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#ICONS_ASSIGNMENTS_INFO",
-			value1 = "${key_label}");
-
-        AssertElementPresent(
-            key_tooltipOverName = "${tooltipOverName}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#TOOLTIP_OVER_NAME");
-    }
-
 
 }
