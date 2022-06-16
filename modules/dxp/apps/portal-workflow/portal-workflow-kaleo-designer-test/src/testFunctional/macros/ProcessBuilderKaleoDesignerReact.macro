@@ -222,12 +222,14 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_VALUE_NODE_SIDEBAR");
 	}
 
-	macro gotoTimer {
+	macro gotoSidebarProperty {
 		Click(
 			key_propertyName = "${propertyName}",
 			key_propertyValue = "${propertyValue}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY",
 			value1 = "${propertyValue}");
+
+			
 	}
 
 	macro hideSidebarFields {
@@ -293,6 +295,44 @@ definition {
 
 			Alert.viewErrorMessage(errorMessage = "${errorMessage}");
 		}
+	}
+
+	macro viewActionsInfo {
+		if (isSet(name)) {
+			AssertTextEquals(
+				key_inputOption = "Name",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${name}");
+		}
+
+		if (isSet(description)) {
+			AssertTextEquals(
+				key_inputOption = "Description",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${description}");
+		}
+
+		if (isSet(actionsTemplateValue)) {
+			AssertTextEquals(
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
+				value1 = "${actionsTemplateValue}");
+		}
+
+		if (isSet(executionTypeOption)) {
+			AssertTextEquals(
+				key_selectorField = "Execution Type",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+				value1 = "${executionTypeOption}");
+		}
+
+		if (isSet(priorityValue)) {
+			AssertTextEquals(
+				key_inputOption = "Priority",
+				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+				value1 = "${priorityValue}");
+		}
+
+
 	}
 
 	macro viewActiveNodeHighlighted {
