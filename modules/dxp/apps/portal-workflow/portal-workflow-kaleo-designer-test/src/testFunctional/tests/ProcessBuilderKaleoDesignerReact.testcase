@@ -273,8 +273,6 @@ definition {
 			propertyValue = "Liferay Actions");
 
 		ProcessBuilderKaleoDesignerReact.viewActionsInfo(actionsTemplateValue = "Action Script Template");
-
-		
 	}
 
 	@description = "Verify that the user can add Nodes into diagram by drag&drop: Start"
