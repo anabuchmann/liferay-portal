@@ -1305,7 +1305,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1317,7 +1317,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1347,7 +1347,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1357,7 +1357,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 1 minute");
 
@@ -1368,7 +1368,7 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
-		ProcessBuilderKaleoDesignerReact.gotoTimer(
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
 			propertyName = "Timer",
 			propertyValue = "Duration: 2 minute");
 
@@ -3039,11 +3039,27 @@ definition {
 	}
 
 	@description = "Verify that the Role ID is a read only field"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test NodeIDIsReadyOnly {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#NodeIDIsReadyOnly";
 
-		// TODO NodeIDIsReadyOnly pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Task",
+            nodePosition = "0,0");
+
+        ProcessBuilderKaleoDesignerReact.viewAndFillAssignments(
+            assignmentType = "Role",
+            roleName = "Administrator");
+
+        ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
+            propertyName = "Assignments",
+            propertyValue = "Role:Administrator");
+
+        ProcessBuilderKaleoDesignerReact.viewFieldRoleIDDisabled();
 
 	}
 

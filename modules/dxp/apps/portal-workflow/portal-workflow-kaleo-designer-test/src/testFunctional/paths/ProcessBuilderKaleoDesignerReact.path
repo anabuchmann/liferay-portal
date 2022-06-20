@@ -202,9 +202,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>SIDEBAR_PROPERTY</td>
-	<td>//span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']/..//span[contains(.,'${key_propertyValue}')]</td>
-	<td></td>
+    <td>SIDEBAR_PROPERTY</td>
+    <td>//span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']/..//span[contains(.,'${key_propertyValue}')] | //span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']//*[contains(@class,'d-flex') and contains(., '${key_propertyValue}')]</td>
+    <td></td>
 </tr>
 <tr>
 	<td>PROPERTIES_NEW_BUTTON</td>
@@ -370,6 +370,11 @@
 	<td>DETAILS_FIELDS</td>
 	<td>//div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]/..//span | //div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]</td>
 	<td></td>
+</tr>
+<tr>
+    <td>ROLE_ID_FIELD_DISABLED</td>
+    <td>//input[contains(@id,'role-id') and @disabled]</td>
+    <td></td>
 </tr>
 </tbody>
 </table>
