@@ -440,15 +440,12 @@ definition {
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
 			nodeLabel = "Task",
 			nodePosition = "0,0");
-			
 
 		ProcessBuilderKaleoDesignerReact.viewAndFillAssignments(
 			assignmentType = "Role",
 			roleName = "Asset Library Member");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedAssignments(selectedAssignments = "Role: Asset Library Member");
-
-
 	}
 
 	@description = "Verify that the user is able to assign the task node to a Scripted Assignment"
