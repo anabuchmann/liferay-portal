@@ -886,6 +886,10 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_FIELD_LABEL");
 	}
 
+	macro viewFieldRoleIDDisabled {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_ID_FIELD_DISABLED");
+	}
+
 	macro viewInactiveNodeNotHighlighted {
 		AssertElementNotPresent(
 			key_nodeType = "${nodeType}",
@@ -1315,10 +1319,5 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
-
-	macro viewFieldRoleIDDisabled {
-        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_ID_FIELD_DISABLED");
-
-    }
 
 }
