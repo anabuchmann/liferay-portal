@@ -1316,4 +1316,10 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro deleteAssignmentByTrashIconNoPermission {
+		AssertElementPresent(
+			key_text = "trash",
+			locator1 = "Icon#ANY_DISABLED");
+	}
+
 }
