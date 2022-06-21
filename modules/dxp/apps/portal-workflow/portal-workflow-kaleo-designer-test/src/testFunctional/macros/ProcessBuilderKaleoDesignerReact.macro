@@ -92,6 +92,12 @@ definition {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_CLOSE_MODAL");
 	}
 
+	macro deleteAssignmentByTrashIconNoPermission {
+		AssertElementPresent(
+			key_text = "trash",
+			locator1 = "Icon#ANY_DISABLED");
+	}
+
 	macro deleteLanguage {
 		Click(
 			key_language = "${translationOption}",
@@ -1314,12 +1320,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro deleteAssignmentByTrashIconNoPermission {
-		AssertElementPresent(
-			key_text = "trash",
-			locator1 = "Icon#ANY_DISABLED");
 	}
 
 }

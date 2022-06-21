@@ -1530,8 +1530,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(nodeLabel = "Task");
 
 		ProcessBuilderKaleoDesignerReact.deleteAssignmentByTrashIconNoPermission();
-		
-
 	}
 
 	@description = "Verify that is not possible to have multiple Start nodes"
