@@ -222,6 +222,16 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_VALUE_NODE_SIDEBAR");
 	}
 
+	macro gotoSidebarProperty {
+		Click(
+			key_propertyName = "${propertyName}",
+			key_propertyValue = "${propertyValue}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY",
+			value1 = "${propertyValue}");
+
+			
+	}
+
 	macro gotoTimer {
 		Click(
 			key_propertyName = "${propertyName}",
@@ -295,10 +305,32 @@ definition {
 		}
 	}
 
+	macro viewActionNotPresentSidebar {
+		AssertElementNotPresent(
+			key_propertyName = "${propertyName}",
+			key_propertyValue = "${propertyValue}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+
+
+	}
+
 	macro viewActiveNodeHighlighted {
 		AssertElementPresent(
 			key_nodeType = "${nodeType}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
+	}
+
+	macro viewAndDeleteBySidebarProperty {
+		AssertElementPresent(
+			key_propertyName = "${sidebarPropertyName}",
+			key_propertyValue = "${propertyValue}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
+
+		Click(
+			key_PropertyName = "${sidebarPropertyName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ICON_TRASH_SIDEBAR_PROPERTY");
+
+
 	}
 
 	macro viewAndFillActions {

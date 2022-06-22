@@ -371,6 +371,12 @@
 	<td>//div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]/..//span | //div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>ICON_TRASH_SIDEBAR_PROPERTY</td>
+	<td>//span[contains(., '${key_PropertyName}')]/../..//div[@class='panel-body']/..//*[contains(@class, 'icon-trash')]</td>
+	<td></td>
+</tr>
+
 </tbody>
 </table>
 </body>
