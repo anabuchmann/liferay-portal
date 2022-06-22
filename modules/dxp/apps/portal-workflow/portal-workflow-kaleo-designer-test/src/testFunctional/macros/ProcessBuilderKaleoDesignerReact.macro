@@ -228,8 +228,6 @@ definition {
 			key_propertyValue = "${propertyValue}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY",
 			value1 = "${propertyValue}");
-
-			
 	}
 
 	macro gotoTimer {
@@ -310,8 +308,6 @@ definition {
 			key_propertyName = "${propertyName}",
 			key_propertyValue = "${propertyValue}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
-
-
 	}
 
 	macro viewActiveNodeHighlighted {
@@ -327,10 +323,8 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SIDEBAR_PROPERTY");
 
 		Click(
-			key_PropertyName = "${sidebarPropertyName}",
+			key_propertyName = "${sidebarPropertyName}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#ICON_TRASH_SIDEBAR_PROPERTY");
-
-
 	}
 
 	macro viewAndFillActions {

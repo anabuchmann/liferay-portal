@@ -373,7 +373,7 @@
 </tr>
 <tr>
 	<td>ICON_TRASH_SIDEBAR_PROPERTY</td>
-	<td>//span[contains(., '${key_PropertyName}')]/../..//div[@class='panel-body']/..//*[contains(@class, 'icon-trash')]</td>
+	<td>//span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']/..//*[contains(@class, 'icon-trash')]</td>
 	<td></td>
 </tr>
 

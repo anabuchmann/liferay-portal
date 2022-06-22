@@ -691,8 +691,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewActionNotPresentSidebar(
 			propertyName = "Actions",
 			propertyValue = "Liferay Actions");
-
-			
 	}
 
 	@description = "Verify that the user can delete actions inside Timers"
