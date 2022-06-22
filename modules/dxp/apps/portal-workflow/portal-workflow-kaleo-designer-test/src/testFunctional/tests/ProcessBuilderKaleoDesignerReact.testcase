@@ -714,8 +714,6 @@ definition {
 			actionsTemplateValue = "Action Template",
 			name = "Liferay Action",
 			sectionOptionList = "1,2,3");
-
-			
 	}
 
 	@description = "Verify that the user can delete all Timers at once"

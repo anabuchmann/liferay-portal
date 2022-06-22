@@ -102,8 +102,6 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#MODAL_MESSAGE");
 
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DELETE_MODAL");
-
-
 	}
 
 	macro deleteLanguage {
@@ -431,8 +429,6 @@ definition {
 				}
 			}
 		}
-
-
 	}
 
 	macro viewAndFillAssignments {
@@ -1033,8 +1029,6 @@ definition {
 					value1 = "${priorityValue} ${sectionOption}");
 			}
 		}
-
-
 	}
 
 	macro viewMultipleActionPresent {
@@ -1078,8 +1072,6 @@ definition {
 					value1 = "${priorityValue} ${sectionOption}");
 			}
 		}
-
-		
 	}
 
 	macro viewNodeInfo {
