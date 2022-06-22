@@ -417,9 +417,6 @@ definition {
 				}
 			}
 		}
-
-
-
 	}
 
 	macro viewAndFillAssignments {
@@ -979,6 +976,49 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS_MODAL");
 	}
 
+	macro viewMultipleActionPresent {
+		for (var sectionOption : list "${sectionOptionList}") {
+			if (isSet(name)) {
+				AssertTextEquals(
+					key_inputOption = "Name",
+					key_sectionOption = "${sectionOption}",
+					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
+					value1 = "${name} ${sectionOption}");
+			}
+
+			if (isSet(description)) {
+				AssertTextEquals(
+					key_inputOption = "Description",
+					key_sectionOption = "${sectionOption}",
+					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
+					value1 = "${description} ${sectionOption}");
+			}
+
+			if (isSet(actionsTemplateValue)) {
+				AssertTextEquals(
+					key_sectionOption = "${sectionOption}",
+					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA_BY_POSITION",
+					value1 = "${actionsTemplateValue} ${sectionOption}");
+			}
+
+			if (isSet(executionTypeOption)) {
+				AssertTextEquals(
+					key_sectionOption = "${sectionOption}",
+					key_selectorField = "Execution Type",
+					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS_BY_POSITION",
+					value1 = "${executionTypeOption}");
+			}
+
+			if (isSet(priorityValue)) {
+				AssertTextEquals(
+					key_inputOption = "Priority",
+					key_sectionOption = "${sectionOption}",
+					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
+					value1 = "${priorityValue} ${sectionOption}");
+			}
+		}
+	}
+
 	macro viewNodeInfo {
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "${nodeType}");
 
@@ -1379,49 +1419,4 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
-	macro viewMultipleActionPresent {
-		for (var sectionOption : list "${sectionOptionList}") {
-			if (isSet(name)) {
-				AssertTextEquals(
-					key_inputOption = "Name",
-					key_sectionOption = "${sectionOption}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
-					value1 = "${name} ${sectionOption}");
-			}
-
-			if (isSet(description)) {
-				AssertTextEquals(
-					key_inputOption = "Description",
-					key_sectionOption = "${sectionOption}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
-					value1 = "${description} ${sectionOption}");
-			}
-
-			if (isSet(actionsTemplateValue)) {
-				AssertTextEquals(
-					key_sectionOption = "${sectionOption}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA_BY_POSITION",
-					value1 = "${actionsTemplateValue} ${sectionOption}");
-			}
-
-			if (isSet(executionTypeOption)) {
-				AssertTextEquals(
-					key_sectionOption = "${sectionOption}",
-					key_selectorField = "Execution Type",
-					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS_BY_POSITION",
-					value1 = "${executionTypeOption}");
-			}
-
-			if (isSet(priorityValue)) {
-				AssertTextEquals(
-					key_inputOption = "Priority",
-					key_sectionOption = "${sectionOption}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
-					value1 = "${priorityValue} ${sectionOption}");
-			}
-		}
-	}
-
-
-	
 }
