@@ -372,11 +372,24 @@ definition {
 	}
 
 	@description = "Verify that is possible to select Account role type for role assignments"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanAssignAccountRole {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanAssignAccountRole";
 
-		// TODO CanAssignAccountRole pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.dragSidebarNodeAndMove(
+            nodeLabel = "Task",
+            nodePosition = "0,0");
+
+        ProcessBuilderKaleoDesignerReact.viewAndFillAssignments(
+            assignmentType = "Role Type",
+            roleTypeName = "Account",
+            roleTypeRoleName = "Account Member");
+
+        ProcessBuilderKaleoDesignerReact.viewSelectedAssignments(selectedAssignments = "Role Type: Account Member");
 
 	}
 
