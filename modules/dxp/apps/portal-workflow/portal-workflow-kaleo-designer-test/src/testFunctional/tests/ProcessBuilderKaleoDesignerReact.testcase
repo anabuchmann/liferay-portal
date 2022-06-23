@@ -1642,11 +1642,8 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewPropertyNotPresentOnSideBar(
 			propertyName = "Assignment",
 			propertyValue = "Asset Creator");
-		
-		
 
 		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "end");
-
 
 		ProcessBuilderKaleoDesignerReact.viewPropertyNotPresentOnSideBar(
 			propertyName = "Assignment",
