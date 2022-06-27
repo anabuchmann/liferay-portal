@@ -371,6 +371,11 @@
 	<td>//div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]/..//span | //div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]</td>
 	<td></td>
 </tr>
+<tr>
+    <td>CURRENT_VERSION_FIELD</td>
+    <td>//div[@class='info-group']//label[contains(text() ,'Current Version') and contains(.,'${key_number}')]</td>
+    <td></td>
+</tr>
 </tbody>
 </table>
 </body>

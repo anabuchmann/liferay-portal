@@ -1316,4 +1316,10 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewCurrentVersionAtRevisionHistoryTab {
+		AssertVisible(
+			key_number = "${number}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CURRENT_VERSION_FIELD");
+	}
+
 }
