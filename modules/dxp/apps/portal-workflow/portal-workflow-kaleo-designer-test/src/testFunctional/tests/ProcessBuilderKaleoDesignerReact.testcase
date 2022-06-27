@@ -672,7 +672,6 @@ definition {
 			resourceActionsText = "Test");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedAssignments(selectedAssignments = "Resource Actions: Test");
-
 	}
 
 	@description = "Verify that the user can delete action with the trash icon at the bottom right corner"
