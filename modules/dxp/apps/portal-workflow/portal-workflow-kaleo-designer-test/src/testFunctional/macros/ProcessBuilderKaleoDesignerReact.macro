@@ -751,6 +751,12 @@ definition {
 			value1 = "${connectorLabel}");
 	}
 
+	macro viewCurrentVersionAtRevisionHistoryTab {
+		AssertVisible(
+			key_number = "${number}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CURRENT_VERSION_FIELD");
+	}
+
 	macro viewDefaultToggleStatus {
 		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
 
@@ -1314,12 +1320,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro viewCurrentVersionAtRevisionHistoryTab {
-		AssertVisible(
-			key_number = "${number}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#CURRENT_VERSION_FIELD");
 	}
 
 }
