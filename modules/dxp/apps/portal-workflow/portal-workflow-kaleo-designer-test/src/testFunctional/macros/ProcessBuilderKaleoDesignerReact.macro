@@ -751,6 +751,12 @@ definition {
 			value1 = "${connectorLabel}");
 	}
 
+	macro viewCurrentVersionAtRevisionHistoryTab {
+		AssertVisible(
+			key_number = "${number}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#CURRENT_VERSION_FIELD");
+	}
+
 	macro viewDefaultToggleStatus {
 		ProcessBuilderKaleoDesignerReact.selectConnector(connectorLabel = "${connectorLabel}");
 
@@ -1128,6 +1134,12 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#DETAILS_FIELDS");
 	}
 
+	macro viewRevisionHistoryVersion {
+		AssertVisible(
+			key_number = "${number}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#REVISION_HISTORY_VERSION");
+	}
+
 	macro viewSaveButtonPresent {
 		AssertElementPresent(locator1 = "KaleoDesigner#SAVE_BUTTON");
 	}
@@ -1315,17 +1327,5 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
-
-	macro viewRevisionHistoryVersion {
-		AssertVisible(
-			key_number = "${number}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#REVISION_HISTORY_VERSION");
-	}
-
-	macro viewCurrentVersionAtRevisionHistoryTab {
-        AssertVisible(
-            key_number = "${number}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#CURRENT_VERSION_FIELD");
-    }
 
 }
