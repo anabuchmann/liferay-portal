@@ -1128,6 +1128,12 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#DETAILS_FIELDS");
 	}
 
+	macro viewRoleNamePresentInSidebar {
+		AssertVisible(
+			key_roleName = "${roleName}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_NAME_FIELD");
+	}
+
 	macro viewSaveButtonPresent {
 		AssertElementPresent(locator1 = "KaleoDesigner#SAVE_BUTTON");
 	}
@@ -1316,9 +1322,4 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
-	macro viewRoleNamePresentInSidebar {
-        AssertVisible(
-            key_roleName = "${roleName}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_NAME_FIELD");
-    }
 }

@@ -3113,22 +3113,19 @@ definition {
 	test SingleApproverComesWithAccountMemberAndAdmRoleName {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#SingleApproverComesWithAccountMemberAndAdmRoleName";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
-        Workflow.gotoEditWorkflowDefinition(workflowDefinitionTitle = "Single Approver");
+		Workflow.gotoEditWorkflowDefinition(workflowDefinitionTitle = "Single Approver");
 
-        ProcessBuilderKaleoDesignerReact.selectNodeByLabel(nodeLabel = "review");
+		ProcessBuilderKaleoDesignerReact.selectNodeByLabel(nodeLabel = "review");
 
-        ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
-            propertyName = "Assignments",
-            propertyValue = "Role Type:Account Administrator");
+		ProcessBuilderKaleoDesignerReact.gotoSideBarProperty(
+			propertyName = "Assignments",
+			propertyValue = "Role Type:Account Administrator");
 
 		ProcessBuilderKaleoDesignerReact.viewRoleNamePresentInSidebar(roleName = "Account Member");
-		
 
-        ProcessBuilderKaleoDesignerReact.viewRoleNamePresentInSidebar(roleName = "Account Administrator");
-
-
+		ProcessBuilderKaleoDesignerReact.viewRoleNamePresentInSidebar(roleName = "Account Administrator");
 	}
 
 	@description = "Verify that the Single Approver Workflow comes with the Account role assigned"
