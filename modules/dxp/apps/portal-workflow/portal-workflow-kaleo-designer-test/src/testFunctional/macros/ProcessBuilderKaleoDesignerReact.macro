@@ -222,7 +222,7 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_VALUE_NODE_SIDEBAR");
 	}
 
-	macro gotoTimer {
+	macro gotoSideBarProperty {
 		Click(
 			key_propertyName = "${propertyName}",
 			key_propertyValue = "${propertyValue}",
@@ -1316,4 +1316,9 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewRoleNamePresentInSidebar {
+        AssertVisible(
+            key_roleName = "${roleName}",
+            locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_NAME_FIELD");
+    }
 }
