@@ -242,6 +242,12 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#RESTORE_VERSION_ICON");
 	}
 
+	macro searchLanguage {
+		Type(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SEARCH_BAR_INPUT",
+			value1 = "${languageName}");
+	}
+
 	macro selectConnector {
 		Click(
 			key_connectorLabel = "${connectorLabel}",
@@ -1132,6 +1138,12 @@ definition {
 		AssertElementPresent(locator1 = "KaleoDesigner#SAVE_BUTTON");
 	}
 
+	macro viewSearchTranslationResultPresent {
+		AssertElementPresent(
+			key_result = "${result}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_NAME_RESULT");
+	}
+
 	macro viewSelectedAssignments {
 		AssertTextEquals(
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_ASSIGNMENTS_VALUE",
@@ -1314,19 +1326,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro searchLanguage {
-		Type(
-			locator1 = "ProcessBuilderKaleoDesignerReact#SEARCH_BAR_INPUT",
-			value1 = "${languageName}");
-
-	}
-
-	macro viewSearchTranslationResultPresent {
-		AssertElementPresent(
-			key_result = "${result}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_NAME_RESULT");
 	}
 
 }
