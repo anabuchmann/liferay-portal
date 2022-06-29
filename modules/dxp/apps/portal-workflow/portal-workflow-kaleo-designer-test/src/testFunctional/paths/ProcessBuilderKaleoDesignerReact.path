@@ -371,6 +371,16 @@
 	<td>//div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]/..//span | //div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>SEARCH_BAR_INPUT</td>
+	<td>//input[contains(@class, 'input-group')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LANGUAGE_NAME_RESULT</td>
+	<td>//td[contains(@class,'table-cell-expand') and contains(.,'${key_result}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>

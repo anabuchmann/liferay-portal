@@ -1974,11 +1974,22 @@ definition {
 	}
 
 	@description = "Verify that the user can search languages"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanSearchLanguages {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanSearchLanguages";
 
-		// TODO CanSearchLanguages pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
+
+        ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
+		
+		ProcessBuilderKaleoDesignerReact.searchLanguage(languageName = "Netherlands");
+
+		ProcessBuilderKaleoDesignerReact.viewSearchTranslationResultPresent(result = "Dutch (Netherlands)");
+
 
 	}
 

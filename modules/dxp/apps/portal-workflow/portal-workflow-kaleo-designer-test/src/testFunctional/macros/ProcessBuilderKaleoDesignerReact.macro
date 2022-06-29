@@ -1316,4 +1316,17 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro searchLanguage {
+		Type(
+			locator1 = "ProcessBuilderKaleoDesignerReact#SEARCH_BAR_INPUT",
+			value1 = "${languageName}");
+
+	}
+
+	macro viewSearchTranslationResultPresent {
+		AssertElementPresent(
+			key_result = "${result}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_NAME_RESULT");
+	}
+
 }
