@@ -2499,11 +2499,42 @@ definition {
 	}
 
 	@description = "Verify that on the Details tab, the Total Modifications field follows the number of times the definition was updated"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanViewTotalModificationsAtDetailsTab {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanViewTotalModificationsAtDetailsTab";
 
-		// TODO CanViewTotalModificationsAtDetailsTab pending implementation
+        Workflow.openWorkflowListView();
+
+        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+        ProcessBuilderKaleoDesignerReact.addConnector(
+            connectorIn = "end",
+            connectorLabel = "Start-End Connector",
+            connectorOut = "start",
+            key_direction = "bottom");
+
+        PortletEntry.publish();
+
+        Alert.viewSuccessMessageText(successMessage = "Workflow published successfully.");
+
+		ProcessBuilderKaleoDesignerReact.gotoInfoWorkflowDefinition();
+
+        ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
+			fieldOption = "TOTAL MODIFICATIONS",
+			fieldInformation = "1 Revision");
+
+		Button.click(button = "Update");
+
+		ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
+			fieldOption = "TOTAL MODIFICATIONS",
+			fieldInformation = "2 Revisions");
+
+		Button.click(button = "Update");
+
+		ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
+			fieldOption = "TOTAL MODIFICATIONS",
+			fieldInformation = "3 Revisions");
+
 
 	}
 

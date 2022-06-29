@@ -1316,4 +1316,11 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewDetailsFieldsInformationPresent {
+		AssertVisible(
+			key_fieldInformation = "${fieldInformation}",
+			key_fieldOption = "${fieldOption}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DETAILS_FIELDS_INFORMATION");
+	}
+
 }
