@@ -778,6 +778,13 @@ definition {
 			value1 = "${definitionTitle}");
 	}
 
+	macro viewDetailsFieldsInformationPresent {
+		AssertVisible(
+			key_fieldInformation = "${fieldInformation}",
+			key_fieldOption = "${fieldOption}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#DETAILS_FIELDS_INFORMATION");
+	}
+
 	macro viewDetailsFieldsPresent {
 		AssertVisible(
 			key_fieldOption = "CREATED",
@@ -1314,13 +1321,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro viewDetailsFieldsInformationPresent {
-		AssertVisible(
-			key_fieldInformation = "${fieldInformation}",
-			key_fieldOption = "${fieldOption}",
-			locator1 = "ProcessBuilderKaleoDesignerReact#DETAILS_FIELDS_INFORMATION");
 	}
 
 }

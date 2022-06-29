@@ -2503,39 +2503,37 @@ definition {
 	test CanViewTotalModificationsAtDetailsTab {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanViewTotalModificationsAtDetailsTab";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.addConnector(
-            connectorIn = "end",
-            connectorLabel = "Start-End Connector",
-            connectorOut = "start",
-            key_direction = "bottom");
+		ProcessBuilderKaleoDesignerReact.addConnector(
+			connectorIn = "end",
+			connectorLabel = "Start-End Connector",
+			connectorOut = "start",
+			key_direction = "bottom");
 
-        PortletEntry.publish();
+		PortletEntry.publish();
 
-        Alert.viewSuccessMessageText(successMessage = "Workflow published successfully.");
+		Alert.viewSuccessMessageText(successMessage = "Workflow published successfully.");
 
 		ProcessBuilderKaleoDesignerReact.gotoInfoWorkflowDefinition();
 
-        ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
-			fieldOption = "TOTAL MODIFICATIONS",
-			fieldInformation = "1 Revision");
+		ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
+			fieldInformation = "1 Revision",
+			fieldOption = "TOTAL MODIFICATIONS");
 
 		Button.click(button = "Update");
 
 		ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
-			fieldOption = "TOTAL MODIFICATIONS",
-			fieldInformation = "2 Revisions");
+			fieldInformation = "2 Revisions",
+			fieldOption = "TOTAL MODIFICATIONS");
 
 		Button.click(button = "Update");
 
 		ProcessBuilderKaleoDesignerReact.viewDetailsFieldsInformationPresent(
-			fieldOption = "TOTAL MODIFICATIONS",
-			fieldInformation = "3 Revisions");
-
-
+			fieldInformation = "3 Revisions",
+			fieldOption = "TOTAL MODIFICATIONS");
 	}
 
 	@description = "LPS-129928 - Verify that when the user makes changes to the Process Builder these changes are reflected in the XML code"
