@@ -84,6 +84,16 @@
 	<td>//div[contains(text() ,'${key_modalTitle}')]/../../../..//*[contains(@class,'modal-dialog')]//*[contains(@class,'modal-body')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>LANGUAGE_MANAGE_TRANSLATIONS_BUTTON</td>
+	<td>//button[@class='dropdown-item']//span[@class='dropdown-item-indicator-start']//*[contains(@class,'lexicon-icon-${key_translationOptionSelected}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>LANGUAGE_OPTION</td>
+	<td>//tr//td[contains(text(),'${key_language}')]</td>
+	<td></td>
+</tr>
 
 <!-- DIAGRAM_VIEW_PATHS -->
 
