@@ -915,6 +915,10 @@ definition {
 			locator1 = "ManageTranslations#LIST_ITEM_LANGUAGE");
 	}
 
+	macro viewManageTranslationButton {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS_BUTTON");
+	}
+
 	macro viewModalNotPresent {
 		AssertElementNotPresent(
 			key_modalTitle = "${modalTitle}",
@@ -1351,10 +1355,5 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
 	}
-
-	macro viewManageTranslationButton {
-		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS_BUTTON");
-	}
-
 
 }
