@@ -1352,4 +1352,9 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewManageTranslationButton {
+		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#MANAGE_TRANSLATIONS_BUTTON");
+	}
+
+
 }
