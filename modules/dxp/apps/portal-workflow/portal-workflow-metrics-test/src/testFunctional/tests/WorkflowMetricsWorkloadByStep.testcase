@@ -149,8 +149,6 @@ definition {
 
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
-		Pause(locator1 = "90000");
-
 		Refresh();
 
 		WorkflowMetricsWorkloadByStep.viewWorkloadByStepOntimeValue(
@@ -200,9 +198,12 @@ definition {
 
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
-		Pause(locator1 = "40000");
-
-		Refresh();
+		while (IsElementNotPresent(
+			locator1 = "WorkflowMetricsWorkloadByStep#METRICS_WORKLOAD_BY_STEP_PAGE_TABLE_ONTIME_VALUE",
+			value1 = "0") && (maxIterations = "10")) {
+		
+			Refresh();
+		}
 
 		WorkflowMetrics.checkPendingWorkflowValues(
 			key_ontime = "1",
