@@ -386,7 +386,6 @@
 	<td>//span[contains(., '${key_propertyName}')]/../..//div[@class='panel-body']/..//*[contains(@class, 'icon-trash')]</td>
 	<td></td>
 </tr>
-
 </tbody>
 </table>
 </body>
