@@ -203,6 +203,11 @@
 	<td>//div[contains(@class, 'modal-content')]//div[contains(@class, 'modal-body') and contains(text(), '${key_modalMessage}')]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>BUTTON_DONE_MODAL</td>
+	<td>//div[contains(@class, 'modal-content')]//button[contains(.,'Done')]</td>
+	<td></td>
+</tr>
 
 <!-- NODES_PROPERTIES_PATHS -->
 
@@ -400,6 +405,16 @@
 	<td>SIDEBAR_HEADER</td>
 	<td>//div[contains(@class,'sidebar-header')]//span[contains(@class,'title')]/..//span[contains(., '${key_header}')]</td>
 	<td></td>
+</tr>
+<tr>
+    <td>LANGUAGE_MANAGE_TRANSLATIONS_BUTTON</td>
+    <td>//button[@class='dropdown-item']//span[@class='dropdown-item-indicator-start']//*[contains(@class,'lexicon-icon-${key_translationOptionSelected}')]</td>
+    <td></td>
+</tr>
+<tr>
+    <td>LANGUAGE_OPTION</td>
+    <td>//tr//td[contains(text(),'${key_language}')]</td>
+    <td></td>
 </tr>
 </tbody>
 </table>
