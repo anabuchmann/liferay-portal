@@ -104,8 +104,20 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#CONNECTOR_SOURCE");
 	}
 
+	macro addLanguage {
+		Click(locator1 = "Button#PLUS");
+
+		Click(
+			key_translationOptionSelected = "${translationOptionSelected}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_MANAGE_TRANSLATIONS_BUTTON");
+	}
+
 	macro backArrowOnSidebar {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BACK_TO_SIDEBAR_BUTTON");
+	}
+
+	macro clickButtonDone {
+		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DONE_MODAL");
 	}
 
 	macro clickDefaultToggle {
@@ -969,6 +981,18 @@ definition {
 			locator1 = "ManageTranslations#LIST_ITEM_LANGUAGE");
 	}
 
+	macro viewLanguageOptionNotPresent {
+		AssertElementNotPresent(
+			key_language = "${languageOption}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_OPTION");
+	}
+
+	macro viewLanguageOptionPresent {
+		AssertElementPresent(
+			key_language = "${languageOption}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_OPTION");
+	}
+
 	macro viewLanguagePresentAtManageTranslations {
 		AssertElementPresent(
 			key_language = "${languageName}",
@@ -1418,30 +1442,4 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
-	macro addLanguage {
-
-        Click(locator1 = "Button#PLUS");
-
-        Click(
-            key_translationOptionSelected = "${translationOptionSelected}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_MANAGE_TRANSLATIONS_BUTTON");
-    }
-
-    macro viewLanguageOptionPresent {
-        AssertElementPresent(
-            key_language = "${languageOption}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_OPTION");
-    }
-
-    macro viewLanguageOptionNotPresent {
-        AssertElementNotPresent(
-            key_language = "${languageOption}",
-            locator1 = "ProcessBuilderKaleoDesignerReact#LANGUAGE_OPTION");
-    }
-
-	macro clickButtonDone {
-		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_DONE_MODAL");
-	}
-
-	
 }

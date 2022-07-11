@@ -30,34 +30,33 @@ definition {
 	test AddedTranslationsAreDisplayedOnLanguageSelector {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#AddedTranslationsAreDisplayedOnLanguageSelector";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
 
-       	ProcessBuilderKaleoDesignerReact.viewTranslationLanguageOptionPresent(
+		ProcessBuilderKaleoDesignerReact.viewTranslationLanguageOptionPresent(
 			currentTranslationOption = "en-us",
 			translationOption = "ca_ES",
 			translationStatus = "warning");
 
-        ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
+		ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
 
-        ProcessBuilderKaleoDesignerReact.deleteLanguage(translationOption = "Catalan");
+		ProcessBuilderKaleoDesignerReact.deleteLanguage(translationOption = "Catalan");
 
 		ProcessBuilderKaleoDesignerReact.clickButtonDone();
 
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
 
-       	ProcessBuilderKaleoDesignerReact.viewTranslationLanguageOptionNotPresent(
+		ProcessBuilderKaleoDesignerReact.viewTranslationLanguageOptionNotPresent(
 			currentTranslationOption = "en-us",
 			translationOption = "ca_ES",
 			translationStatus = "warning");
 
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
 
-        ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
-		
+		ProcessBuilderKaleoDesignerReact.gotoManageTranslations();
 
 		ProcessBuilderKaleoDesignerReact.addLanguage(translationOptionSelected = "ca-es");
 
@@ -65,14 +64,10 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.viewTranslationDropdown(translationOptionSelected = "en-us");
 
-
 		ProcessBuilderKaleoDesignerReact.viewTranslationLanguageOptionPresent(
 			currentTranslationOption = "en-us",
 			translationOption = "ca_ES",
 			translationStatus = "warning");
-
-	
-
 	}
 
 	@description = "Verify that Action can be added"

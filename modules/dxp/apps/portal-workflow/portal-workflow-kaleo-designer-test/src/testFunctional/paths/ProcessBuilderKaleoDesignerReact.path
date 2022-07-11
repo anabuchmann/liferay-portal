@@ -407,14 +407,14 @@
 	<td></td>
 </tr>
 <tr>
-    <td>LANGUAGE_MANAGE_TRANSLATIONS_BUTTON</td>
-    <td>//button[@class='dropdown-item']//span[@class='dropdown-item-indicator-start']//*[contains(@class,'lexicon-icon-${key_translationOptionSelected}')]</td>
-    <td></td>
+	<td>LANGUAGE_MANAGE_TRANSLATIONS_BUTTON</td>
+	<td>//button[@class='dropdown-item']//span[@class='dropdown-item-indicator-start']//*[contains(@class,'lexicon-icon-${key_translationOptionSelected}')]</td>
+	<td></td>
 </tr>
 <tr>
-    <td>LANGUAGE_OPTION</td>
-    <td>//tr//td[contains(text(),'${key_language}')]</td>
-    <td></td>
+	<td>LANGUAGE_OPTION</td>
+	<td>//tr//td[contains(text(),'${key_language}')]</td>
+	<td></td>
 </tr>
 </tbody>
 </table>
