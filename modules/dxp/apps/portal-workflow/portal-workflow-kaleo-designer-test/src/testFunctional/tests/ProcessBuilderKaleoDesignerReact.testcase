@@ -175,26 +175,23 @@ definition {
 	test CanAddMultipleNotifications {
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanAddMultipleNotifications";
 
-        Workflow.openWorkflowListView();
+		Workflow.openWorkflowListView();
 
-        Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
 
-        ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
+		ProcessBuilderKaleoDesignerReact.selectNode(nodeType = "start");
 
-        ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
-            name = "Liferay Notification",
-            newNotification = "true",
-            notificationTemplateValue = "Liferay Template",
-            notificationTypeOption = "email",
-            newSection = "New Notification",
-            sectionOptionList = "1,2,");
-        
-        ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
+		ProcessBuilderKaleoDesignerReact.viewAndFillNotification(
+			name = "Liferay Notification",
+			newNotification = "true",
+			newSection = "New Notification",
+			notificationTemplateValue = "Liferay Template",
+			notificationTypeOption = "email",
+			sectionOptionList = "1,2,");
+
+		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.viewNotificationPresent(notificationName = "Liferay Notification 1,Liferay Notification 2");
-
-    
-
 	}
 
 	@description = "Verify that the user can add multiple Timers to a task node"
