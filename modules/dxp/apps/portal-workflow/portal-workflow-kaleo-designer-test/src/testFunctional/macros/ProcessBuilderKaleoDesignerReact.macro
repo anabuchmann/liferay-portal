@@ -480,125 +480,241 @@ definition {
 	}
 
 	macro viewAndFillNotification {
-		if (isSet(newNotification)) {
-			Click(
-				key_propertyName = "Notification",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_NEW_BUTTON");
-		}
+        if (isSet(newNotification)) {
+            Click(
+                key_propertyName = "Notification",
+                locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_NEW_BUTTON");
+        }
 
-		AssertElementPresent(
-			key_inputOption = "Name",
-			locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT");
+        AssertElementPresent(
+            key_inputOption = "Name",
+            locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT");
 
-		AssertElementPresent(
-			key_inputOption = "Description",
-			locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT");
+        AssertElementPresent(
+            key_inputOption = "Description",
+            locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT");
 
-		AssertElementPresent(
-			key_selectorField = "Template Language",
-			locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
+        AssertElementPresent(
+            key_selectorField = "Template Language",
+            locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
 
-		AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA");
+        AssertElementPresent(locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA");
 
-		AssertElementPresent(
-			key_selectorField = "Notifications Type",
-			locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
+        AssertElementPresent(
+            key_selectorField = "Notifications Type",
+            locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
 
-		AssertElementPresent(
-			key_selectorField = "Execution Type",
-			locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
+        AssertElementPresent(
+            key_selectorField = "Execution Type",
+            locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
 
-		AssertElementPresent(
-			key_selectorField = "Recipient Type",
-			locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
+        AssertElementPresent(
+            key_selectorField = "Recipient Type",
+            locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS");
 
-		if (isSet(name)) {
-			Type(
-				key_inputOption = "Name",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${name}");
-		}
+        if (isSet(singleAction)) {
+            if (isSet(name)) {
+                Type(
+                    key_inputOption = "Name",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+                    value1 = "${name}");
+            }
 
-		if (isSet(description)) {
-			Type(
-				key_inputOption = "Description",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
-				value1 = "${description}");
-		}
+            if (isSet(description)) {
+                Type(
+                    key_inputOption = "Description",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT",
+                    value1 = "${description}");
+            }
 
-		if (isSet(templateLanguageOption)) {
-			Select(
-				key_selectorField = "Template Language",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
-				value1 = "${templateLanguageOption}");
-		}
+            if (isSet(templateLanguageOption)) {
+                Select(
+                    key_selectorField = "Template Language",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+                    value1 = "${templateLanguageOption}");
+            }
 
-		if (isSet(notificationTemplateValue)) {
-			Type(
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
-				value1 = "${notificationTemplateValue}");
-		}
+            if (isSet(notificationTemplateValue)) {
+                Type(
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA",
+                    value1 = "${notificationTemplateValue}");
+            }
 
-		if (isSet(notificationTypeOption)) {
-			Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
+            if (isSet(notificationTypeOption)) {
+                Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN");
 
-			Check.checkNotVisible(
-				key_checkboxValue = "${notificationTypeOption}",
-				locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
-		}
+                Check.checkNotVisible(
+                    key_checkboxValue = "${notificationTypeOption}",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS");
+            }
 
-		if (isSet(executionTypeOption)) {
-			Select(
-				key_selectorField = "Execution Type",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
-				value1 = "${executionTypeOption}");
-		}
+            if (isSet(executionTypeOption)) {
+                Select(
+                    key_selectorField = "Execution Type",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+                    value1 = "${executionTypeOption}");
+            }
 
-		if (isSet(recipientTypeOption)) {
-			Select(
-				key_selectorField = "Recipient Type",
-				locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
-				value1 = "${recipientTypeOption}");
+            if (isSet(recipientTypeOption)) {
+                Select(
+                    key_selectorField = "Recipient Type",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS",
+                    value1 = "${recipientTypeOption}");
 
-			if ("${recipientTypeOption}" == "Role") {
-				Type(
-					locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_FIELD",
-					value1 = "${notificationsRecipientTypeRoleName}");
+                if ("${recipientTypeOption}" == "Role") {
+                    Type(
+                        locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_FIELD",
+                        value1 = "${notificationsRecipientTypeRoleName}");
 
-				Click.mouseOverClick(
-					key_optionRoleName = "${notificationsRecipientTypeRoleName}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
-			}
+                    Click.mouseOverClick(
+                        key_optionRoleName = "${notificationsRecipientTypeRoleName}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
+                }
 
-			if ("${recipientTypeOption}" == "Role Type") {
-				Type(
-					locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_TYPE_FIELD",
-					value1 = "${notificationsRoleType}");
+                if ("${recipientTypeOption}" == "Role Type") {
+                    Type(
+                        locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_TYPE_FIELD",
+                        value1 = "${notificationsRoleType}");
 
-				Click.mouseOverClick(
-					key_optionRoleName = "${notificationsRoleType}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
+                    Click.mouseOverClick(
+                        key_optionRoleName = "${notificationsRoleType}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
 
-				Type(
-					locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_FIELD",
-					value1 = "${notificationsRoleTypeRoleName}");
+                    Type(
+                        locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_FIELD",
+                        value1 = "${notificationsRoleTypeRoleName}");
 
-				Click.mouseOverClick(
-					key_optionRoleName = "${notificationsRoleTypeRoleName}",
-					locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
+                    Click.mouseOverClick(
+                        key_optionRoleName = "${notificationsRoleTypeRoleName}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
 
-				if ("${autoCreate}" == "true") {
-					Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_RECIPIENT_ROLE_TYPE_AUTOCREATE");
-				}
-			}
+                    if ("${autoCreate}" == "true") {
+                        Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_RECIPIENT_ROLE_TYPE_AUTOCREATE");
+                    }
+                }
 
-			if ("${recipientTypeOption}" == "Scripted Recipient") {
-				Type(
-					locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_SCRIPTED_RECIPIENT_VALUE",
-					value1 = "${notificationScript}");
-			}
-		}
-	}
+                if ("${recipientTypeOption}" == "Scripted Recipient") {
+                    Type(
+                        locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_SCRIPTED_RECIPIENT_VALUE",
+                        value1 = "${notificationScript}");
+                }
+
+                if (isSet(newSection)) {
+                Click(
+                    key_buttonName = "${newSection}",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_GENERIC");
+                }
+            }
+        }
+
+        if (isSet(sectionOptionList)) {
+            for (var sectionOption : list "${sectionOptionList}") {
+                if (isSet(name)) {
+                Type(
+                    key_inputOption = "Name",
+                    key_sectionOption = "${sectionOption}",
+                    locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
+                    value1 = "${name} ${sectionOption}");
+                }
+
+                if (isSet(description)) {
+                    Type(
+                        key_inputOption = "Description",
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_INPUT_BY_POSITION",
+                        value1 = "${description} ${sectionOption}");
+                }
+
+                if (isSet(templateLanguageOption)) {
+                    Select(
+                        key_selectorField = "Template Language",
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS_BY_POSITION",
+                        value1 = "${templateLanguageOption}");
+                }
+
+                if (isSet(notificationTemplateValue)) {
+                    Type(
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_TEMPLATE_TEXTAREA_BY_POSITION",
+                        value1 = "${notificationTemplateValue} ${sectionOption}");
+                }
+
+                if (isSet(notificationTypeOption)) {
+                    Click(
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_TYPE_DROPDOWN_BY_POSITION");
+
+                    Check.checkNotVisible(
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATION_TYPE_OPTIONS",
+                        key_checkboxValue = "${notificationTypeOption}");
+                }   
+                
+                if (isSet(executionTypeOption)) {
+                    Select(
+                        key_selectorField = "Execution Type",
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS_BY_POSITION",
+                        value1 = "${executionTypeOption}");
+                }
+
+                if (isSet(recipientTypeOption)) {
+                    Select(
+                        key_selectorField = "Recipient Type",
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#PROPERTIES_SELECTORS_BY_POSITION",
+                        value1 = "${recipientTypeOption}");
+
+                    if ("${recipientTypeOption}" == "Role") {
+                        Type(
+                            locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_FIELD",
+                            value1 = "${notificationsRecipientTypeRoleName}");
+
+                        Click.mouseOverClick(
+                            key_optionRoleName = "${notificationsRecipientTypeRoleName}",
+                            locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
+                    }
+
+                    if ("${recipientTypeOption}" == "Role Type") {
+                        Type(
+                            locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_TYPE_FIELD",
+                            value1 = "${notificationsRoleType}");
+
+                        Click.mouseOverClick(
+                            key_optionRoleName = "${notificationsRoleType}",
+                            locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
+
+                        Type(
+                            locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_FIELD",
+                            value1 = "${notificationsRoleTypeRoleName}");
+
+                        Click.mouseOverClick(
+                            key_optionRoleName = "${notificationsRoleTypeRoleName}",
+                            locator1 = "ProcessBuilderKaleoDesignerReact#RECIPIENT_TYPE_NAME_OPTIONS");
+
+                        if ("${autoCreate}" == "true") {
+                            Click(locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_RECIPIENT_ROLE_TYPE_AUTOCREATE");
+                        }
+                    }
+
+                    if ("${recipientTypeOption}" == "Scripted Recipient") {
+                        Type(
+                            locator1 = "ProcessBuilderKaleoDesignerReact#NOTIFICATIONS_SCRIPTED_RECIPIENT_VALUE",
+                            value1 = "${notificationScript}");
+                    }
+                }
+
+                if (isSet(newSection)) {
+                    Click(
+                        key_buttonName = "${newSection}",
+                        key_sectionOption = "${sectionOption}",
+                        locator1 = "ProcessBuilderKaleoDesignerReact#BUTTON_GENERIC_BY_POSITION");
+
+                }   
+            }
+        }
+    }
 
 	macro viewAndFillTimers {
 		if (isSet(newTimer)) {

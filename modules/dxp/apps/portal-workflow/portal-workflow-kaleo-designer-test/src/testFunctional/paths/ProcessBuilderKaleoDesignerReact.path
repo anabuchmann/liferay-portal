@@ -20,7 +20,7 @@
 </tr>
 <tr>
 	<td>BUTTON_GENERIC_BY_POSITION</td>
-	<td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//button[contains(., '${key_buttonName}')]</td>
+	<td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//button[contains(., '${key_buttonName}')] | //div[@class='panel']/../../..//div[@class='panel-group panel-group-flush'][${key_sectionOption}]//button[contains(., '${key_buttonName}')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -247,9 +247,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>PROPERTIES_INPUT_BY_POSITION</td>
-	<td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., '${key_inputOption}')]/..//input</td>
-	<td></td>
+    <td>PROPERTIES_INPUT_BY_POSITION</td>
+    <td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., '${key_inputOption}')]/..//input | //div[@class='panel']/../../div[@class='panel-group panel-group-flush'][${key_sectionOption}]//label[contains(., '${key_inputOption}')]/..//input</td>
+    <td></td>
 </tr>
 <tr>
 	<td>PROPERTIES_SELECTORS</td>
@@ -257,9 +257,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>PROPERTIES_SELECTORS_BY_POSITION</td>
-	<td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., '${key_selectorField}')]/..//select</td>
-	<td></td>
+    <td>PROPERTIES_SELECTORS_BY_POSITION</td>
+    <td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., '${key_selectorField}')]/..//select | //div[@class='panel']/../..//div[@class='panel-group panel-group-flush'][${key_sectionOption}]//label[contains(., '${key_selectorField}')]/..//select</td>
+    <td></td>
 </tr>
 <tr>
 	<td>PROPERTIES_SELECTORS_WITHOUT_TEXT_WARNING</td>
@@ -277,9 +277,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>PROPERTIES_TEMPLATE_TEXTAREA_BY_POSITION</td>
-	<td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., 'Script')]/..//textarea</td>
-	<td></td>
+    <td>PROPERTIES_TEMPLATE_TEXTAREA_BY_POSITION</td>
+    <td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., 'Script')]/..//textarea | //div[@class='panel']/../..//div[@class='panel-group panel-group-flush'][${key_sectionOption}]//label[contains(., 'Template')]/..//textarea | //label[contains(., 'Script')]/..//textarea</td>
+    <td></td>
 </tr>
 <tr>
 	<td>SIDEBAR_MESSAGE_FEEDBACK</td>
@@ -327,9 +327,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>NOTIFICATION_TYPE_OPTIONS</td>
-	<td>//input[@type='checkbox' and @value ='${key_checkboxValue}']</td>
-	<td></td>
+    <td>NOTIFICATION_TYPE_OPTIONS</td>
+    <td>//div[@class='dropdown-menu show']//ul[@class='list-unstyled']//input[@type='checkbox' and @value ='${key_checkboxValue}']</td>
+    <td></td>
 </tr>
 <tr>
 	<td>RECIPIENT_TYPE_NAME_FIELD</td>
@@ -400,6 +400,11 @@
 	<td>SIDEBAR_HEADER</td>
 	<td>//div[contains(@class,'sidebar-header')]//span[contains(@class,'title')]/..//span[contains(., '${key_header}')]</td>
 	<td></td>
+</tr>
+<tr>
+    <td>NOTIFICATIONS_TYPE_DROPDOWN_BY_POSITION</td>
+    <td>//div[contains(@class,'panel-group panel-group-flush') and contains(@role,'tablist')][${key_sectionOption}]//input[contains(@value,'Select')]</td>
+    <td></td>
 </tr>
 </tbody>
 </table>
