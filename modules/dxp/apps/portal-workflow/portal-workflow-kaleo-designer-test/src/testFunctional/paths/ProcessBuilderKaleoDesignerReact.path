@@ -417,6 +417,11 @@
 	<td>//span[contains(., '${key_propertyName}')]/../../div[@class='spaced-items']/..//button[contains(@class, 'trash-button')]</td>
 	<td></td>
 </tr>
+<tr>	
+	<td>DETAILS_FIELDS_INFORMATION</td>
+	<td>//div[@class='info-group']//label[contains(text() ,'${key_fieldOption}')]/..//span[contains(text() ,'${key_fieldInformation}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
