@@ -252,7 +252,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>PROPERTIES_INPUT_BY_POSITION_TIMERS</td>
+	<td>PROPERTIES_INPUT_TIMERS_BY_POSITION</td>
 	<td>//div[@class='panel'][div[@class='panel-group panel-group-flush']][${key_sectionOption}]//label[contains(., '${key_inputOption}')]/..//input</td>
 	<td></td>
 </tr>
