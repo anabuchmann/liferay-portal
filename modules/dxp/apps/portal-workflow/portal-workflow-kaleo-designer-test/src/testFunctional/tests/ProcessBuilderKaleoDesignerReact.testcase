@@ -4038,9 +4038,8 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Account",
-			positonOption = "2");
-
+			positonOption = "2",
+			selectedRole = "Account");
 	}
 
 	@description = "LPS-129928 - Verify that when hovering the Source button the text Source view is displayed"
