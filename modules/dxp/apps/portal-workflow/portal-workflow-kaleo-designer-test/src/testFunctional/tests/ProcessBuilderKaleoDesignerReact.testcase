@@ -3121,69 +3121,68 @@ definition {
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Account",
-			positonOption = "2");
+			positonOption = "2",
+			selectedRole = "Account");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Account",
-			positonOption = "3");
+			positonOption = "3",
+			selectedRole = "Account");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Asset Library",
-			positonOption = "4");
+			positonOption = "4",
+			selectedRole = "Asset Library");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Asset Library",
-			positonOption = "5");
+			positonOption = "5",
+			selectedRole = "Asset Library");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Asset Library",
-			positonOption = "6");
+			positonOption = "6",
+			selectedRole = "Asset Library");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Organization",
-			positonOption = "7");
+			positonOption = "7",
+			selectedRole = "Organization");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Organization",
-			positonOption = "8");
+			positonOption = "8",
+			selectedRole = "Organization");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Organization",
-			positonOption = "9");
+			positonOption = "9",
+			selectedRole = "Organization");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Regular",
-			positonOption = "10");
+			positonOption = "10",
+			selectedRole = "Regular");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Regular",
-			positonOption = "11");
+			positonOption = "11",
+			selectedRole = "Regular");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Site",
-			positonOption = "12");
+			positonOption = "12",
+			selectedRole = "Site");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Site",
-			positonOption = "13");
+			positonOption = "13",
+			selectedRole = "Site");
 
 		ProcessBuilderKaleoDesignerReact.viewSelectedRoleAssignmentsByPosition(
 			inputOption = "Role",
-			selectedRole = "Site",
-			positonOption = "14");
-
+			positonOption = "14",
+			selectedRole = "Site");
 	}
 
 	@description = "Verify that at the Details/Revision Story sidebar Header the definition Title is present"

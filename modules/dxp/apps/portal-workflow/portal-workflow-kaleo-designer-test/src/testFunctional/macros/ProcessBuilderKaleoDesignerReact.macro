@@ -1647,6 +1647,14 @@ definition {
 			locator1 = "ProcessBuilderKaleoDesignerReact#SELECTED_NODE");
 	}
 
+	macro viewSelectedRoleAssignmentsByPosition {
+		AssertElementPresent(
+			key_inputOption = "${inputOption}",
+			key_positonOption = "${positonOption}",
+			locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_NAME_FIELD_ASSIGNMENTS_BY_POSITON",
+			value1 = "${selectedRole}");
+	}
+
 	macro viewSidebarFeedback {
 		AssertElementPresent(
 			key_sidebarMessage = "${sidebarMessage}",
@@ -1848,15 +1856,6 @@ definition {
 			key_line = "${lineY}",
 			locator1 = "ProcessBuilderKaleoDesignerReact#XML_CODE_METADATA_ELEMENT",
 			value1 = "${coordinateY}");
-	}
-
-	macro viewSelectedRoleAssignmentsByPosition {
-		AssertElementPresent(
-				key_inputOption = "${inputOption}",
-				locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_NAME_FIELD_ASSIGNMENTS_BY_POSITON",
-				key_positonOption = "${positonOption}",
-				value1 = "${selectedRole}");
-
 	}
 
 }
