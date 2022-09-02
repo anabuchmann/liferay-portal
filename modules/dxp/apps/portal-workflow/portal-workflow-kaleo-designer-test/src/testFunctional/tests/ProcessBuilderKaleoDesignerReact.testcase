@@ -720,9 +720,9 @@ definition {
 			propertyValue = "Duration: 2 minute");
 
 		ProcessBuilderKaleoDesignerReact.addMultiplesActionsOnTimers(
-			newSection = "New Action",
 			actionName = "Liferay Timer",
 			actionsTemplateValue = "${userName} sent you a ${entryType} for review in the workflow.",
+			newSection = "New Action",
 			sectionOptionList = "4,5");
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
@@ -734,7 +734,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.viewActionsInsideTimersPresent(actionName = "Liferay Timer 4");
 
 		ProcessBuilderKaleoDesignerReact.viewActionsInsideTimersPresent(actionName = "Liferay Timer 5");
-
 	}
 
 	@description = "Verify that the user can select and define an Reassignment to be conducted once the timer expires"
