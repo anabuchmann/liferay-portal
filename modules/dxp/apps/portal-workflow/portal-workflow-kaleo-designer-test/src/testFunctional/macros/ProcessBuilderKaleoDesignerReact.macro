@@ -1850,4 +1850,13 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewSelectedRoleAssignmentsByPosition {
+		AssertElementPresent(
+				key_inputOption = "${inputOption}",
+				locator1 = "ProcessBuilderKaleoDesignerReact#ROLE_NAME_FIELD_ASSIGNMENTS_BY_POSITON",
+				key_positonOption = "${positonOption}",
+				value1 = "${selectedRole}");
+
+	}
+
 }
