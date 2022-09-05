@@ -711,6 +711,7 @@ definition {
 	@description = "Verify that the user can create a Template for Notification"
 	@priority = "4"
 	test CanCreateNotificationTemplate {
+		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanCreateNotificationTemplate";
 
 		Workflow.openWorkflowListView();
@@ -757,6 +758,7 @@ definition {
 		UserBar.gotoDropdownItem(dropdownItem = "Notifications");
 
 		WorkflowAsset.viewNotification(contentBody = "Test Test sent you a Blogs Entry for review in the workflow.");
+		
 	}
 
 	@description = "LPS-140056 - Verify that only one transition in the same direction from one node to the other can be created"

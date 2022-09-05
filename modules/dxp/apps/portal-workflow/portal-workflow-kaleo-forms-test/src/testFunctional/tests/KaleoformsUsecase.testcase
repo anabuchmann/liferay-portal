@@ -3896,6 +3896,7 @@ definition {
 
 	@priority = "4"
 	test RejectAndResubmitProcessAndViewNotifications {
+		property portal.upstream = "quarantine";
 		Navigator.openURL();
 
 		ProductMenu.gotoPortlet(
@@ -4026,6 +4027,7 @@ definition {
 			workflowAssetTitle = "Kaleo Forms Process",
 			workflowAssetType = "${workflowAssetType}",
 			workflowTask = "Review");
+			
 	}
 
 	@priority = "4"
