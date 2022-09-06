@@ -921,7 +921,6 @@ definition {
 		ProcessBuilderKaleoDesignerReact.deleteByTrashTopSidebar(
 			modalMessage = "Are you sure you want to delete all timers and their settings?",
 			sidebarPropertyName = "Timers");
-			
 	}
 
 	@description = "Verify that the user can delete all actions with the trash icon at the top right corner"
