@@ -512,6 +512,11 @@
 	<td>//div[@class='panel']/../..//div[@class='panel-group panel-group-flush'][${key_sectionOption}]//label[contains(., 'Script')]/..//textarea</td>
 	<td></td>
 </tr>
+<tr>
+	<td>ACTIONS_NAME_ON_TIMERS_FIELD</td>
+	<td>//div[@class='sidebar']//span[contains(text(),'Action')]/../..//input[contains(@value,'${key_actionName}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
