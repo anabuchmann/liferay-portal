@@ -3411,6 +3411,7 @@ definition {
 	@description = "Verify that a Success alert appears when the user restore a definition version (Example: Success:Restored to Revision 'X')"
 	@priority = "3"
 	test CanViewRestoreVersionSuccessAlert {
+		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanViewRestoreVersionSuccessAlert";
 
 		Workflow.openWorkflowListView();
@@ -3458,6 +3459,7 @@ definition {
 		ProcessBuilderKaleoDesignerReact.restorePreviousVersion(number = "1");
 
 		Alert.viewSuccessMessageText(successMessage = "Restored to Revision 1");
+		
 	}
 
 	@description = "LPS-129928 - Verify that when the user clicks on the Source button the Source editor appears"
