@@ -461,6 +461,7 @@ definition {
 	@description = "LPS-101075 - Verify that the All Versions filter considers only the steps touched by the task"
 	@priority = "4"
 	test FilterConsidersStepsTouchedByTaks {
+		property portal.upstream = "quarantine";
 		property test.name.skip.portal.instance = "WorkflowMetricsPerformanceByStep#FilterConsidersStepsTouchedByTaks";
 
 		ApplicationsMenu.gotoPortlet(
@@ -543,6 +544,7 @@ definition {
 		AssertElementNotPresent(
 			key_stepName = "Update",
 			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
+			
 	}
 
 	@description = "LPS-130215 - Verify that, selecting all versions, the filter considers only the steps touched by the task"
