@@ -521,6 +521,11 @@
 	<td>//div[@class='sidebar']//span[contains(text(),'Action')]/../..//input[contains(@value,'${key_actionName}')]</td>
 	<td></td>
 </tr>
+<tr>
+    <td>ERROR_MESSAGE</td>
+    <td>//div[contains(@class,'alert') and (contains(@class,'alert-error') or contains(@class,'alert-danger'))]</td>
+    <td></td>
+</tr>
 </tbody>
 </table>
 </body>

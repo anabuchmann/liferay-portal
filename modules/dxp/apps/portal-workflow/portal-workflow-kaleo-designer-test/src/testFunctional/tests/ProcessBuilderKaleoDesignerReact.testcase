@@ -2244,9 +2244,11 @@ definition {
 
 		Button.clickPublish();
 
-		Alert.viewErrorMessage(errorMessage = "The Start node must have an outgoing transition");
+		ProcessBuilderKaleoDesignerReact.viewErrorMessage(errorMessage = "The Start node must have an outgoing transition");
+		
 
 		Navigator.gotoBack();
+
 
 		Workflow.viewDefinitionNotPresent(workflowDefinitionTitle = "New Workflow Definition");
 	}

@@ -1980,4 +1980,10 @@ definition {
 			value1 = "${coordinateY}");
 	}
 
+	macro viewErrorMessage {
+        AssertTextEquals.assertPartialText(
+            locator1 = "ProcessBuilderKaleoDesignerReact#ERROR_MESSAGE",
+            value1 = "${errorMessage}");
+    }
+
 }
