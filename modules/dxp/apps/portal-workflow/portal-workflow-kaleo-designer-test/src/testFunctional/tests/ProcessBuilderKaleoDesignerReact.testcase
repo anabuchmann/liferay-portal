@@ -330,7 +330,6 @@ definition {
 			notificationTypeOption = "User Notification",
 			singleAction = "true");
 
-
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.viewPropertyValue(
@@ -877,7 +876,6 @@ definition {
 			notificationTypeOption = "User Notification",
 			singleAction = "true",
 			templateLanguageOption = "FreeMarker");
-
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
@@ -1650,7 +1648,6 @@ definition {
 			notificationTypeOption = "User Notification",
 			singleAction = "true");
 
-
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
@@ -1813,7 +1810,6 @@ definition {
 			notificationTypeOption = "User Notification",
 			singleAction = "true",
 			templateLanguageOption = "FreeMarker");
-
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
@@ -3117,7 +3113,6 @@ definition {
 			recipientTypeOption = "Task Assignees",
 			singleAction = "true");
 
-
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "New Notification");
@@ -3148,7 +3143,6 @@ definition {
 			notificationTypeOption = "User Notification",
 			singleAction = "true");
 
-
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
 		ProcessBuilderKaleoDesignerReact.gotoNotification(notificationName = "Liferay Notification");
@@ -3176,7 +3170,6 @@ definition {
 			notificationTemplateValue = '''${userName} sent you a ${entryType} for review in the workflow.''',
 			notificationTypeOption = "User Notification",
 			singleAction = "true");
-			
 
 		ProcessBuilderKaleoDesignerReact.backArrowOnSidebar();
 
