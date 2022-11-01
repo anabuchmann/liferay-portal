@@ -227,6 +227,66 @@ definition {
 			value1 = "${roleName}");
 	}
 
+	macro approveTaskByActions {
+		Workflow.viewTaskAssignedToMe(
+			ddlDataDefinitionName = "${ddlDataDefinitionName}",
+			multipleTasks = "${multipleTasks}",
+			taskPosition = "${taskPosition}",
+			workflowAssetTitle = "${workflowAssetTitle}",
+			workflowAssetType = "${workflowAssetType}",
+			workflowTask = "${workflowTask}");
+
+		Workflow.gotoTaskAssignedToMeActionsCmd(
+			multipleTasks = "${multipleTasks}",
+			taskPosition = "${taskPosition}",
+			workflowAssetTitle = "${workflowAssetTitle}",
+			workflowTask = "${workflowTask}");
+
+		var menuItem = "join";
+
+		if (isSet(workflowDefinitionTask)) {
+			var menuItem = "${workflowDefinitionTask}";
+		}
+		else if (isSet(boardWorkflowTask)) {
+			var menuItem = "join ${boardWorkflowTask}";
+		}
+
+		MenuItem.click(menuItem = "${menuItem}");
+
+		IFrame.selectConfigurationFrame();
+
+		if (isSet(workflowActivityComment)) {
+			var key_workflowActivityComment = "${workflowActivityComment}";
+
+			Type.clickAtType(
+				locator1 = "MyWorkflowTasks#DIALOG_BOX_COMMENT_FIELD",
+				value1 = "${workflowActivityComment}");
+		}
+
+		Workflow.confirmWorkflowAction();
+
+		Workflow.viewCompletedTask(
+			completedTask = "${completedTask}",
+			ddlDataDefinitionName = "${ddlDataDefinitionName}",
+			multipleTasks = "${multipleTasks}",
+			taskPosition = "${taskPosition}",
+			workflowAssetTitle = "${workflowAssetTitle}",
+			workflowAssetType = "${workflowAssetType}",
+			workflowTask = "${workflowTask}");
+
+		if (isSet(workflowActivityComment)) {
+			Workflow.gotoCompletedFilter();
+
+			if (isSet(workflowOrder)) {
+				Workflow.clickRevertSortDirection();
+			}
+
+			Workflow._viewActivities(
+				workflowActivityComment = "${workflowActivityComment}",
+				workflowAssetTitle = "${workflowAssetTitle}");
+		}
+	}
+
 	macro backArrowOnSidebar {
 		Click(locator1 = "ProcessBuilderKaleoDesignerReact#BACK_TO_SIDEBAR_BUTTON");
 	}

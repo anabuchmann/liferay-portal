@@ -2356,12 +2356,85 @@ definition {
 	}
 
 	@description = "LPS-139388 - Verify that, when all the parallel reviews are complete, the Join node will allow the instance to progress to the next step"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanProgressToNextStepWhenParallelTasksCompleted {
+		property test.name.skip.portal.instance = "ProcessBuilderKaleoDesignerReact#CanProgressToNextStepWhenParallelTasksCompleted";
 
-		// TODO LRQA-72985 CanProgressToNextStepWhenParallelTasksCompleted pending implementation
+		Workflow.openWorkflowListView();
 
+		Workflow.addNewDefinition(workflowDefinitionTitle = "New Workflow Definition");
+
+		ProcessBuilderKaleoDesignerReact.uploadDefinition(workflowDefinitionFile = "multi-task-process-workflow-definition.xml");
+
+		ProcessBuilderKaleoDesignerReact.diagramSourceSwitchView();
+
+		Button.clickPublish();
+
+		Navigator.gotoBack();
+
+		Navigator.gotoNavItem(navItem = "Configuration");
+
+		Workflow.configureWorkflow(
+			workflowDefinition = "New Workflow Definition",
+			workflowResourceValue = "Blogs Entry");
+
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content",
+			entryTitle = "Blogs Entry Title");
+
+		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "task1");
+
+		ProcessBuilderKaleoDesignerReact.approveTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "task1");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "task2");
+
+		ProcessBuilderKaleoDesignerReact.approveTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "task2");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "task3");
+
+		ProcessBuilderKaleoDesignerReact.approveTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "task3");
+
+		WorkflowMetrics.goToWorkflowAllItemsByStatus(
+			completedItemStatus = "Total Completed",
+			workflowProcessName = "New Workflow Definition");
+
+		WaitForElementPresent(locator1 = "WorkflowAllItems#WORKFLOW_INSTANCE_ID");
+
+		var getInstanceId = selenium.getText("WorkflowAllItems#WORKFLOW_INSTANCE_ID");
+
+		Click(locator1 = "WorkflowAllItems#WORKFLOW_INSTANCE_ID");
+
+		WorkflowMetricsAllItemsList.viewDetailsModal();
+
+		WorkflowMetricsAllItemsList.goToTrackWorkflowlink();
+
+		WorkflowMetrics.viewCurrentNodeDoneIcon(currentNode = "task1");
+
+		WorkflowMetrics.viewCurrentNodeDoneIcon(currentNode = "task2");
+
+		WorkflowMetrics.viewCurrentNodeDoneIcon(currentNode = "task3");
+
+		WorkflowMetrics.viewCurrentNodeDoneIcon(currentNode = "join");
 	}
 
 	@description = "Verify that the user can publish a definition with Condition node"
