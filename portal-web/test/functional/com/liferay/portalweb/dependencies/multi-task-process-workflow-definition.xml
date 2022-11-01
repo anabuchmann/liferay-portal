@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+
+<workflow-definition
+	xmlns="urn:liferay.com:liferay-workflow_7.4.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:liferay.com:liferay-workflow_7.4.0 http://www.liferay.com/dtd/liferay-workflow-definition_7_4_0.xsd"
+>
+	<version>1</version>
+	<fork>
+		<id>fork</id>
+		<description>Split the workflow into multiple paths.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						-257.95452880859375,
+						322.727294921875
+					]
+				}
+			]]>
+		</metadata>
+		<labels>
+			<label language-id="en_US">
+				fork
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						task1
+					</label>
+				</labels>
+				<id>fork_task1_task1</id>
+				<target>task1</target>
+				<default>true</default>
+			</transition>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						task2
+					</label>
+				</labels>
+				<id>fork_task2_task2</id>
+				<target>task2</target>
+				<default>false</default>
+			</transition>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						task3
+					</label>
+				</labels>
+				<id>fork_task3_task3</id>
+				<target>task3</target>
+				<default>false</default>
+			</transition>
+		</transitions>
+	</fork>
+	<join>
+		<id>join</id>
+		<description>All interactions need to be closed.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						527.0482788085938,
+						228.789794921875
+					]
+				}
+			]]>
+		</metadata>
+		<labels>
+			<label language-id="en_US">
+				join
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						end
+					</label>
+				</labels>
+				<id>join_end_end</id>
+				<target>end</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</join>
+	<state>
+		<id>start</id>
+		<description>Begin a workflow.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						-324.0511474609375,
+						-48.2613525390625
+					]
+				}
+			]]>
+		</metadata>
+		<initial>true</initial>
+		<labels>
+			<label language-id="en_US">
+				start
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						fork
+					</label>
+				</labels>
+				<id>start_fork_fork</id>
+				<target>fork</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</state>
+	<state>
+		<id>end</id>
+		<description>Execute actions in the workflow.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						919.04833984375,
+						125.914794921875
+					]
+				}
+			]]>
+		</metadata>
+		<labels>
+			<label language-id="en_US">
+				end
+			</label>
+		</labels>
+	</state>
+	<task>
+		<id>task1</id>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						223.96307373046875,
+						13.110794067382812
+					]
+				}
+			]]>
+		</metadata>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Administrator</name>
+					<auto-create>false</auto-create>
+				</role>
+				<role>
+					<role-type>regular</role-type>
+					<name>Power User</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				task1
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						join
+					</label>
+				</labels>
+				<id>task1_join_join</id>
+				<target>join</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<id>task2</id>
+		<description>Ask a user to work on the item.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						159.946044921875,
+						288.758544921875
+					]
+				}
+			]]>
+		</metadata>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Administrator</name>
+					<auto-create>false</auto-create>
+				</role>
+				<role>
+					<role-type>regular</role-type>
+					<name>Power User</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				task2
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						join
+					</label>
+				</labels>
+				<id>task2_join_join</id>
+				<target>join</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<id>task3</id>
+		<description>Ask a user to work on the item.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						193.9573974609375,
+						491.00848388671875
+					]
+				}
+			]]>
+		</metadata>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Administrator</name>
+					<auto-create>false</auto-create>
+				</role>
+				<role>
+					<role-type>regular</role-type>
+					<name>Power User</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				task3
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						join
+					</label>
+				</labels>
+				<id>task3_join_join</id>
+				<target>join</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</task>
+</workflow-definition>
