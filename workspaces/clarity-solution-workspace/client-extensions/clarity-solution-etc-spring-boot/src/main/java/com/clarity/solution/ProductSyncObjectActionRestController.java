@@ -13,11 +13,13 @@ import java.io.InputStreamReader;
 
 import java.nio.charset.StandardCharsets;
 
+import java.util.Base64;
 import java.util.UUID;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -43,32 +45,36 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 		JSONObject syncRequestJSONObject = _getSyncRequestJSONObject(
 			new JSONObject(json));
 
+		String authorization = _getAuthorization();
+
 		_patchSyncRequest(
-			jwt.toString(), syncRequestJSONObject,
+			authorization, syncRequestJSONObject,
 			new JSONObject(
 			).put(
-				"status", "running"
+				"syncStatus", "running"
 			));
 
-		JSONObject importTaskJSONObject = _postProductImportTask(
-			jwt.toString(), _toProductsJSONArray());
-
-		String batchExternalReferenceCode = importTaskJSONObject.getString(
-			"externalReferenceCode");
+		String batchExternalReferenceCode = _postProductImportTask(
+			authorization,
+			_toProductsJSONArray(
+				_getCatalogExternalReferenceCode(authorization)));
 
 		JSONObject importTaskStatusJSONObject =
 			_getImportTaskByExternalReferenceCodeJSONObject(
-				jwt.toString(), batchExternalReferenceCode);
+				authorization, batchExternalReferenceCode);
 
-		JSONArray failedItemsJSONArray =
-			importTaskStatusJSONObject.optJSONArray("failedItems");
+		JSONObject valuesJSONObject = new JSONObject(
+		).put(
+			"batchExternalReferenceCode", batchExternalReferenceCode
+		).put(
+			"syncStatus", "submitted"
+		);
 
-		_patchSyncRequest(
-			jwt.toString(), syncRequestJSONObject,
-			new JSONObject(
-			).put(
-				"batchExternalReferenceCode", batchExternalReferenceCode
-			).put(
+		if (importTaskStatusJSONObject != null) {
+			JSONArray failedItemsJSONArray =
+				importTaskStatusJSONObject.optJSONArray("failedItems");
+
+			valuesJSONObject.put(
 				"errorMessage",
 				importTaskStatusJSONObject.optString("errorMessage")
 			).put(
@@ -79,26 +85,70 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 				"processedItemsCount",
 				importTaskStatusJSONObject.optInt("processedItemsCount")
 			).put(
-				"status", importTaskStatusJSONObject.optString("executeStatus")
-			));
+				"syncStatus",
+				importTaskStatusJSONObject.optString("executeStatus")
+			);
+		}
+
+		_patchSyncRequest(
+			authorization, syncRequestJSONObject, valuesJSONObject);
 
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+
+	private String _getAuthorization() {
+		String encodedBasicAuthorization = Base64.getEncoder(
+		).encodeToString(
+			_basicAuthorization.getBytes(StandardCharsets.UTF_8)
+		);
+
+		return "Basic " + encodedBasicAuthorization;
+	}
+
+	private String _getCatalogExternalReferenceCode(String authorization) {
+		JSONObject catalogsJSONObject = new JSONObject(
+			get(
+				authorization,
+				UriComponentsBuilder.fromPath(
+					"/o/headless-commerce-admin-catalog/v1.0/catalogs"
+				).build(
+				).toUri()));
+
+		JSONArray itemsJSONArray = catalogsJSONObject.getJSONArray("items");
+
+		if (itemsJSONArray.isEmpty()) {
+			throw new IllegalStateException(
+				"Unable to start product sync without a Commerce catalog");
+		}
+
+		return itemsJSONArray.getJSONObject(
+			0
+		).getString(
+			"externalReferenceCode"
+		);
 	}
 
 	private JSONObject _getImportTaskByExternalReferenceCodeJSONObject(
 			String authorization, String batchExternalReferenceCode)
 		throws Exception {
 
-		for (int i = 0; i < 5; i++) {
-			JSONObject importTaskJSONObject = new JSONObject(
-				get(
-					authorization,
-					UriComponentsBuilder.fromPath(
-						"/o/headless-batch-engine/v1.0/import-task" +
-							"/by-external-reference-code/" +
-								batchExternalReferenceCode
-					).build(
-					).toUri()));
+		for (int i = 0; i < 2; i++) {
+			String importTask = get(
+				authorization,
+				UriComponentsBuilder.fromPath(
+					"/o/headless-batch-engine/v1.0/import-task" +
+						"/by-external-reference-code/" +
+							batchExternalReferenceCode
+				).build(
+				).toUri());
+
+			if (importTask == null) {
+				Thread.sleep(500);
+
+				continue;
+			}
+
+			JSONObject importTaskJSONObject = new JSONObject(importTask);
 
 			String executeStatus = importTaskJSONObject.optString(
 				"executeStatus");
@@ -107,18 +157,10 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 				return importTaskJSONObject;
 			}
 
-			Thread.sleep(2000);
+			Thread.sleep(500);
 		}
 
-		return new JSONObject(
-			get(
-				authorization,
-				UriComponentsBuilder.fromPath(
-					"/o/headless-batch-engine/v1.0/import-task" +
-						"/by-external-reference-code/" +
-							batchExternalReferenceCode
-				).build(
-				).toUri()));
+		return null;
 	}
 
 	private JSONObject _getSyncRequestJSONObject(JSONObject payloadJSONObject) {
@@ -163,31 +205,34 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 			).toUri());
 	}
 
-	private JSONObject _postProductImportTask(
+	private String _postProductImportTask(
 		String authorization, JSONArray productsJSONArray) {
 
 		String batchExternalReferenceCode =
 			"CLARITY_PRODUCT_SYNC_" + UUID.randomUUID();
 
-		return new JSONObject(
-			post(
-				authorization, productsJSONArray.toString(),
-				UriComponentsBuilder.fromPath(
-					"/o/headless-batch-engine/v1.0/import-task/" +
-						_CLASS_NAME_PRODUCT
-				).queryParam(
-					"batchExternalReferenceCode", batchExternalReferenceCode
-				).queryParam(
-					"createStrategy", "UPSERT"
-				).queryParam(
-					"externalReferenceCode", batchExternalReferenceCode
-				).queryParam(
-					"importStrategy", "ON_ERROR_CONTINUE"
-				).build(
-				).toUri()));
+		post(
+			authorization, productsJSONArray.toString(),
+			UriComponentsBuilder.fromPath(
+				"/o/headless-batch-engine/v1.0/import-task/" +
+					_CLASS_NAME_PRODUCT
+			).queryParam(
+				"batchExternalReferenceCode", batchExternalReferenceCode
+			).queryParam(
+				"createStrategy", "UPSERT"
+			).queryParam(
+				"externalReferenceCode", batchExternalReferenceCode
+			).queryParam(
+				"importStrategy", "ON_ERROR_CONTINUE"
+			).build(
+			).toUri());
+
+		return batchExternalReferenceCode;
 	}
 
-	private JSONArray _toProductsJSONArray() throws Exception {
+	private JSONArray _toProductsJSONArray(String catalogExternalReferenceCode)
+		throws Exception {
+
 		JSONArray productsJSONArray = new JSONArray();
 
 		InputStream inputStream = getClass().getResourceAsStream(
@@ -212,7 +257,8 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 					).put(
 						"active", true
 					).put(
-						"catalogExternalReferenceCode", values[3]
+						"catalogExternalReferenceCode",
+						catalogExternalReferenceCode
 					).put(
 						"externalReferenceCode", values[0]
 					).put(
@@ -238,5 +284,8 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 
 	private static final String _CLASS_NAME_PRODUCT =
 		"com.liferay.headless.commerce.admin.catalog.dto.v1_0.Product";
+
+	@Value("${liferay.demo.basic.authorization:test@liferay.com:test}")
+	private String _basicAuthorization;
 
 }
