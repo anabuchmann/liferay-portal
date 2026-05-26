@@ -8,10 +8,17 @@ package com.clarity.solution;
 import com.liferay.client.extension.util.spring.boot3.BaseRestController;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+import java.time.Instant;
 
 import java.util.Base64;
 import java.util.UUID;
@@ -41,6 +48,10 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 	public ResponseEntity<String> post(
 			@AuthenticationPrincipal Jwt jwt, @RequestBody String json)
 		throws Exception {
+
+		String runId = UUID.randomUUID().toString();
+
+		_appendDemoLog(runId, "request.payload", json);
 
 		JSONObject syncRequestJSONObject = _getSyncRequestJSONObject(
 			new JSONObject(json));
@@ -93,7 +104,32 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 		_patchSyncRequest(
 			authorization, syncRequestJSONObject, valuesJSONObject);
 
+		_appendDemoLog(runId, "result.values", valuesJSONObject.toString(2));
+
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+
+	private void _appendDemoLog(String runId, String stage, String payload) {
+		String line = String.format(
+			"%s | run=%s | stage=%s%n%s%n%s%n",
+			Instant.now(), runId, stage, payload,
+			"----------------------------------------");
+
+		Path path = Paths.get(_demoLogPath);
+
+		try {
+			if (path.getParent() != null) {
+				Files.createDirectories(path.getParent());
+			}
+
+			Files.writeString(
+				path, line, StandardCharsets.UTF_8,
+				StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+		}
+		catch (IOException ioException) {
+			System.err.println(
+				"Unable to write demo log: " + ioException.getMessage());
+		}
 	}
 
 	private String _getAuthorization() {
@@ -287,5 +323,8 @@ public class ProductSyncObjectActionRestController extends BaseRestController {
 
 	@Value("${liferay.demo.basic.authorization:test@liferay.com:test}")
 	private String _basicAuthorization;
+
+	@Value("${clarity.demo.log.path:/tmp/clarity-sync-demo.log}")
+	private String _demoLogPath;
 
 }
