@@ -7,6 +7,9 @@ clarity-solution-etc-spring-boot-oaua:
     scopes:
         -   Liferay.Headless.Admin.User.everything
         -   Liferay.Headless.Admin.Workflow.everything
+        -   Liferay.Headless.Batch.Engine.everything
+        -   Liferay.Headless.Commerce.Admin.Catalog.everything
+        -   c_claritysyncrequest.everything
     type: oAuthApplicationUserAgent
 clarity-solution-etc-spring-boot-object-action:
     name: Clarity Solution Etc Spring Boot Object Action
@@ -18,3 +21,8 @@ clarity-solution-etc-spring-boot-workflow-action:
     oAuth2ApplicationExternalReferenceCode: clarity-solution-etc-spring-boot-oaua
     resourcePath: /workflow/action
     type: workflowAction
+clarity-solution-product-sync-object-action:
+    name: Clarity Solution Product Sync Object Action
+    oAuth2ApplicationExternalReferenceCode: clarity-solution-etc-spring-boot-oaua
+    resourcePath: /object/action/product-sync
+    type: objectAction

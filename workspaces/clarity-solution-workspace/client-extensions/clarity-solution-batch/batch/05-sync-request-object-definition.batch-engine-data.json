@@ -1,0 +1,172 @@
+{
+	"configuration": {
+		"className": "com.liferay.object.admin.rest.dto.v1_0.ObjectDefinition",
+		"parameters": {
+			"containsHeaders": "true",
+			"createStrategy": "INSERT",
+			"onErrorFail": "ON_ERROR_FAIL",
+			"taskItemDelegateName": "DEFAULT",
+			"updateStrategy": "UPDATE"
+		}
+	},
+	"items": [
+		{
+			"active": true,
+			"enableCategorization": false,
+			"enableIndexSearch": true,
+			"enableObjectEntryDraft": false,
+			"externalReferenceCode": "CLARITY_SYNC_REQUEST",
+			"label": {
+				"en_US": "Clarity Sync Request"
+			},
+			"modifiable": true,
+			"name": "ClaritySyncRequest",
+			"objectActions": [
+				{
+					"active": true,
+					"conditionExpression": "",
+					"description": "Start the Clarity product sync worker when a sync request is created.",
+					"errorMessage": {
+					},
+					"label": {
+						"en_US": "Start Product Sync"
+					},
+					"name": "startProductSync",
+					"objectActionExecutorKey": "function#clarity-solution-product-sync-object-action",
+					"objectActionTriggerKey": "onAfterAdd",
+					"parameters": {
+					}
+				}
+			],
+			"objectFields": [
+				{
+					"DBType": "String",
+					"businessType": "Text",
+					"indexed": true,
+					"indexedLanguageId": "en_US",
+					"label": {
+						"en_US": "Event Type"
+					},
+					"name": "eventType",
+					"readOnly": "false",
+					"required": true,
+					"state": false,
+					"type": "String"
+				},
+				{
+					"DBType": "String",
+					"businessType": "Text",
+					"defaultValue": "requested",
+					"indexed": true,
+					"indexedLanguageId": "en_US",
+					"label": {
+						"en_US": "Status"
+					},
+					"name": "syncStatus",
+					"objectFieldSettings": [
+						{
+							"name": "defaultValue",
+							"value": "requested"
+						},
+						{
+							"name": "defaultValueType",
+							"value": "inputAsValue"
+						}
+					],
+					"readOnly": "false",
+					"required": true,
+					"state": false,
+					"type": "String"
+				},
+				{
+					"DBType": "String",
+					"businessType": "Text",
+					"indexed": true,
+					"indexedLanguageId": "en_US",
+					"label": {
+						"en_US": "Source"
+					},
+					"name": "source",
+					"readOnly": "false",
+					"state": false,
+					"type": "String"
+				},
+				{
+					"DBType": "String",
+					"businessType": "Text",
+					"indexed": true,
+					"indexedLanguageId": "en_US",
+					"label": {
+						"en_US": "Correlation ID"
+					},
+					"name": "correlationId",
+					"readOnly": "false",
+					"state": false,
+					"type": "String"
+				},
+				{
+					"DBType": "String",
+					"businessType": "Text",
+					"indexed": true,
+					"indexedLanguageId": "en_US",
+					"label": {
+						"en_US": "Batch External Reference Code"
+					},
+					"name": "batchExternalReferenceCode",
+					"readOnly": "false",
+					"state": false,
+					"type": "String"
+				},
+				{
+					"DBType": "Long",
+					"businessType": "Integer",
+					"indexed": true,
+					"label": {
+						"en_US": "Processed Items Count"
+					},
+					"name": "processedItemsCount",
+					"readOnly": "false",
+					"state": false,
+					"type": "Long"
+				},
+				{
+					"DBType": "Long",
+					"businessType": "Integer",
+					"indexed": true,
+					"label": {
+						"en_US": "Failed Items Count"
+					},
+					"name": "failedItemsCount",
+					"readOnly": "false",
+					"state": false,
+					"type": "Long"
+				},
+				{
+					"DBType": "Clob",
+					"businessType": "LongText",
+					"indexed": false,
+					"label": {
+						"en_US": "Error Message"
+					},
+					"name": "errorMessage",
+					"readOnly": "false",
+					"state": false,
+					"type": "String"
+				}
+			],
+			"objectFolderExternalReferenceCode": "U3A2_DISTRIBUTOR_MANAGEMENT",
+			"panelCategoryKey": "applications_menu.applications.custom.apps",
+			"pluralLabel": {
+				"en_US": "Clarity Sync Requests"
+			},
+			"restContextPath": "/o/c/claritysyncrequests",
+			"scope": "company",
+			"status": {
+				"code": 0,
+				"label": "approved",
+				"label_i18n": "Approved"
+			},
+			"titleObjectFieldName": "eventType"
+		}
+	]
+}
